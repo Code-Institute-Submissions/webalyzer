@@ -3,18 +3,18 @@ import sys
 import time
 
 
-def sprint(str):
+def slow_print(string):
     """
     Function for slow typing in terminal
     Source: https://stackoverflow.com/a/54472904
     """
-    for c in str + '\n':
+    for c in string + '\n':
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(3./90)
 
 
-sprint('hello world')
+slow_print('hello world')
 
 
 def get_url_link():
@@ -22,15 +22,15 @@ def get_url_link():
     Get website link input from the user
     """
     while True:
-        sprint("Please enter your URL")
-        sprint("The URL MUST include HTTP, subdomain, domain and tld\n")
-        sprint("Example: https://en.wikipedia.org/wiki/"
-               "Python_(programming_language)\n")
+        slow_print("Please enter your URL")
+        slow_print("The URL MUST include HTTP, subdomain, domain and tld\n")
+        slow_print("Example: https://en.wikipedia.org/wiki/"
+                   "Python_(programming_language)\n")
 
         url_link = input("Enter your url here: ")
 
         if validate_url(url_link):
-            print("URL is valid!")
+            slow_print("URL is valid!")
             break
 
     return url_link
@@ -55,7 +55,7 @@ def validate_url(url):
                 f"URL Error! URL provided: {url}"
             )
     except ValueError as validate_error:
-        sprint(f"\nInvalid link: {validate_error}, please try again.\n")
+        slow_print(f"\nInvalid link: {validate_error}, please try again.\n")
         return False
 
     return True
