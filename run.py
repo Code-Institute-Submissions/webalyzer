@@ -1,4 +1,20 @@
 import re
+import sys
+import time
+
+
+def sprint(str):
+    """
+    Function for slow typing in terminal
+    Source: https://stackoverflow.com/a/54472904
+    """
+    for c in str + '\n':
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(3./90)
+
+
+sprint('hello world')
 
 
 def get_url_link():
@@ -6,9 +22,10 @@ def get_url_link():
     Get website link input from the user
     """
     while True:
-        print("Please enter your URL")
-        print("The URL MUST include HTTP, subdomain, domain and tld\n")
-        print("Example: https://en.wikipedia.org/wiki/Python_(programming_language)\n")
+        sprint("Please enter your URL")
+        sprint("The URL MUST include HTTP, subdomain, domain and tld\n")
+        sprint("Example: https://en.wikipedia.org/wiki/"
+               "Python_(programming_language)\n")
 
         url_link = input("Enter your url here: ")
 
@@ -38,10 +55,10 @@ def validate_url(url):
                 f"URL Error! URL provided: {url}"
             )
     except ValueError as validate_error:
-        print(f"\nInvalid link: {validate_error}, please try again.\n")
+        sprint(f"\nInvalid link: {validate_error}, please try again.\n")
         return False
 
     return True
 
 
-url = get_url_link()
+valid_url = get_url_link()
