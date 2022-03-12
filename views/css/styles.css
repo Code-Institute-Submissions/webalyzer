@@ -15,5 +15,5 @@ header {
     width: 1095.78px;
     display: grid;
     justify-content: center;
-    background: url("../images/program-process-background-final.svg") center/contain no-repeat;
+    background: url("./images/program-process-background-final.svg") center/contain no-repeat;
 }
