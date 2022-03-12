@@ -1,0 +1,19 @@
+body {
+    display: grid;
+    justify-content: center;
+    height: 100vh;
+    grid-template-rows: 220px 448px;
+}
+
+header {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+#py__app {
+    width: 1095.78px;
+    display: grid;
+    justify-content: center;
+    background: url("../images/program-process-background-final.svg") center/contain no-repeat;
+}
