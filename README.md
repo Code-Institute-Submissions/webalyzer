@@ -6,13 +6,11 @@ Project URL: [View live project](https://websichanic.herokuapp.com "Websichanic"
 
 ![Mockup]()
 
+
 ## Summary
 
-Websichanic, short for "website mechanic" based on real world website -TextMechanic, a site I have used and known for a long time. A user can manipulate text, like removing empty lines, trim lines and empty spaces. Tools like removing duplicates and adding string(s) before or/and after a line etc. It's a good toolset to have when working with text. I wanted to create something similar and based on "TM" I came up with Websichanic. An app that takes an input and gives feedback to the user, a question came to life.
+Websichanic, short for "website mechanic" based on real world website -TextMechanic, a site I have used and known for a long time. A user can manipulate text, like removing empty lines, trim lines and empty spaces. Tools like removing duplicates and adding string(s) before or/and after a line etc. It's a good toolset to have when working with text. I wanted to create something similar and based on "TM" I came up with Websichanic. An app that takes an input and gives feedback to the user.
 
-### For who?
-
-I asked myself, what's current need based on my current surounding. Developers! So I set out to build something that could be used by developers that could potientially save devs time. Time is limited, we all wouldn't hesitate saving time where possible, thus Websichanic was born.
 
 ## User Experience (UX)
 
@@ -34,11 +32,13 @@ I asked myself, what's current need based on my current surounding. Developers! 
     
     -   #### Wireframe
 
-        Mockflow.com was used to design the initial layout for the desktop screen.
+        Mockflow.com was used to design the initial layout for the desktop screen only, as the project requirements does not include or mention mobile responsiveness.
 
         | Desktop |
         |:--------:|
         | ![Front](./assets/images/readme/wc-wireframe-min.png) |
+
+        <br>
 
     -   #### Colour Scheme
 
@@ -52,29 +52,30 @@ I asked myself, what's current need based on my current surounding. Developers! 
 
             The background image was produced by the shades of the main three colors.
 
+            <br>
+
     -   #### Imagery
 
-        -   All images have been created by myself and serves the purpose of make the app more appealing.
+        -   I created the images myself and was created to make the app more appealing.
         -   The colors and images all serve to be aligned and assist in the name and branding of app.
         -   They also intent to give the app an identity the user can relate to, lifting it's overall impression.
 
         <br>
-        <br>
+
         The background image was produced using adobe's illustrator as it is my preferred tool for working on svg files.
-        <br>
-        <br>
-
-        ![Background Image](./assets/images/readme/bg-for-websichanic-illustrator-min.jpg)|
 
         <br>
+
+        ![Background Image](./assets/images/readme/bg-for-websichanic-illustrator-min.jpg)
+
         <br>
+
         The favicon image was produced using adobe's illustrator as well.
-        <br>
-        <br>
-
-        ![Background Image](./assets/images/readme/favicon-for-websichanic-illustrator-min.jpg)|
 
         <br>
+
+        ![Background Image](./assets/images/readme/favicon-for-websichanic-illustrator-min.jpg)
+
         <br>
 
 ## Table of Contents
@@ -86,15 +87,12 @@ I asked myself, what's current need based on my current surounding. Developers! 
     * [Scope](#scope)
     * [Strategy](#strategy)
 * [Development](#development)
+    * [HTML](#dev-html)
     * [CSS](#dev-css)
     * [Python](#dev-python)
-    * [Images](#images)
-    * [Accessibility](#accessibility)
     * [Testings](#testings)
     * [Bugs](#bugs)
-* [Validators](#validators)
-    * [HTML](#validate-html)
-    * [CSS](#validate-css)
+* [Validator](#validator)
     * [Python](#validate-python)
 * [Deployment](#deployment)
     * [Fork](#fork)
@@ -102,27 +100,37 @@ I asked myself, what's current need based on my current surounding. Developers! 
     * [Deploy](#deploy)
 * [Credits](#credits)
 
+<br>
+
 ## Planes
+
+
+<br>
 
 ### Surface
 
-
+What will the product actually look like, what colors, what typography, what images/design elements, what animation, what transitions, how will the final product look like?
+<br>
 
 ### Skeleton
 
-
+(How the infomation implemented), (how will the user navigate), (how the content relate to each other, low, mid top priority, how and where to position content)?
+<br>
 
 ### Structure
 
-
+How is the information, logically grouped, the feature the elements the data?
+<br>
 
 ### Scope
+What features,(nvp), both ability and desires?
 
-
+<br>
 
 ### Strategy
+Aiming to achieve and for whom?
 
-
+<br>
 
 ## Development
 
@@ -131,10 +139,12 @@ I asked myself, what's current need based on my current surounding. Developers! 
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets "Wikipedia's CSS3 page")
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Wikipedia's Python page")
 
+<br>
+
 ### Frameworks, Libraries & Programs Used
 
 1. [Mockflow:](https://mockflow.com/)
-    - Mockflow was used to create the [wireframes](#wireframes) during the design process.
+    - Mockflow was used to create the [wireframe](#wireframe) during the design process.
 2. [Git:](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 3. [GitHub:](https://github.com/)
@@ -152,51 +162,71 @@ I asked myself, what's current need based on my current surounding. Developers! 
 9. [time:](https://docs.python.org/3/library/time.html)
     - This module provides various time-related functions.
 
+    <br>
+
 ### Dev HTML
 
 The base HTML that came with the initial template was used and slightly altered to move the button below the terminal. Two extra tags where added to give me more freedom to better control the layout of the app.
 
+<br>
+
 ### Dev CSS
 
-Initially I had a small fight with Heroku and finally after some time, I realized it was out of the scope of this project. I ended up adding CSS code to layout.html instead of a custom styles.css file.
+Initially I had a small fight with Heroku and finally after some time, I realized it was out of the scope of this project. I ended up adding CSS code to layout.html instead of a custom stylesheet file.
 
-### Images
+<br>
 
-There's two images shown on the app, one in the `<body>` background set to be shown below or behind the python terminal, and the favicon to further strengthen the branding of the app.
+### Dev Python
+
+
+
+<br>
 
 ## Testings
 
 
 
-### Lighthouse Mobile
-
-| App Page |
-|:--------:|
-| ![Front]() |
+<br>
 
 ### Bugs
 
 
+<br>
 
 ## Validator
 
 ### Validate Python
 
 
+<br>
 
 ## Deployment
 
+
+<br>
+
 ### Fork
+
+
+<br>
 
 ### Clone
 
+
+<br>
+
 ### Deploy
+
+
+<br>
 
 ## Credits
 
-### Content and Images
+### Code
 
 
+
+<br>
 
 ### Sources Used
 
@@ -214,7 +244,7 @@ https://regex101.com
 
 https://note.nkmk.me/en/python-str-compare/
 
-
+<br>
 
 ## Acknowledgement
 
