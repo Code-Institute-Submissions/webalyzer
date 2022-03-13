@@ -8,9 +8,11 @@ Project URL: [View live project](https://websichanic.herokuapp.com "Websichanic"
 
 ## Summary
 
-Websichanic short for "website mechanic" an idea based on TextMechanic, a site I have used and known a long time. A user can manipulate text, like removing empty lines, trim lines and empty spaces. Tools like removing dubplicates and adding string(s) before or/and after a line etc. It's a good toolset to have when working with text. I wanted to something something similar and based on that idea I came up with websichanic. An app that takes an input and gives feedback to the user, a question came to life, to who?
+Websichanic, short for "website mechanic" based on real world website -TextMechanic, a site I have used and known for a long time. A user can manipulate text, like removing empty lines, trim lines and empty spaces. Tools like removing duplicates and adding string(s) before or/and after a line etc. It's a good toolset to have when working with text. I wanted to create something similar and based on "TM" I came up with Websichanic. An app that takes an input and gives feedback to the user, a question came to life.
 
-I asked myself, what's current need based on my current surounding. Developers! So I set out to build something that could be used by developers that could potientially save them time, as time is limited, we all wouldn't hesitate saving time where possible and Websichanic was born.
+### For who?
+
+I asked myself, what's current need based on my current surounding. Developers! So I set out to build something that could be used by developers that could potientially save devs time. Time is limited, we all wouldn't hesitate saving time where possible, thus Websichanic was born.
 
 ## User Experience (UX)
 
@@ -19,16 +21,24 @@ I asked myself, what's current need based on my current surounding. Developers! 
     -   #### First Time Visitor Goals
 
         1. I want to understand the site's primary purpose quickly.
-        2. I want to use the app without any issues.
-        3. I want the app to continue on until I close the program.
+        2. I want the app to give options related to it's branding.
+        3. I want to use the app without any issues.
+        4. I want the app to continue on until I close the program. 
 
     -   #### Returning Visitor Goals
 
-        1. I want the app to perform as new.
-        2. I want the app to offer quick access to it's options.
+        1. I want the app to offer quick access to it's options.
         2. I want the app to provide a help doc. if needed.
 
 -   ### Design
+    
+    -   #### Wireframe
+
+        Mockflow.com was used to design the initial layout for the desktop screen.
+
+        | Desktop |
+        |:--------:|
+        | ![Front](./assets/images/readme/wc-wireframe-min.png) |
 
     -   #### Colour Scheme
 
@@ -48,13 +58,24 @@ I asked myself, what's current need based on my current surounding. Developers! 
         -   The colors and images all serve to be aligned and assist in the name and branding of app.
         -   They also intent to give the app an identity the user can relate to, lifting it's overall impression.
 
-*   ### Wireframes
+        <br>
+        <br>
+        The background image was produced using adobe's illustrator as it is my preferred tool for working on svg files.
+        <br>
+        <br>
 
-    -   Mockflow.com was used to design the initial layout for the desktop screen.
+        ![Background Image](./assets/images/readme/bg-for-websichanic-illustrator-min.jpg)|
 
-        | Desktop |
-        |:--------:|
-        | [Front](https://github.com/MTraveller/find-that-dinner/blob/308d642fbca484f52b51bbf2202c56bddf63387a/assets/images/readme/desktop.jpg) |
+        <br>
+        <br>
+        The favicon image was produced using adobe's illustrator as well.
+        <br>
+        <br>
+
+        ![Background Image](./assets/images/readme/favicon-for-websichanic-illustrator-min.jpg)|
+
+        <br>
+        <br>
 
 ## Table of Contents
 
@@ -114,16 +135,22 @@ I asked myself, what's current need based on my current surounding. Developers! 
 
 1. [Mockflow:](https://mockflow.com/)
     - Mockflow was used to create the [wireframes](#wireframes) during the design process.
-1. [Git](https://git-scm.com/)
+2. [Git:](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-1. [GitHub:](https://github.com/)
+3. [GitHub:](https://github.com/)
     - GitHub is used to store the project's code after being pushed from Git.
-1. [Requests:](https://pypi.org/project/requests/)
+4. [Heroku:](https://www.heroku.com)
+    - Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps.
+5. [Requests:](https://pypi.org/project/requests/)
     - Requests is a simple, yet elegant, HTTP library.
-1. [html5lib:](https://pypi.org/project/html5lib/)
+6. [html5lib:](https://pypi.org/project/html5lib/)
     - html5lib is a pure-python library for parsing HTML. It is designed to conform to the WHATWG HTML specification, as is implemented by all major web browsers.
-1. [bs4:](https://pypi.org/project/beautifulsoup4/)
+7. [bs4:](https://pypi.org/project/beautifulsoup4/)
     - Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.
+8. [sys:](https://docs.python.org/3/library/sys.html)
+    - This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. It is always available.
+9. [time:](https://docs.python.org/3/library/time.html)
+    - This module provides various time-related functions.
 
 ### Dev HTML
 
@@ -143,7 +170,7 @@ There's two images shown on the app, one in the `<body>` background set to be sh
 
 ### Lighthouse Mobile
 
-| Home Page |
+| App Page |
 |:--------:|
 | ![Front]() |
 
