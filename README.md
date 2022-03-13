@@ -6,11 +6,7 @@ Project URL: [View live project](https://websichanic.herokuapp.com "Websichanic"
 
 ![Mockup]()
 
-
-## Summary
-
-
-
+<br>
 
 ## User Experience (UX)
 
@@ -27,54 +23,6 @@ Project URL: [View live project](https://websichanic.herokuapp.com "Websichanic"
 
         1. I want the app to offer quick access to it's options.
         2. I want the app to provide a help doc. if needed.
-
--   ### Design
-    
-    -   #### Wireframe
-
-        Mockflow.com was used to design the initial layout for the desktop screen only, as the project requirements does not include or mention mobile responsiveness.
-
-        | Desktop |
-        |:--------:|
-        | ![Front](./assets/images/readme/wc-wireframe-min.png) |
-
-        <br>
-
-    -   #### Colour Scheme
-
-        -   The app uses three main colors which are:
-            
-            | #HEX | Color |
-            |:--------:|:--------:|
-            | #26396A |![Gradient Palette](./assets/images/readme/26396a.png)|
-            | #444655 |![Gradient Palette](./assets/images/readme/444655.png)|
-            | #A8AABC |![Gradient Palette](./assets/images/readme/a8aabc.png)|
-
-            The background image was produced by the shades of the main three colors.
-
-            <br>
-
-    -   #### Imagery
-
-        -   I created the images myself and was created to make the app more appealing.
-        -   The colors and images all serve to be aligned and assist in the name and branding of app.
-        -   They also intent to give the app an identity the user can relate to, lifting it's overall impression.
-
-        <br>
-
-        The background image was produced using adobe's illustrator as it is my preferred tool for working on svg files.
-
-        <br>
-
-        ![Background Image](./assets/images/readme/bg-for-websichanic-illustrator-min.jpg)
-
-        <br>
-
-        The favicon image was produced using adobe's illustrator as well.
-
-        <br>
-
-        ![Background Image](./assets/images/readme/favicon-for-websichanic-illustrator-min.jpg)
 
         <br>
 
@@ -109,8 +57,55 @@ Project URL: [View live project](https://websichanic.herokuapp.com "Websichanic"
 
 ### Surface
 
-What will the product actually look like, what colors, what typography, what images/design elements, what animation, what transitions, how will the final product look like?
 <br>
+
+#### Wireframe
+
+Mockflow.com was used to design the initial layout for the desktop screen only, as the project requirements does not include or mention mobile responsiveness.
+
+| Desktop |
+|:--------:|
+| ![Front](./assets/images/readme/wc-wireframe-min.png) |
+
+<br>
+
+-   #### Colour Scheme
+
+    -   The app uses three main colors which are:
+    
+    | #HEX | Color |
+    |:--------:|:--------:|
+    | #26396A |![Gradient Palette](./assets/images/readme/26396a.png)|
+    | #444655 |![Gradient Palette](./assets/images/readme/444655.png)|
+    | #A8AABC |![Gradient Palette](./assets/images/readme/a8aabc.png)|
+
+    The background image was produced by the shades of the main three colors.
+
+    <br>
+
+-   #### Imagery
+
+    -   I created the images myself and was created to make the app more appealing.
+    -   The colors and images all serve to be aligned and assist in the name and branding of app.
+    -   They also intent to give the app an identity the user can relate to, lifting it's overall impression.
+
+    <br>
+
+    The background image was produced using adobe's illustrator as it is my preferred tool for working on svg files.
+
+    <br>
+
+    ![Background Image](./assets/images/readme/bg-for-websichanic-illustrator-min.jpg)
+
+    <br>
+
+    The favicon image was produced using adobe's illustrator as well.
+
+    <br>
+
+    ![Background Image](./assets/images/readme/favicon-for-websichanic-illustrator-min.jpg)
+
+    <br>
 
 ### Skeleton
 
@@ -123,7 +118,7 @@ The structure of app should not be more than 3 levels deep and should be user fr
 
 <br>
 
-![Background Image](./assets/images/readme/app-process-chart.svg)
+![Background Image](./assets/images/readme/app-process-chart-final.svg)
 
 <br>
 
