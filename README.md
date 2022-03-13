@@ -119,8 +119,11 @@ What will the product actually look like, what colors, what typography, what ima
 
 ### Structure
 
-How is the information, logically grouped, the feature the elements the data?
+The structure of app should not be more than 3 levels deep and should be user friendly so that the user quickly finds what the user wants. Below is a chart showcasing the logic structure and functionality of the app. 
 
+<br>
+
+![Background Image](./assets/images/readme/app-process-chart.svg)
 
 <br>
 
@@ -130,17 +133,27 @@ How is the information, logically grouped, the feature the elements the data?
 
 The minimum feature the app must contain includes the following features:
 
-To validate the HTML of a webpage and receive the validation response.
+- To validate the HTML spec standard meta tags names.
 
-To validate the CSS of a webpage and receive the validation response.
+- To validate the HTML of a webpage and receive the validation response.
 
-To validate the Javascript of a website and receive the validation response.
+- To validate the CSS of a webpage and receive the validation response.
+
+- To validate the Javascript of a website and receive the validation response.
+
+- To be able to scrape the meta tags of a website and saved to a CSV file.
+
+- To be able to scrape the content of a webpage and analyze the content.
+
+- To be able to scrape and validate all links of a webpage.
 
 #### Desired features
 
 The desired features the app could contain includes the following features:
 
-To validate the Python code of a file and report the validation response.
+- To validate the Python code of a file and report the validation response.
+
+- To be able to add bulk URLs to validate/analyze.
 
 <br>
 
