@@ -9,7 +9,7 @@ Project URL: [View live project](https://websichanic.herokuapp.com "Websichanic"
 
 ## Summary
 
-Websichanic, short for "website mechanic" based on real world website -TextMechanic, a site I have used and known for a long time. A user can manipulate text, like removing empty lines, trim lines and empty spaces. Tools like removing duplicates and adding string(s) before or/and after a line etc. It's a good toolset to have when working with text. I wanted to create something similar and based on "TM" I came up with Websichanic. An app that takes an input and gives feedback to the user.
+
 
 
 ## User Experience (UX)
@@ -120,15 +120,35 @@ What will the product actually look like, what colors, what typography, what ima
 ### Structure
 
 How is the information, logically grouped, the feature the elements the data?
+
+
 <br>
 
 ### Scope
-What features,(nvp), both ability and desires?
+
+#### Minimum viable product
+
+The minimum feature the app must contain includes the following features:
+
+To validate the HTML of a webpage and receive the validation response.
+
+To validate the CSS of a webpage and receive the validation response.
+
+To validate the Javascript of a website and receive the validation response.
+
+#### Desired features
+
+The desired features the app could contain includes the following features:
+
+To validate the Python code of a file and report the validation response.
 
 <br>
 
 ### Strategy
-Aiming to achieve and for whom?
+
+Websichanic, short for "website mechanic" based on real world website -TextMechanic, a site I have used and known for a long time. A user can manipulate text, like removing empty lines, trim lines and empty spaces. Tools like removing duplicates and adding string(s) before or/and after a line etc. It's a good toolset to have when working with text. I wanted to create something similar and based on "TM" I came up with Websichanic. An app that takes an input and gives feedback to the user.
+
+I asked myself, what's current need based on my current surounding. Web Developers! Both new and senior web developers. Questions comes to mind like; what could be used by web developers, that could potientially save time? What features could be desired? As a web developer saving time where possible is and will be always good, as time is limited.
 
 <br>
 
