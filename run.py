@@ -1,6 +1,8 @@
 import re
 import sys
 import time
+from time import sleep
+from art import *
 
 
 def slow_print(string):
@@ -14,16 +16,18 @@ def slow_print(string):
         time.sleep(3./90)
 
 
-slow_print('hello world')
-
-
 def get_url_link():
     """
     Get website link input from the user
     """
+    slow_print("Welcome to")
+    sleep(.5)
+    tprint("Websichanic", font="speed", sep="\n")
+    sleep(.5)
     while True:
         slow_print("Please enter your URL")
-        slow_print("The URL MUST include HTTP, subdomain, domain and tld\n")
+        slow_print(
+            "The URL MUST include HTTP(s), subdomain, domain and tld\n")
         slow_print("Example: https://en.wikipedia.org/wiki/"
                    "Python_(programming_language)\n")
 
