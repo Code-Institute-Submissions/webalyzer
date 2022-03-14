@@ -5,6 +5,7 @@ from time import sleep
 import re
 from subprocess import call
 import requests
+from requests.exceptions import HTTPError
 from modules.slow_print import sprint, wprint
 
 
@@ -73,11 +74,16 @@ def test_response_url(url_link):
     try:
         response = requests.get(url_link).status_code
         if not response == 200:
-            raise ValueError(
-                f"URL Error! Website responded with {response}"
+            raise HTTPError(
+                f"Response: {response}"
             )
+    except HTTPError as http_err:
+        sprint(f"Error: {http_err}, please try again \n")
+        sleep(4)
+        return False
     except requests.exceptions.ConnectionError:
         sprint("This site can't be reached, please try again \n")
+        sleep(4)
         return False
 
     return True
