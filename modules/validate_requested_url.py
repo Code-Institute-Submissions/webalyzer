@@ -1,9 +1,12 @@
 """
 init validate URL
 """
+from time import sleep
 import re
+from subprocess import call
 import requests
-from modules.slow_print import sprint
+from modules.slow_print import sprint, wprint
+
 
 # Regex Source:
 # geeksforgeeks.org/check-if-an-url-is-valid-or-not-using-regular-expression/
@@ -19,18 +22,25 @@ def get_url_link():
     """
     Get website link input from the user
     """
+    count = 0
     while True:
-        sprint("Please enter your URL")
-        sprint(
+        if count > 0:
+            call('clear')
+
+        wprint(
             "The URL MUST include HTTP(s), subdomain, domain and tld\n")
+        sleep(.6)
         sprint("Example: https://en.wikipedia.org/wiki/"
                "Python_(programming_language)\n")
-
+        sleep(1.3)
         url_link = input("Enter your url here: ")
 
-        if validate_url(url_link) and (test_response_url(url_link) == 200):
-            sprint("URL is valid!")
+        if validate_url(url_link) and test_response_url(url_link):
+            wprint("Response code: 200 => URL is valid")
+            sleep(1)
             break
+
+        count += 1
 
     return url_link
 
@@ -47,6 +57,7 @@ def validate_url(url):
             )
     except ValueError as validate_error:
         sprint(f"\nInvalid link: {validate_error}, please try again.\n")
+        sleep(4)
         return False
 
     return True
@@ -56,6 +67,17 @@ def test_response_url(url_link):
     """
     Function to test response of requested url
     """
-    url = url_link
-    response = requests.get(url)
-    return response.status_code
+    sleep(.2)
+    sprint("Checking website...")
+    sleep(2)
+    try:
+        response = requests.get(url_link).status_code
+        if not response == 200:
+            raise ValueError(
+                f"URL Error! Website responded with {response}"
+            )
+    except requests.exceptions.ConnectionError:
+        sprint("This site can't be reached, please try again \n")
+        return False
+
+    return True
