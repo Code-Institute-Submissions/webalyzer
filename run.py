@@ -3,6 +3,7 @@ Init the app
 """
 from time import sleep
 from art import tprint
+from modules.intro import print_intro
 
 
 tprint("Welcome to", font="Small Slant", sep="\n")
@@ -15,7 +16,6 @@ def start_intro():
     """
     Initialize intro
     """
-    from modules.intro import print_intro
     print(print_intro())
 
 
