@@ -8,24 +8,39 @@
     <!--Preconnect-->
     <link rel="preconnect" href="//raw.githubusercontent.com">
     <link rel="preconnect" href="//cdnjs.cloudflare.com">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!--metas for search engines-->
     <meta name="title" content="Websichanic">
-    <meta name="description" content="Websichanic is a python app that runs via the python terminal. From the terminal there's multiple options to extract information of a website">
+    <meta name="description" content="
+        Websichanic is a python app that runs via the python terminal. 
+        From the terminal there's multiple options to extract information of a website">
     <meta name="author" content="MT - MTraveller, https://github.com/MTraveller/websichanic">
 
     <!--Load favicon-->
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/MTraveller/websichanic/main/assets/favicon-min.png">
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/MTraveller/websichanic/main/assets/favicon-min.png">
 
-    <!--Load fontawesome-->
+    <!--Load fonts-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
     <!--default scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
     <title>Websichanic - Website Mechanic</title>
     <style>
+        /* 
+        * Font to use VT323
+        * from: https://fonts.google.com/specimen/VT323?category=Monospace#standard-styles
+        */
+
+        * {
+            font-family: 'VT323', monospace;
+        }
+
         /* 
         * Gradient generated from 
         * https://mycolor.space/gradient3?ori=to+left+top&hex=%2326396A&hex2=%23444655&hex3=%23A8AABC&submit=submit
@@ -63,12 +78,14 @@
         }
 
         #py__app {
-            width: 790px;
+            width: 765px;
+            height: 392px;
         }
 
         #footer button {
             padding: 6px 10px;
             color: white;
+            background-color: #27396A;
         }
 
         /**
