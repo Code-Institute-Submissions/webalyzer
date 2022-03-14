@@ -5,7 +5,14 @@ import re
 import requests
 from modules.slow_print import sprint
 
-print_message = "slow_print working in vru"
+# Regex Source:
+# geeksforgeeks.org/check-if-an-url-is-valid-or-not-using-regular-expression/
+# Regex code to check URL
+REGEX = ("((http|https)://)(\\w+)?" +
+         "[a-zA-Z0-9@:%._\\+~#?&//=]" +
+         "{2,256}\\.[a-z]" +
+         "{2,6}\\b([-a-zA-Z0-9@:%" +
+         "._\\+~#?&//=]*)")
 
 
 def get_url_link():
@@ -32,14 +39,6 @@ def validate_url(url):
     """
     Function to validate the url link entered
     """
-    # Regex Source:
-    # geeksforgeeks.org/check-if-an-url-is-valid-or-not-using-regular-expression/
-    # Regex code to check URL
-    REGEX = (r"((http|https)://)(\\w+)?" +
-             r"[a-zA-Z0-9@:%._\\+~#?&//=]" +
-             r"{2,256}\\.[a-z]" +
-             r"{2,6}\\b([-a-zA-Z0-9@:%" +
-             r"._\\+~#?&//=]*)")
     compiled_regex = re.compile(REGEX)
     try:
         if not re.search(compiled_regex, url):
