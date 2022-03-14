@@ -1,8 +1,11 @@
+"""
+Init the app
+"""
 import re
 import sys
 import time
 from time import sleep
-from art import *
+from art import tprint
 
 
 def slow_print(string):
@@ -10,8 +13,8 @@ def slow_print(string):
     Function for slow typing in terminal
     Source: https://stackoverflow.com/a/54472904
     """
-    for c in string + '\n':
-        sys.stdout.write(c)
+    for letter in string + '\n':
+        sys.stdout.write(letter)
         sys.stdout.flush()
         time.sleep(3./90)
 
