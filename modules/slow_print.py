@@ -14,3 +14,16 @@ def sprint(string):
         sys.stdout.write(letter)
         sys.stdout.flush()
         time.sleep(3./90)
+
+
+def wprint(string):
+    """
+    Function to slow down words in terminal
+    Based on the above function.
+    """
+    split_string = string.split()
+    for word in split_string:
+        sys.stdout.write(word + ' ')
+        sys.stdout.flush()
+        time.sleep(.4)
+    print("\n")
