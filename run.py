@@ -15,8 +15,8 @@ def start_intro():
     """
     Initialize intro
     """
-    from modules.intro import run_intro
-    print(run_intro)
+    from modules.intro import print_intro
+    print(print_intro())
 
 
 start_intro()
