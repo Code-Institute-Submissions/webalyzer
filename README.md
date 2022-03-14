@@ -63,9 +63,9 @@ Project URL: [View live project](https://websichanic.herokuapp.com "Websichanic"
 
 Mockflow.com was used to design the initial layout for the desktop screen only, as the project requirements does not include or mention mobile responsiveness.
 
-| Desktop |
-|:--------:|
-| ![Front](./assets/images/readme/wc-wireframe-min.png) |
+| Mobile | Desktop |
+|:--------:|:--------:|
+| ![Mobile](./assets/images/readme/wc-wireframe-mobile.png) | ![Front](./assets/images/readme/wc-wireframe-min.png) |
 
 <br>
 
@@ -79,7 +79,7 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
     | #444655 |![Gradient Palette](./assets/images/readme/444655.png)|
     | #A8AABC |![Gradient Palette](./assets/images/readme/a8aabc.png)|
 
-    The background image was produced by the shades of the main three colors.
+    The background image was produced from the shades of the main three colors.
 
     <br>
 
@@ -128,27 +128,25 @@ The structure of app should not be more than 3 levels deep and should be user fr
 
 The minimum feature the app must contain includes the following features:
 
-- To validate the HTML spec standard meta tags names.
+- To be able to validate the standard `https://html.spec.whatwg.org` meta tags of a website.
 
-- To validate the HTML of a webpage and receive the validation response.
+- To validate the HTML of a webpage.
 
-- To validate the CSS of a webpage and receive the validation response.
+- To validate the CSS of a webpage.
 
-- To validate the Javascript of a website and receive the validation response.
-
-- To be able to scrape the meta tags of a website and saved to a CSV file.
-
-- To be able to scrape the content of a webpage and analyze the content.
-
-- To be able to scrape and validate all links of a webpage.
+- To validate the Javascript of a website.
 
 #### Desired features
 
 The desired features the app could contain includes the following features:
 
-- To validate the Python code of a file and report the validation response.
+- To be able to scrape the content of a webpage and analyze the content.
 
-- To be able to add bulk URLs to validate/analyze.
+- To be able to scrape and validate all links of a webpage.
+
+- To validate the Python code of a file.
+
+- To be able to add bulk URLs to validate/scrape.
 
 <br>
 
@@ -258,19 +256,17 @@ Initially I had a small fight with Heroku and finally after some time, I realize
 
 ### Sources Used
 
-https://docs.python.org/3/library/index.html
+[Python docs](https://docs.python.org/3.10/)
 
-https://docs.python.org/3.10/
+[Python peps](https://peps.python.org/pep-0000/)
 
-https://peps.python.org/pep-0000/
+[Stackoverflow](https://stackoverflow.com)
 
-https://stackoverflow.com
+[Regex101](https://regex101.com)
 
-https://www.google.com
+[Pypi](https://pypi.org)
 
-https://regex101.com
-
-https://note.nkmk.me/en/python-str-compare/
+[whatwg.org/#standard-metadata-names:](https://html.spec.whatwg.org/multipage/semantics.html#standard-metadata-names)
 
 <br>
 
