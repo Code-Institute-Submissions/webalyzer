@@ -77,7 +77,7 @@
             font-size: 60.5px;
         }
 
-        #py__app {
+        #py--app {
             width: 768px;
             height: 408px;
         }
@@ -243,6 +243,25 @@
             font-size: 1.5rem;
             letter-spacing: .8px;
             cursor: pointer;
+        }
+
+        /* Media query to hide background, terminal and button */
+        @media screen and (max-width: 1280px) {
+            body {
+                background: none;
+            }
+
+            #terminal,
+            #py--app button {
+                display: none;
+            }
+        }
+
+        /* Media query to hide elements that targets mobile */
+        @media screen and (min-width: 1280px) {
+            #mobile--notice {
+                display: none;
+            }
         }
     </style>
 </head>
