@@ -3,6 +3,25 @@ Utils module
 """
 import sys
 from time import sleep
+from art import tprint
+
+
+def print_intro_welcome():
+    """
+    Print welcome intro
+    """
+    tprint("Welcome to", font="Small Slant", sep="\n")
+    sleep(.2)
+    tprint("Websichanic", font="Small Slant", sep="\n")
+    sleep(.5)
+
+
+def print_brand_name():
+    """
+    Print brand name
+    """
+    tprint("Websichanic", font="Small Slant", sep="\n")
+    sleep(.5)
 
 
 def del_last_line():
