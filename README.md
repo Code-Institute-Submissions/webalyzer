@@ -65,7 +65,7 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
 
 | Mobile | Desktop |
 |:--------:|:--------:|
-| ![Mobile](./assets/images/readme/wc-wireframe-mobile.png) | ![Front](./assets/images/readme/wc-wireframe-min.png) |
+| ![Mobile](./assets/readme/wc-wireframe-mobile.png) | ![Front](./assets/readme/wc-wireframe-min.png) |
 
 <br>
 
@@ -75,9 +75,9 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
     
     | #HEX | Color |
     |:--------:|:--------:|
-    | #26396A |![Gradient Palette](./assets/images/readme/26396a.png)|
-    | #444655 |![Gradient Palette](./assets/images/readme/444655.png)|
-    | #A8AABC |![Gradient Palette](./assets/images/readme/a8aabc.png)|
+    | #26396A |![Gradient Palette](./assets/readme/26396a.png)|
+    | #444655 |![Gradient Palette](./assets/readme/444655.png)|
+    | #A8AABC |![Gradient Palette](./assets/readme/a8aabc.png)|
 
     The background image was produced from the shades of the main three colors.
 
@@ -95,7 +95,7 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
 
     <br>
 
-    ![Background Image](./assets/images/readme/bg-for-websichanic-illustrator-min.jpg)
+    ![Background Image](./assets/readme/bg-for-websichanic-illustrator-min.jpg)
 
     <br>
 
@@ -103,7 +103,7 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
 
     <br>
 
-    ![Background Image](./assets/images/readme/favicon-for-websichanic-illustrator-min.jpg)
+    ![Background Image](./assets/readme/favicon-for-websichanic-illustrator-min.jpg)
 
     <br>
 
@@ -118,7 +118,7 @@ The structure of app should not be more than 3 levels deep and should be user fr
 
 <br>
 
-![Background Image](./assets/images/readme/app-process-chart-final.svg)
+![Background Image](./assets/readme/app-process-chart-final.svg)
 
 <br>
 
@@ -187,6 +187,16 @@ I asked myself, what's current need based on my current surounding. Web Develope
     - This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. It is always available.
 9. [time:](https://docs.python.org/3/library/time.html)
     - This module provides various time-related functions.
+10. [re:](https://docs.python.org/3/library/re.html)
+    - This module provides regular expression matching operations similar to those found in Perl.
+11. [run:](https://docs.python.org/3/library/subprocess.html#subprocess.run)
+    - Used to run new codes and applications by creating new processes.
+12. [httperror:](https://docs.python.org/3/library/urllib.error.html#urllib.error.HTTPError)
+    - Useful when handling exotic HTTP errors.
+13. [sleep:](https://docs.python.org/3/library/time.html#time.sleep)
+    - Delay execution for a given number of seconds. The argument may be a floating point number for subsecond precision.
+14. [tprint from art:](https://pypi.org/project/art/)
+    - ART is a Python lib for text converting to ASCII art
 
     <br>
 
