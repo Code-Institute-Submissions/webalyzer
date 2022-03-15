@@ -3,7 +3,7 @@ init validate URL
 """
 from time import sleep
 import re
-from subprocess import call
+from subprocess import run
 import requests
 from requests.exceptions import HTTPError
 from modules.slow_print import sprint, wprint
@@ -26,10 +26,10 @@ def get_url_link():
     count = 0
     while True:
         if count > 0:
-            call('clear')
+            run('clear', check=True)
 
         wprint(
-            "The URL MUST include HTTP(s), subdomain, domain and tld\n")
+            "The URL MUST include HTTP(s), domain and tld\n")
         sleep(.6)
         sprint("Example: https://en.wikipedia.org/wiki/"
                "Python_(programming_language)\n")
