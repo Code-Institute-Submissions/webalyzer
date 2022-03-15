@@ -2,16 +2,12 @@
 Init the app
 """
 from subprocess import run
-from time import sleep
-from art import tprint
+from modules.utils import print_intro_welcome
 from modules.intro import print_intro
 
 
 run('clear', check=True)
-tprint("Welcome to", font="Small Slant", sep="\n")
-sleep(.2)
-tprint("Websichanic", font="Small Slant", sep="\n")
-sleep(.5)
+print_intro_welcome()
 
 
 def start_intro():
