@@ -30,7 +30,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
-    <title>Websichanic - Website Mechanic</title>
+    <title>Websichanic</title>
     <style>
         /* 
         * Font to use VT323
@@ -48,6 +48,7 @@
 
         html {
             height: 100vh;
+            min-height: 895px;
             background-image: linear-gradient(to left top, #26396a, #2d3b66, #343e62, #39405e, #3e435a, #484b60, #525467, #5c5d6d, #6e6f80, #818294, #9496a8, #a8aabc);
         }
 
@@ -57,13 +58,10 @@
         */
 
         body {
-            font-family: Arial;
             display: grid;
-            grid-template-rows: 135px 750px;
-            justify-content: center;
-            justify-items: center;
-            align-items: center;
-            background: url(https://raw.githubusercontent.com/MTraveller/websichanic/main/assets/program-process-background.svg) center center/1094.78px no-repeat;
+            grid-template-rows: 135px 700px 1fr;
+            place-items: center;
+            background: url(https://raw.githubusercontent.com/MTraveller/websichanic/main/assets/program-process-background.svg) center center/1094px no-repeat;
         }
 
         #header {
@@ -73,6 +71,15 @@
         #header h1 {
             color: white;
             font-size: clamp(1rem, 20vw, 5rem);
+            margin: -10px;
+        }
+
+        #header h2 {
+            color: white;
+            font-size: clamp(.8rem, 6vw, 1.6rem);
+            letter-spacing: 3px;
+            opacity: .4;
+            margin: 0;
         }
 
         #footer button {
