@@ -1,8 +1,8 @@
 """
 init validate URL
 """
-from time import sleep
 import re
+from time import sleep
 from subprocess import run
 import requests
 from requests.exceptions import HTTPError
@@ -34,7 +34,7 @@ def get_url_link():
         sprint("Example: https://en.wikipedia.org/wiki/"
                "Python_(programming_language)\n")
         sleep(1.3)
-        url_link = input("Enter your url here: ")
+        url_link = input("Enter your url here: \n")
 
         if validate_url(url_link) and test_response_url(url_link):
             wprint("Response code: 200 => URL is valid")
