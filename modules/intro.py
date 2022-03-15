@@ -1,15 +1,16 @@
 """
 init run intro
 """
-from subprocess import run
 from time import sleep
-from modules.slow_print import sprint  # , wprint
-# from subprocess import run
+from modules.slow_print import sprint, wprint
+from modules.utils import del_last_line, del_last_lines_up
+from modules.options import run_choices
 
 
 def print_intro():
     """
-    Testing mapping
+    Function to print intro and
+    begin choices
     """
     print(
         "01001001 00100000 01101000 01101111 "
@@ -26,72 +27,54 @@ def print_intro():
         "01101010 01101111 01111001 01100101 "
         "01100100 00100000 01101101 01100001 "
         "01101011 01101001 01101110 01100111 "
-        "00100000 01110100 01101000 01100101 "
-        "01101101 00100000 00111010 00101001\n")
+        "00100000 01101001 01110100 00111010 00101001\n")
 
-    choice = run_choices()
-    print(choice)
+    for i in range(101):
+        # Loop to print from 0 - 100% without newline
+        # on previous line
+        print(f"\rInitiating: {i}%", end="")
+        sleep(0.05)
 
+    del_last_line()
+    sleep(1)
 
-def run_choices():
-    """
-    Function to present choices of the app
-    """
-    skip = input("Skip info of the choices?: ").lower()
-    if skip == 'y':
-        pass
+    sprint("Please use 'y' for yes and 'n' for no\n")
+    sleep(1)
+    skip_background = input("Skip background? \n").lower()
+    if skip_background == 'y':
+        del_last_lines_up(5)
     else:
+        del_last_lines_up(5)
+        sprint("A little background:")
         sleep(1)
-        print("Validate HTML")
+        sprint("Websichanic is an app that asks you for a URL "
+               "and returns the requests data.\n")
+        sleep(1.5)
+        sprint("The features of Websichanic is:\n")
         sleep(1)
-        print("Validate CSS")
+        wprint("1. Validate The standard META TAGS of:")
         sleep(1)
-        print("Validate Javascript")
+        print("https://html.spec.whatwg.org/"
+              "multipage/semantics.html#standard-metadata-names\n")
         sleep(1)
-        print("Validate Meta Tags")
+        wprint("2. Validate HTML, CSS AND Javascript")
+        sleep(1)
+        sprint("Validation HTML, CSS is through 'W3C' "
+               "=> World Wide Web Consortium")
+        sleep(2)
+        sprint("Validation of Javascript is through CodeBeautify\n")
         sleep(1)
 
-    run('clear', check=True)
-    sleep(2)
-    sprint("Please choose one of the following:\n")
-    print("\n" * 2)
-    print("Validate Meta Tags?")
-    validation_choice = input("     y = yes / n = no:  \n").lower()
+    sprint("Please use 'y' for yes and 'n' for no\n")
+    sleep(1.2)
+    read_more = input("Want to read about "
+                      "each option in more detail? \n").lower()
 
-    if not validation_choice == 'n':
-        return validation_choice
-
-    run('clear', check=True)
-    sprint("Validate HTML?")
-    validation_choice = input("y = yes / n = no:  \n").lower()
-
-    if not validation_choice == 'n':
-        return validation_choice
-
-    run('clear', check=True)
-    sprint("Validate CSS?")
-    validation_choice = input("y = yes / n = no:  \n").lower()
-
-    if not validation_choice == 'n':
-        return validation_choice
-
-    run('clear', check=True)
-    sprint("Validate Javascript?")
-    validation_choice = input("y = yes / n = no:  \n").lower()
-
-    if not validation_choice == 'n':
-        return validation_choice
-
-    run('clear', check=True)
-    ask_again = input("Start Over?  y / n").lower()
-    if ask_again == 'y':
-        repeat_choices()
-
-    return
-
-
-def repeat_choices():
-    """
-    Function to repeat choices
-    """
-    return True
+    if skip_background == 'y':
+        if read_more == 'y':
+            print("run help")
+        else:
+            choice = run_choices()
+    else:
+        del_last_lines_up(19)
+    print(choice)
