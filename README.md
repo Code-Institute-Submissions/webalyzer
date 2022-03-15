@@ -154,7 +154,7 @@ The desired features the app could contain includes the following features:
 
 Websichanic, short for "website mechanic" based on real world website -TextMechanic, a site I have used and known for a long time. A user can manipulate text, like removing empty lines, trim lines and empty spaces. Tools like removing duplicates and adding string(s) before or/and after a line etc. It's a good toolset to have when working with text. I wanted to create something similar and based on "TM" I came up with Websichanic. An app that takes an input and gives feedback to the user.
 
-I asked myself, what's current need based on my current surounding. Web Developers! Both new and senior web developers. Questions comes to mind like; what could be used by web developers, that could potientially save time? What features could be desired? As a web developer saving time where possible is and will be always good, as time is limited.
+Asking myself, what's current need based on my current surounding. Web Developers! Both new and senior web developers. Questions comes to mind like; what could be used by the web developers, that could potientially save time? What features could be desired? As a web developer saving time where possible is and will be always good, as time is limited.
 
 <br>
 
@@ -162,6 +162,7 @@ I asked myself, what's current need based on my current surounding. Web Develope
 
 #### Languages Used
 
+- [HTML](https://en.wikipedia.org/wiki/HTML "Wikipedia's HTML page")
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets "Wikipedia's CSS3 page")
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Wikipedia's Python page")
 
@@ -169,8 +170,10 @@ I asked myself, what's current need based on my current surounding. Web Develope
 
 ### Frameworks, Libraries & Programs Used
 
+<br>
+
 1. [Mockflow:](https://mockflow.com/)
-    - Mockflow was used to create the [wireframe](#wireframe) during the design process.
+    - Mockflow was used to create the [wireframes](#wireframe) during the design process.
 2. [Git:](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 3. [GitHub:](https://github.com/)
@@ -202,13 +205,13 @@ I asked myself, what's current need based on my current surounding. Web Develope
 
 ### Dev HTML
 
-The base HTML that came with the initial template was used and slightly altered to move the button below the terminal. Two extra tags where added to give me more freedom to better control the layout of the app.
+The base HTML that came with the initial project template which was provided by Code Institute, was used and slightly altered to move the button below the terminal. Three extra tags where added to give me more freedom to better control the layout of the app and make it aligned with the vizualised identity and brand image set in the design stage.
 
 <br>
 
 ### Dev CSS
 
-Initially I had a small fight with Heroku and finally after some time, I realized it was out of the scope of this project. I ended up adding CSS code to layout.html instead of a custom stylesheet file.
+Initially I had a small fight with Heroku and finally realized it was out of the scope of this project. I added the CSS code to `/views/layout.html` instead of a custom stylesheet file. That works, but I would rather separate the my code based on language and make it more origanized.
 
 <br>
 
