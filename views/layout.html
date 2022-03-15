@@ -67,19 +67,12 @@
         }
 
         #header {
-            display: grid;
-            justify-items: center;
-            align-items: center;
+            text-align: center;
         }
 
         #header h1 {
             color: white;
             font-size: 60.5px;
-        }
-
-        #py--app {
-            width: 768px;
-            height: 408px;
         }
 
         #footer button {
@@ -255,12 +248,26 @@
             #py--app button {
                 display: none;
             }
+
+            #py--app {
+                padding: 20px;
+            }
+
+            #mobile--notice p {
+                font-size: 1.8rem;
+                text-align: center;
+            }
         }
 
         /* Media query to hide elements that targets mobile */
         @media screen and (min-width: 1280px) {
             #mobile--notice {
                 display: none;
+            }
+
+            #py--app {
+                width: 768px;
+                height: 408px;
             }
         }
     </style>
