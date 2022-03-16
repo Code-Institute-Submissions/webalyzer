@@ -1,8 +1,8 @@
 # The 3rd Project Portfolio of CI
 
-### Websichanic
+### Webalyzer
 
-Project URL: [View live project](https://websichanic.herokuapp.com "Websichanic")
+Project URL: [View live project](https://webalyzer.herokuapp.com "Webalyzer")
 
 ![Mockup]()
 
@@ -95,7 +95,7 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
 
     <br>
 
-    ![Background Image](./assets/readme/bg-for-websichanic-illustrator-min.jpg)
+    ![Background Image](./assets/readme/bg-for-app-illustrator-min.jpg)
 
     <br>
 
@@ -103,7 +103,7 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
 
     <br>
 
-    ![Background Image](./assets/readme/favicon-for-websichanic-illustrator-min.jpg)
+    ![Background Image](./assets/readme/favicon-for-app-illustrator-min.jpg)
 
     <br>
 
@@ -152,7 +152,7 @@ The desired features the app could contain includes the following features:
 
 ### Strategy
 
-Websichanic, short for "website mechanic" based on real world website -TextMechanic, a site I have used and known for a long time. A user can manipulate text, like removing empty lines, trim lines and empty spaces. Tools like removing duplicates and adding string(s) before or/and after a line etc. It's a good toolset to have when working with text. I wanted to create something similar and based on "TM" I came up with Websichanic. An app that takes an input and gives feedback to the user.
+Webalyzer, short for "website analyzer" based on real world website -TextMechanic, a site I have used and known for a long time. A user can manipulate text, like removing empty lines, trim lines and empty spaces. Tools like removing duplicates and adding string(s) before or/and after a line etc. It's a good toolset to have when working with text. I wanted to create something similar and based on "TM" I came up with Webalyzer. An app that takes an input and gives feedback to the user.
 
 Asking myself, what's current need based on my current surounding. Web Developers! Both new and senior web developers. Questions comes to mind like; what could be used by the web developers, that could potientially save time? What features could be desired? As a web developer saving time where possible is and will be always good, as time is limited.
 
