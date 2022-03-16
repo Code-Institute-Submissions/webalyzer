@@ -61,7 +61,7 @@
             display: grid;
             grid-template-rows: 135px 700px 1fr;
             place-items: center;
-            background: url(https://raw.githubusercontent.com/MTraveller/websichanic/main/assets/program-process-background.svg) center center/1094px no-repeat;
+            background: url(https://raw.githubusercontent.com/MTraveller/websichanic/main/assets/program-process-background-last.svg) center center/1200px no-repeat;
         }
 
         #header {
@@ -151,7 +151,7 @@
 
         .xterm .xterm-viewport {
             /* On OS X this is required in order for the scroll bar to appear fully opaque */
-            background-color: #000;
+            background-color: #000 !important;
             overflow-y: scroll;
             cursor: default;
             position: absolute;
@@ -159,8 +159,7 @@
             left: 0;
             top: 0;
             bottom: 0;
-            background-color: rgb(0, 0, 0);
-            width: 730px;
+            width: 748px;
         }
 
         .xterm .xterm-screen {
@@ -274,8 +273,32 @@
             }
 
             #py--app {
-                width: 768px;
-                height: 408px;
+                width: 734px;
+                height: 426px;
+            }
+
+            #terminal {
+                width: 734px;
+                padding: .8rem;
+                background-color: #000000;
+                box-shadow: 0px 0px 20px 0px #333333;
+                -webkit-box-shadow: 0px 0px 20px 0px #333333;
+                -moz-box-shadow: 0px 0px 20px 0px #333333;
+            }
+
+            ::-webkit-scrollbar {
+                width: .8rem;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: #293a68;
+                border-radius: .2rem;
+            }
+
+            ::-webkit-scrollbar-track {
+                background-color: #333333;
+                border-radius: .2rem;
+                box-shadow: 0 0 .1rem .1rem #293a68;
             }
         }
     </style>
