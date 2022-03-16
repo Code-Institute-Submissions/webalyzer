@@ -4,6 +4,7 @@ Utils module
 import sys
 from time import sleep
 from art import tprint
+from modules.slow_print import sprint  # , wprint
 
 
 def print_intro_welcome():
@@ -22,6 +23,15 @@ def print_brand_name():
     """
     tprint("Websichanic", font="Small Slant", sep="\n")
     sleep(.5)
+
+
+def print_yes_no():
+    """
+    Print use yes / no for input
+    """
+    sprint("Please use '\x1b[1;32my\x1b[0;0m' "
+           "for \x1b[1;32mYes\x1b[0;0m and "
+           "'\x1b[1;31mn\x1b[0;0m' for \x1b[1;31mNo\x1b[0;0m")
 
 
 def del_last_line():
@@ -48,3 +58,15 @@ def del_last_lines_up(times):
         sys.stdout.write('\x1b[2K')
     print()
     sleep(1)
+
+
+def validate_input_answer(options, answer):
+    """
+    Validates if input answer given aligns with
+    the expected input options
+    """
+    for option in options:
+        if option == answer:
+            return option
+    print("\x1b[1;31mWrong answer please try again...\x1b[0;0m")
+    return False
