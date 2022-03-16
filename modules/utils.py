@@ -13,7 +13,7 @@ def print_intro_welcome():
     """
     tprint("Welcome to", font="Small Slant", sep="\n")
     sleep(.2)
-    tprint("Websichanic", font="Small Slant", sep="\n")
+    tprint("Webalyzer", font="Small Slant", sep="\n")
     sleep(.5)
 
 
@@ -21,7 +21,7 @@ def print_brand_name():
     """
     Print brand name
     """
-    tprint("Websichanic", font="Small Slant", sep="\n")
+    tprint("Webalyzer", font="Small Slant", sep="\n")
     sleep(.5)
 
 
@@ -65,8 +65,12 @@ def validate_input_answer(options, answer):
     Validates if input answer given aligns with
     the expected input options
     """
-    for option in options:
-        if option == answer:
-            return option
-    print("\x1b[1;31mWrong answer please try again...\x1b[0;0m")
-    return False
+    result = answer in options
+    if not result:
+        sleep(1)
+        print("\x1b[1;31mWrong answer please try again...\x1b[0;0m")
+        del_last_lines_up(4)
+
+        return True, result
+
+    return False, result

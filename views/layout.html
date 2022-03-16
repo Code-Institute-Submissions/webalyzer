@@ -12,15 +12,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!--metas for search engines-->
-    <meta name="title" content="Websichanic">
+    <meta name="title" content="Webalyzer">
     <meta name="description" content="
-        Websichanic is a python app that runs via the python terminal. 
+        Webalyzer is a python app that runs via the python terminal. 
         From the terminal there's multiple options to extract information of a website">
-    <meta name="author" content="MT - MTraveller, https://github.com/MTraveller/websichanic">
+    <meta name="author" content="MT - MTraveller, https://github.com/MTraveller/webalyzer">
 
     <!--Load favicon-->
     <link rel="icon" type="image/png"
-        href="https://raw.githubusercontent.com/MTraveller/websichanic/main/assets/favicon-min.png">
+        href="https://raw.githubusercontent.com/MTraveller/webalyzer/main/assets/favicon-min.png">
 
     <!--Load fonts-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -48,7 +48,6 @@
 
         html {
             height: 100vh;
-            min-height: 895px;
             background-image: linear-gradient(to left top, #26396a, #2d3b66, #343e62, #39405e, #3e435a, #484b60, #525467, #5c5d6d, #6e6f80, #818294, #9496a8, #a8aabc);
         }
 
@@ -61,7 +60,7 @@
             display: grid;
             grid-template-rows: 135px 700px 1fr;
             place-items: center;
-            background: url(https://raw.githubusercontent.com/MTraveller/websichanic/main/assets/program-process-background-last.svg) center center/1200px no-repeat;
+            background: url(https://raw.githubusercontent.com/MTraveller/webalyzer/main/assets/program-process-background-last.svg) center center/1200px no-repeat;
         }
 
         #header {
@@ -247,7 +246,7 @@
         /* Media query to hide background, terminal and button */
         @media screen and (max-width: 1280px) {
             body {
-                grid-template-rows: 135px 330px;
+                grid-template-rows: 135px 330px 1fr;
                 background: none;
             }
 
@@ -268,6 +267,10 @@
 
         /* Media query to hide elements that targets mobile */
         @media screen and (min-width: 1280px) {
+            html {
+                min-height: 895px;
+            }
+
             #mobile--notice {
                 display: none;
             }
