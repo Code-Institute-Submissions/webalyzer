@@ -26,4 +26,3 @@ def wprint(string):
         sys.stdout.write(word + ' ')
         sys.stdout.flush()
         time.sleep(.4)
-    print("\n")
