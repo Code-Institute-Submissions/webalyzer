@@ -85,12 +85,13 @@ def print_intro():
                                            "each option in more detail?"
                                            "   "))
 
-                if read_more.validate_input()[1] == 'y':
+                read_more_answer = read_more.validate_input()
+                if read_more_answer[1] == 'y':
                     del_last_lines_up(15)
                     print("run help")
                     pause("!!!")
 
-            elif background.validate_input()[1] == 'n':
+            elif background_answer[1] == 'n':
                 pass
 
         break
