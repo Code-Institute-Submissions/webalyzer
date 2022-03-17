@@ -4,9 +4,10 @@ init run intro
 from time import sleep
 from subprocess import run
 from getch import pause
-from modules.slow_print import sprint, wprint
 from modules.utils import (del_last_line, del_last_lines_up,
-                           print_brand_name, print_yes_no, Validate)
+                           print_brand_name, print_about,
+                           print_yes_no, Validate)
+from modules.prints import BINARY
 # from modules.options import run_choices
 
 
@@ -15,23 +16,7 @@ def print_intro():
     Function to print intro and
     begin choices
     """
-    print(
-        "01001001 00100000 01101000 01101111 "
-        "01110000 01100101 00100000 01111001 "
-        "01101111 01110101 00100000 01100101 "
-        "01101110 01101010 01101111 01111001 "
-        "00100000 01010111 01100101 01100010 "
-        "01100001 01101100 01111001 01111010 "
-        "01100101 01110010 00100000 01100001 "
-        "01110011 00100000 01101101 01110101 "
-        "01100011 01101000 00100000 01100001 "
-        "01110011 00100000 01001001 00100000 "
-        "01100101 01101110 01101010 01101111 "
-        "01111001 01100101 01100100 00100000 "
-        "01101101 01100001 01101011 01101001 "
-        "01101110 01100111 00100000 01101001 "
-        "01110100 00100000 00111010 00101001 "
-        "\n")
+    print(BINARY)
 
     for i in range(101):
         # Loop to print from 0 - 100% without newline
@@ -54,32 +39,13 @@ def print_intro():
             "   \x1b[0;0m\x1b[23m"))
 
         background_answer = background.validate_input()
-
         if background_answer:
-            # print(background.validate_input())
-            # print(type(background.validate_input()[1]))
-            # pause("!!!")
             if background_answer[1] == 'y':
                 run('clear', check=True)
                 print_brand_name()
-                sleep(1)
-                sprint("Webalyzer is an app that asks for a URL "
-                       "and returns the requested data.\n")
-                sleep(1.5)
-                sprint("The features of Webalyzer is:\n")
-                sleep(1)
-                wprint("1. Validate The standard META TAGS of:")
-                print("\nhttps://html.spec.whatwg.org/"
-                      "multipage/semantics.html#standard-metadata-names\n")
-                sleep(1)
-                wprint("2. Validate HTML, CSS and Javascript")
-                sleep(1)
-                sprint("\nValidation of HTML, CSS is through 'W3C' "
-                       "=> World Wide Web Consortium")
-                sleep(2)
-                sprint("Validation of Javascript is through CodeBeautify\n")
-                # del_last_lines_up(15)
+                print_about()
 
+                sleep(2)
                 read_more = Validate(input_answer,
                                      input("Want to read about "
                                            "each option in more detail?"
@@ -87,7 +53,7 @@ def print_intro():
 
                 read_more_answer = read_more.validate_input()
                 if read_more_answer[1] == 'y':
-                    del_last_lines_up(15)
+                    del_last_lines_up(18)
                     print("run help")
                     pause("!!!")
 
