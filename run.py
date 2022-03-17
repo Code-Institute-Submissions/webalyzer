@@ -14,7 +14,7 @@ def start_intro():
     """
     Initialize intro
     """
-    print(print_intro())
+    return print_intro()
 
 
 start_intro()
