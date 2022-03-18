@@ -78,4 +78,6 @@ def print_intro():
         elif background_answer[1] == 'n':
             break
 
+    run('clear', check=True)
+    print_brand_name()
     run_choices()
