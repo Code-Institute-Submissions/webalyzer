@@ -6,7 +6,7 @@ from time import sleep
 from subprocess import run
 from art import tprint
 from modules.slow_print import sprint
-from modules.prints import (WEBALYZER, WRONG,
+from modules.prints import (WEBALYZER, YES_NO, WRONG,
                             BYE_TOP, BYE_BRAND,
                             BYE_MIDDLE, BYE_BOTTOM)
 
@@ -15,9 +15,7 @@ def print_yes_no():
     """
         Print "use yes / no" above input
     """
-    sprint("Please use '\x1b[1;32my\x1b[0;0m' "
-           "for \x1b[1;32mYes\x1b[0;0m and "
-           "'\x1b[1;31mn\x1b[0;0m' for \x1b[1;31mNo\x1b[0;0m")
+    sprint(YES_NO)
 
 
 def print_brand_name():
