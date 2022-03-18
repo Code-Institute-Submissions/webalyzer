@@ -14,7 +14,7 @@ from modules.prints import (WEBALYZER, YES_NO, WRONG,
 
 def print_yes_no():
     """
-        Print "use yes / no" above input
+        Print "yes / no / quit" above input
     """
     sprint(YES_NO)
 
@@ -24,7 +24,6 @@ def print_brand_name():
         Print brand name
     """
     tprint("Webalyzer", font="Small Slant", sep="\n")
-    sleep(.5)
 
 
 def print_intro_welcome():
@@ -32,7 +31,7 @@ def print_intro_welcome():
         Print welcome intro
     """
     tprint("Welcome to", font="Small Slant", sep="\n")
-    sleep(.2)
+    sleep(.02)
     print_brand_name()
     sleep(.5)
 
@@ -52,16 +51,7 @@ def print_outro():
         Prints Webalyzer's Outro
     """
     run('clear', check=True)
-    for line in BYE_TOP:
-        sleep(.02)
-        print(line)
-    for line in BYE_BRAND:
-        sleep(.02)
-        print(line)
-    for line in BYE_MIDDLE:
-        sleep(.02)
-        print(line)
-    for line in BYE_BOTTOM:
+    for line in BYE_TOP + BYE_BRAND + BYE_MIDDLE + BYE_BOTTOM:
         sleep(.02)
         print(line)
 
@@ -105,7 +95,7 @@ class Validate:
         self.answer = answer
 
     @classmethod
-    def background(cls):
+    def background_cls(cls):
         """
             Defining background classmethod for
             background input in print_intro() in intro.py
@@ -117,7 +107,7 @@ class Validate:
             "   \x1b[0;0m\x1b[23m"))
 
     @classmethod
-    def read_more(cls):
+    def read_more_cls(cls):
         """
             Defining read more classmethod for optional
             read more input under background input
@@ -128,7 +118,7 @@ class Validate:
                          "   "))
 
     @classmethod
-    def option(cls):
+    def option_cls(cls):
         """
             Defining option classmethod for
             chosen number input in run_choices() in options.py
@@ -143,7 +133,7 @@ class Validate:
             and replaces any spaces between the letters
             if any.
 
-            Then checks if answer is valid.
+            Then checks if then answer is valid.
 
             *optin is referring to option_input set to true
             in classmethod option, to target that input for
