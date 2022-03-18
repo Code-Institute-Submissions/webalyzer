@@ -44,7 +44,7 @@ WEBALYZER = (
     "https://html.spec.whatwg.org/"
     "multipage/semantics.html#standard-metadata-names\n",
     "2. Validate HTML, CSS and Javascript",
-    "\nValidation of HTML, CSS is through 'W3C' "
+    "Validation of HTML, CSS is through 'W3C' "
     "=> World Wide Web Consortium",
     "Validation of Javascript is through CodeBeautify\n",
 )
@@ -109,3 +109,6 @@ BYE_BOTTOM = [
     "║" + ("║" * 78) + "║",
     "╚" + ("╩" * 78) + "╝",
 ]
+
+QUIT = ("Did you know;\nTyping '\x1b[1;95mquit\x1b[0;0m' as the answer, "
+        "will \x1b[1;95mQuit\x1b[0;0m the app ;)")
