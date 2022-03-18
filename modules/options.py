@@ -1,67 +1,37 @@
 """
 init run options
 """
-from subprocess import run
-from time import sleep
-from modules.slow_print import sprint  # , wprint
+# from subprocess import run
+# from time import sleep
+from getch import pause
+# from modules.slow_print import sprint  # , wprint
 # from modules.utils import delete_last_line
+from modules.utils import del_last_lines_up, Validate
+from modules.prints import CHOICES, QUIT
 
 
 def run_choices():
     """
-    Function to present choices of the app
+    Function to run choices
     """
-    sleep(1)
-    print("Validate HTML")
-    sleep(1)
-    print("Validate CSS")
-    sleep(1)
-    print("Validate Javascript")
-    sleep(1)
-    print("Validate Meta Tags")
-    sleep(1)
+    print(QUIT)
+    print()
+    for line in CHOICES:
+        print(line)
+    print()
 
-    run('clear', check=True)
-    sleep(2)
-    sprint("Please choose one of the following:\n")
-    print("\n" * 1)
-    print("Validate Meta Tags?")
-    validation_choice = input("     y = yes / n = no:  \n").lower()
+    while True:
+        # Creating a new Validate object
+        chosen_number = Validate.option()
 
-    if not validation_choice == 'n':
-        return validation_choice
-
-    run('clear', check=True)
-    sprint("Validate HTML?")
-    validation_choice = input("y = yes / n = no:  \n").lower()
-
-    if not validation_choice == 'n':
-        return validation_choice
-
-    run('clear', check=True)
-    sprint("Validate CSS?")
-    validation_choice = input("y = yes / n = no:  \n").lower()
-
-    if not validation_choice == 'n':
-        return validation_choice
-
-    run('clear', check=True)
-    sprint("Validate Javascript?")
-    validation_choice = input("y = yes / n = no:  \n").lower()
-
-    if not validation_choice == 'n':
-        return validation_choice
-
-    run('clear', check=True)
-    ask_again = input("Start Over?  y / n").lower()
-    if ask_again == 'y':
-        repeat_choices()
-
-    return
-
-
-def repeat_choices():
-    """
-    Function to repeat choices
-    """
-    return True
+        # Validating the input against valid items
+        chosen_number_answer = chosen_number[0].validate_input(
+            chosen_number[1])
+        if (
+            chosen_number_answer[0] and
+            chosen_number_answer[1] == (
+                '1' or '2' or '3' or '4' or 'quit')
+        ):
+            del_last_lines_up(13)
+            pause("!!!")
+            break
