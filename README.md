@@ -4,7 +4,7 @@
 
 Project URL: [View live project](https://webalyzer.herokuapp.com "Webalyzer")
 
-![Mockup]()
+![Mockup](./assets/readme/app-mockup.jpg)
 
 <br>
 
