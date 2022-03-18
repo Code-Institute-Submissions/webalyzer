@@ -20,7 +20,7 @@ def print_intro():
 
     for i in range(101):
         # Loop to print from 0 - 100% without newline
-        # on previous line
+        # using end="" and on previous line using \r
         print(f"\r\x1b[1;34mInitializing\x1b[0;0m: {i}% \x1b[?25l", end="")
         print("\x1b[?25h", end="")
         sleep(.05)
@@ -33,7 +33,7 @@ def print_intro():
         sleep(.3)
 
         # Creating a new Validate object
-        background = Validate.background()
+        background = Validate.background_cls()
 
         # Validating the input against valid letters
         background_answer = background.validate_input()
@@ -50,7 +50,7 @@ def print_intro():
                 print_yes_no()
 
                 # Creating a new Validate object
-                read_more = Validate.read_more()
+                read_more = Validate.read_more_cls()
 
                 # Validating the input against valid letters
                 read_more_answer = read_more.validate_input()
