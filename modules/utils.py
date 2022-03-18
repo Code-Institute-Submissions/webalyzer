@@ -3,9 +3,12 @@
 """
 import sys
 from time import sleep
+from subprocess import run
 from art import tprint
 from modules.slow_print import sprint
-from modules.prints import WEBALYZER, WRONG
+from modules.prints import (WEBALYZER, WRONG,
+                            BYE_TOP, BYE_BRAND,
+                            BYE_MIDDLE, BYE_BOTTOM)
 
 
 def print_yes_no():
@@ -17,21 +20,21 @@ def print_yes_no():
            "'\x1b[1;31mn\x1b[0;0m' for \x1b[1;31mNo\x1b[0;0m")
 
 
+def print_brand_name():
+    """
+        Print brand name
+    """
+    tprint("Webalyzer", font="Small Slant", sep="\n")
+    sleep(.5)
+
+
 def print_intro_welcome():
     """
         Print welcome intro
     """
     tprint("Welcome to", font="Small Slant", sep="\n")
     sleep(.2)
-    tprint("Webalyzer", font="Small Slant", sep="\n")
-    sleep(.5)
-
-
-def print_brand_name():
-    """
-        Print brand name
-    """
-    tprint("Webalyzer", font="Small Slant", sep="\n")
+    print_brand_name()
     sleep(.5)
 
 
@@ -42,6 +45,25 @@ def print_about():
 
     for line in WEBALYZER:
         sleep(1)
+        print(line)
+
+
+def print_outro():
+    """
+        Prints Webalyzer's Outro
+    """
+    run('clear', check=True)
+    for line in BYE_TOP:
+        sleep(.02)
+        print(line)
+    for line in BYE_BRAND:
+        sleep(.02)
+        print(line)
+    for line in BYE_MIDDLE:
+        sleep(.02)
+        print(line)
+    for line in BYE_BOTTOM:
+        sleep(.02)
         print(line)
 
 
@@ -75,9 +97,9 @@ class Validate:
     """
         Validates user input
     """
+    options = 'quit', 'y', 'n', 1, 2, 3, 4
 
-    def __init__(self, options, answer):
-        self.options = options
+    def __init__(self, answer):
         self.answer = answer
 
     def validate_input(self):
@@ -90,6 +112,7 @@ class Validate:
             Then checks in answer is valid.
         """
         converted = str(self.answer).lower().strip().replace(" ", "")
+        print(converted)
 
         result = converted in self.options
         if not result:
@@ -97,6 +120,10 @@ class Validate:
             sprint(WRONG)
             del_last_lines_up(4)
 
-            return True, converted
+            return False, converted
 
-        return False, converted
+        elif converted == 'quit':
+            print_outro()
+            sys.exit()
+
+        return True, converted
