@@ -23,6 +23,11 @@ BINARY = (
     "01110100 00100000 00111010 00101001 "
     "\n")
 
+YES_NO = ("Please use '\x1b[1;32my\x1b[0;0m' "
+          "for \x1b[1;32mYes\x1b[0;0m, "
+          "'\x1b[1;31mn\x1b[0;0m' for \x1b[1;31mNo\x1b[0;0m "
+          "or '\x1b[1;95mquit\x1b[0;0m' to \x1b[1;95mQuit\x1b[0;0m the app")
+
 
 WEBALYZER = (
     "Webalyzer is an app that asks for a URL "
