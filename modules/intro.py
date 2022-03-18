@@ -8,7 +8,7 @@ from modules.utils import (del_last_line, del_last_lines_up,
                            print_brand_name, print_about,
                            print_yes_no, Validate)
 from modules.prints import BINARY
-# from modules.options import run_choices
+from modules.options import run_choices
 
 
 def print_intro():
@@ -31,35 +31,51 @@ def print_intro():
     while True:
         print_yes_no()
         sleep(.3)
-        input_answer = 'y', 'n'
-        background = Validate(input_answer, input(
+
+        # Creating a new Validate object
+        background = Validate(input(
             "\x1b[3m\x1b[33mWould you like to know what "
             "\x1b[0;0m\x1b[48;2;38;57;106m \x1b[1;97mWebalyzer "
             "\x1b[0;0;0;0;0m\x1b[3m\x1b[33m does?"
             "   \x1b[0;0m\x1b[23m"))
 
+        # Validating the input against valid letters
         background_answer = background.validate_input()
-        if background_answer:
-            if background_answer[1] == 'y':
-                run('clear', check=True)
-                print_brand_name()
-                print_about()
+        if (
+            background_answer[0] and
+            background_answer[1] == 'y'
+        ):
+            run('clear', check=True)
+            print_brand_name()
+            print_about()
 
-                sleep(2)
-                read_more = Validate(input_answer,
-                                     input("Want to read about "
-                                           "each option in more detail?"
-                                           "   "))
+            sleep(2)
+            while True:
+                print_yes_no()
 
+                # Creating a new Validate object
+                read_more = Validate(
+                    input("Want to read about "
+                          "each option in more detail?"
+                          "   "))
+
+                # Validating the input against valid letters
                 read_more_answer = read_more.validate_input()
-                if read_more_answer[1] == 'y':
-                    del_last_lines_up(18)
+                if (
+                    read_more_answer[0] and
+                    read_more_answer[1] == 'y'
+                ):
+                    del_last_lines_up(21)
                     print("run help")
                     pause("!!!")
+                    break
 
-            elif background_answer[1] == 'n':
-                pass
+                elif read_more_answer[1] == 'n':
+                    break
 
-        break
+            break
 
-    # run_choices()
+        elif background_answer[1] == 'n':
+            break
+
+    run_choices()
