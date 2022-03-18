@@ -33,11 +33,7 @@ def print_intro():
         sleep(.3)
 
         # Creating a new Validate object
-        background = Validate(input(
-            "\x1b[3m\x1b[33mWould you like to know what "
-            "\x1b[0;0m\x1b[48;2;38;57;106m \x1b[1;97mWebalyzer "
-            "\x1b[0;0;0;0;0m\x1b[3m\x1b[33m does?"
-            "   \x1b[0;0m\x1b[23m"))
+        background = Validate.background()
 
         # Validating the input against valid letters
         background_answer = background.validate_input()
@@ -54,10 +50,7 @@ def print_intro():
                 print_yes_no()
 
                 # Creating a new Validate object
-                read_more = Validate(
-                    input("Want to read about "
-                          "each option in more detail?"
-                          "   "))
+                read_more = Validate.read_more()
 
                 # Validating the input against valid letters
                 read_more_answer = read_more.validate_input()
