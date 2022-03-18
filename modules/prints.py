@@ -90,10 +90,10 @@ BYE_BRAND = [
 BYE_MIDDLE = [
     "║" + (" " * 78) + "║",
     "║" + (" " * 78) + "║",
-    "║" + (" " * 15) +
-    "We thank you for your visit, and we hope to see" + (" " * 16) + "║",
-    "║" + (" " * 21) + "you soon again :) Have a great day." +
-    (" " * 22) + "║",
+    "║" + (" " * 17) +
+    "We thank you for your visit, and hope to see" + (" " * 17) + "║",
+    "║" + (" " * 22) + "you soon again :) Have a great day." +
+    (" " * 21) + "║",
     "║" + (" " * 78) + "║",
 ]
 
