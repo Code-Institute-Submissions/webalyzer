@@ -4,6 +4,7 @@
 import sys
 from time import sleep
 from subprocess import run
+# from getch import pause
 from art import tprint
 from modules.slow_print import sprint
 from modules.prints import (WEBALYZER, YES_NO, WRONG,
@@ -93,30 +94,74 @@ def del_last_lines_up(times):
 
 class Validate:
     """
-        Validates user input
+        Validate class to validate user input,
+        for all inputs in one place. Validate
+        class make use of classmethods to define
+        the input for each input for better targeting.
     """
-    options = 'quit', 'y', 'n', 1, 2, 3, 4
+    options = 'quit', 'y', 'n', '1', '2', '3', '4'
 
     def __init__(self, answer):
         self.answer = answer
 
-    def validate_input(self):
+    @classmethod
+    def background(cls):
+        """
+            Defining background classmethod for
+            background input in print_intro() in intro.py
+        """
+        return cls(input(
+            "\x1b[3m\x1b[33mWould you like to know what "
+            "\x1b[0;0m\x1b[48;2;38;57;106m \x1b[1;97mWebalyzer "
+            "\x1b[0;0;0;0;0m\x1b[3m\x1b[33m does?"
+            "   \x1b[0;0m\x1b[23m"))
+
+    @classmethod
+    def read_more(cls):
+        """
+            Defining read more classmethod for optional
+            read more input under background input
+            in print_intro() in intro.py
+        """
+        return cls(input("Want to read about "
+                         "each option in more detail?"
+                         "   "))
+
+    @classmethod
+    def option(cls):
+        """
+            Defining option classmethod for
+            chosen number input in run_choices() in options.py
+        """
+        option_input = True
+        return cls(input("Option:   ")), option_input
+
+    def validate_input(self, *optin):
         """
             Converts the string to lowercase,
             strips any before and after whitespace
             and replaces any spaces between the letters
             if any.
 
-            Then checks in answer is valid.
+            Then checks if answer is valid.
+
+            *optin is referring to option_input set to true
+            in classmethod option, to target that input for
+            the if statement below in this validate_input method.
         """
         converted = str(self.answer).lower().strip().replace(" ", "")
-        print(converted)
 
         result = converted in self.options
         if not result:
             sleep(1)
             sprint(WRONG)
-            del_last_lines_up(4)
+            sleep(1)
+
+            if optin:
+                del_last_lines_up(3)
+
+            elif not optin:
+                del_last_lines_up(4)
 
             return False, converted
 
