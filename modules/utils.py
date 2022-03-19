@@ -126,6 +126,15 @@ class Validate:
                          "   ")), option_input
 
     @classmethod
+    def urllink_cls(cls):
+        """
+            Defining urllink classmethod for
+            url_link input in validate_url.py
+        """
+
+        return cls(input("Enter your url here: \n"))
+
+    @classmethod
     def option_cls(cls, option_input=True):
         """
             Defining option classmethod for
