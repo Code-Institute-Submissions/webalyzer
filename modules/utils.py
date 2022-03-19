@@ -88,10 +88,10 @@ def del_last_lines_up(times):
 
 class Validate:
     """
-        Validate class to validate user input,
+        Class to validate user input,
         for all inputs in one place. Validate
         class make use of classmethods to define
-        the input for each input for better targeting.
+        the specific inputs for better targeting.
     """
 
     def __init__(self, answer):
@@ -105,7 +105,7 @@ class Validate:
     def background_cls(cls, option_input=False):
         """
             Defining background classmethod for
-            background input in print_intro() in intro.py
+            background input.
         """
 
         return cls(input(
@@ -118,8 +118,7 @@ class Validate:
     def read_more_cls(cls, option_input=False):
         """
             Defining read more classmethod for optional
-            read more input under background input
-            in print_intro() in intro.py
+            read more input.
         """
 
         return cls(input("Want to read about "
