@@ -99,7 +99,7 @@ class Validate:
         self.options = 'quit', 'y', 'n', '1', '2', '3', '4'
 
     def __str__(self):
-        return str(self.answer).lower().strip().replace(" ", "")
+        return self.answer.lower().strip().replace(' ', '')
 
     @classmethod
     def background_cls(cls, option_input=False):
@@ -134,7 +134,7 @@ class Validate:
 
         return cls(input("Option:   ")), option_input
 
-    def validate_input(self, optin):
+    def validate_input(self, answer, optin):
         """
             Converts the string to lowercase,
             strips any before and after whitespace
@@ -147,7 +147,7 @@ class Validate:
             classmethod's, to target specific inputs.
         """
 
-        result = self.answer in self.options
+        result = str(answer) in self.options
 
         if not result:
             sleep(.2)
@@ -161,10 +161,10 @@ class Validate:
                 sleep(.6)
                 del_last_lines_up(4)
 
-            return False, self.answer
+            return False, str(answer)
 
-        elif self.answer == 'quit':
+        elif self == 'quit':
             print_outro()
             sys.exit()
 
-        return True, self.answer
+        return True, str(answer)
