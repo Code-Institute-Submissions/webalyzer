@@ -38,7 +38,8 @@ def print_intro():
         background = Validate.background_cls()
 
         # Validating the input against valid letters
-        background_answer = background[0].validate_input(background[1])
+        background_answer = background[0].validate_input(
+            background[0], background[1])
         if (
             background_answer[0] and
             background_answer[1] == 'y'
@@ -55,7 +56,8 @@ def print_intro():
                 read_more = Validate.read_more_cls()
 
                 # Validating the input against valid letters
-                read_more_answer = read_more[0].validate_input(read_more[1])
+                read_more_answer = read_more[0].validate_input(
+                    read_more[0], read_more[1])
                 if (
                     read_more_answer[0] and
                     read_more_answer[1] == 'y'
