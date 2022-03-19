@@ -27,11 +27,9 @@ def run_choices():
         # Validating the input against valid items
         chosen_number_answer = chosen_number[0].validate_input(
             chosen_number[1])
-        print(chosen_number_answer)
         if (
             chosen_number_answer[0] and
-            chosen_number_answer[1] == (
-                '1' or '2' or '3' or '4')
+            (chosen_number_answer[1] == '1' or '2' or '3' or '4')
         ):
             pause("TRUTHY")
             break
