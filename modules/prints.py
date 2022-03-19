@@ -33,17 +33,17 @@ WEBALYZER = (
     "Webalyzer is an app that asks for a URL "
     "and returns the requested data.",
     "It first checks the answer of the input, "
-    "validates the input and continues.\n",
-    "Webalyzer first confirms if the answer is, "
-    "a link with http(s), domain and tld.",
-    "Then it moves on to validate the link by making a request "
-    "to the host,", "and if the response header is 200, then "
-    "it carries on to the actual feature.\n",
+    "validates the input, and continues.\n",
+    "Webalyzer first confirms if the answer is "
+    "a link with HTTP(s), domain, and TLD.",
+    "Then it moves on to validate the link by requesting "
+    "the host,", "and if the response header is 200, "
+    "then it carries on to the actual feature.\n",
     "The features of Webalyzer is:\n",
-    "1. Validate The standard META TAGS of:",
+    "1. Validate the standard META TAGs of:",
     "https://html.spec.whatwg.org/"
     "multipage/semantics.html#standard-metadata-names\n",
-    "2. Validate HTML, CSS and Javascript",
+    "2. Validate HTML, CSS, and Javascript",
     "Validation of HTML, CSS is through 'W3C' "
     "=> World Wide Web Consortium",
     "Validation of Javascript is through CodeBeautify\n",
@@ -63,7 +63,7 @@ CHOICES = [
     "==============================",
 ]
 
-WRONG = "\x1b[1;31mWrong answer please try again...\x1b[0;0m"
+WRONG = "\x1b[1;31mWrong answer, please try again...\x1b[0;0m"
 
 
 BYE_TOP = [
@@ -96,7 +96,7 @@ BYE_MIDDLE = [
     "║" + (" " * 78) + "║",
     "║" + (" " * 78) + "║",
     "║" + (" " * 17) +
-    "We thank you for your visit, and hope to see" + (" " * 17) + "║",
+    "We thank you for your visit and hope to see" + (" " * 18) + "║",
     "║" + (" " * 22) + "you soon again :) Have a great day." +
     (" " * 21) + "║",
     "║" + (" " * 78) + "║",
