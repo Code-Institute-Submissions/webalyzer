@@ -8,15 +8,30 @@
     <!--Preconnect-->
     <link rel="preconnect" href="//raw.githubusercontent.com">
     <link rel="preconnect" href="//cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
 
-    <!--metas for search engines-->
+    <!--Primary Meta Tags-->
     <meta name="title" content="Webalyzer">
-    <meta name="description" content="
-        Webalyzer is a python app that runs via the python terminal. 
-        From the terminal there's multiple options to extract information of a website">
+    <meta name="description" content="Webalyzer is a python app that runs via the python terminal. 
+    From the terminal there's multiple options to test and verify HTML, CSS and JS code of a website">
     <meta name="author" content="MT - MTraveller, https://github.com/MTraveller/webalyzer">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://webalyzer.herokuapp.com/">
+    <meta property="og:title" content="Webalyzer">
+    <meta property="og:description" content="Webalyzer is a python app that runs via the python terminal. 
+    From the terminal there's multiple options to test and verify HTML, CSS and JS code of a website">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://webalyzer.herokuapp.com/">
+    <meta property="twitter:title" content="Webalyzer">
+    <meta property="twitter:description" content="Webalyzer is a python app that runs via the python terminal. 
+    From the terminal there's multiple options to test and verify HTML, CSS and JS code of a website">
+    <meta property="twitter:image" content="">
 
     <!--Load favicon-->
     <link rel="icon" type="image/png"
@@ -30,7 +45,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
-    <title>Websichanic</title>
+    <title>Webalyzer</title>
     <style>
         /* 
         * Font to use VT323
@@ -292,16 +307,16 @@
             ::-webkit-scrollbar {
                 width: .56rem;
             }
-
-            ::-webkit-scrollbar-thumb {
-                background: #293a68;
-                border-radius: .2rem;
-            }
-
+            
             ::-webkit-scrollbar-track {
                 background-color: #333333;
                 border-radius: .2rem;
                 box-shadow: 0 0 .1rem .1rem #293a68;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: #293a68;
+                border-radius: .2rem;
             }
         }
     </style>
