@@ -1,5 +1,5 @@
 """
-init run intro
+    init run intro
 """
 from time import sleep
 from subprocess import run
@@ -13,8 +13,10 @@ from modules.options import run_choices
 
 def print_intro():
     """
-    Function to print intro and
-    begin choices
+        Function to print intro and
+        check if user wants back story of
+        Webalyzer and acts accordingly to
+        the answer of the presented input.
     """
     print(BINARY)
 
@@ -36,7 +38,7 @@ def print_intro():
         background = Validate.background_cls()
 
         # Validating the input against valid letters
-        background_answer = background.validate_input()
+        background_answer = background[0].validate_input(background[1])
         if (
             background_answer[0] and
             background_answer[1] == 'y'
@@ -53,7 +55,7 @@ def print_intro():
                 read_more = Validate.read_more_cls()
 
                 # Validating the input against valid letters
-                read_more_answer = read_more.validate_input()
+                read_more_answer = read_more[0].validate_input(read_more[1])
                 if (
                     read_more_answer[0] and
                     read_more_answer[1] == 'y'
