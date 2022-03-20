@@ -8,8 +8,7 @@ import urllib3
 # from getch import pause
 from requests.exceptions import HTTPError
 from modules.slow_print import sprint, wprint
-from modules.utils import Validate
-from modules.utils import del_last_lines_up
+from modules.utils import Validate, del_last_lines_up
 from modules.options import run_choices
 
 
@@ -23,53 +22,11 @@ REGEX = ("((http|https)://)(\\w+)?" +
          "._\\+~#?&//=]*)")
 
 
-def get_url_link():
-    """
-        Get website link input from the user
-    """
-
-    wprint(
-        "The URL MUST include HTTP(s), DOMAIN and TLD")
-    sprint("\nExample: https://en.wikipedia.org/wiki/"
-           "Python_(programming_language)\n")
-    sleep(1.3)
-
-    while True:
-        url_link = Validate.urllink_cls()
-
-        if validate_url(url_link) and test_response_url(url_link):
-            wprint("Response code: 200 => URL is valid")
-            print()
-            sleep(.4)
-            break
-
-    del_last_lines_up(8)
-    return run_choices(url_link)
-
-
-def validate_url(url):
-    """
-        Function to validate the url link entered
-    """
-
-    compiled_regex = re.compile(REGEX)
-    try:
-        if not re.search(compiled_regex, str(url)):
-            raise ValueError(
-                f"URL Error! URL provided: {url}"
-            )
-    except ValueError as validate_error:
-        sprint(f"\nInvalid link: {validate_error}, please try again.")
-        sleep(1.4)
-        del_last_lines_up(5)
-        return False
-
-    return True
-
-
 def test_response_url(url_link):
     """
         Function to test response of requested url
+        handle and give back feedback incase of any known
+        errors.
     """
 
     sleep(.2)
@@ -106,3 +63,52 @@ def test_response_url(url_link):
         return False
 
     return True
+
+
+def validate_url(url):
+    """
+        Function to validate the url link entered
+        by user against predefined REGEX code and
+        if valid, sends the url to test_response_url
+    """
+
+    compiled_regex = re.compile(REGEX)
+    try:
+        if not re.search(compiled_regex, str(url)):
+            raise ValueError(
+                f"URL Error! URL provided: {url}"
+            )
+    except ValueError as validate_error:
+        sprint(f"\nInvalid link: {validate_error}, please try again.")
+        sleep(1.4)
+        del_last_lines_up(5)
+        return False
+
+    return True
+
+
+def get_url_link():
+    """
+        Function to ask for a URL and sends
+        the URL to REGEX test and response test
+        then over to run_choices() function in
+        options.py
+    """
+
+    wprint(
+        "The URL MUST include HTTP(s), DOMAIN and TLD")
+    sprint("\nExample: https://en.wikipedia.org/wiki/"
+           "Python_(programming_language)\n")
+    sleep(1.3)
+
+    while True:
+        url_link = Validate.urllink_cls()
+
+        if validate_url(url_link) and test_response_url(url_link):
+            wprint("Response code: 200 => URL is valid")
+            print()
+            sleep(.4)
+            break
+
+    del_last_lines_up(8)
+    return run_choices(url_link)
