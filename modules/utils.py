@@ -1,63 +1,11 @@
 """
-    Utils module
+    init utils module
 """
 import sys
 from time import sleep
-from subprocess import run
 # from getch import pause
-from art import tprint
 from modules.slow_print import sprint
-from modules.prints import (WEBALYZER, YES_NO, WRONG,
-                            BYE_TOP, BYE_BRAND,
-                            BYE_MIDDLE, BYE_BOTTOM)
-
-
-def print_yes_no():
-    """
-        Print "yes / no / quit" above input
-    """
-
-    sprint(YES_NO)
-
-
-def print_brand_name():
-    """
-        Print brand name
-    """
-
-    tprint("Webalyzer", font="Small Slant", sep="\n")
-
-
-def print_intro_welcome():
-    """
-        Print welcome intro
-    """
-
-    tprint("Welcome to", font="Small Slant", sep="\n")
-    sleep(.02)
-    print_brand_name()
-    sleep(.5)
-
-
-def print_about():
-    """
-        Prints Webalyzer's short story
-    """
-
-    for line in WEBALYZER:
-        sleep(1)
-        print(line)
-
-
-def print_outro():
-    """
-        Prints Webalyzer's Outro
-    """
-
-    run('clear', check=True)
-    for line in BYE_TOP + BYE_BRAND + BYE_MIDDLE + BYE_BOTTOM:
-        sleep(.02)
-        print(line)
+from modules.prints import WRONG, print_outro
 
 
 def del_last_line():
@@ -92,6 +40,11 @@ class Validate:
         for all inputs in one place. Validate
         class make use of classmethods to define
         the specific inputs for better targeting.
+
+        Converts the string to lowercase,
+        strips any before and after whitespace
+        and replaces any spaces between the letters
+        if any.
     """
 
     def __init__(self, answer):
@@ -129,7 +82,7 @@ class Validate:
     def urllink_cls(cls):
         """
             Defining urllink classmethod for
-            url_link input in validate_url.py
+            url_link input.
         """
 
         return cls(input("Enter your url here: \n"))
@@ -138,20 +91,14 @@ class Validate:
     def option_cls(cls, option_input=True):
         """
             Defining option classmethod for
-            chosen number input in run_choices() in options.py
+            chosen number input.
         """
 
         return cls(input("Option:   ")), option_input
 
     def validate_input(self, answer, optin):
         """
-            Converts the string to lowercase,
-            strips any before and after whitespace
-            and replaces any spaces between the letters
-            if any.
-
-            Then checks if then answer is valid.
-
+            Function to check if then answer is valid.
             *optin is referring to option_input in the defined
             classmethod's, to target specific inputs.
         """
@@ -172,7 +119,7 @@ class Validate:
 
             return False, str(answer)
 
-        elif self == 'quit':
+        elif str(answer) == 'quit':
             print_outro()
             sys.exit()
 
