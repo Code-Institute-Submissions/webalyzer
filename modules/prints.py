@@ -110,5 +110,5 @@ BYE_BOTTOM = [
     "╚" + ("╩" * 78) + "╝",
 ]
 
-QUIT = ("Did you know;\nTyping '\x1b[1;95mquit\x1b[0;0m' as the answer, "
+QUIT = ("Did you know;\nTyping '\x1b[1;95mquit\x1b[0;0m' any time, "
         "will \x1b[1;95mQuit\x1b[0;0m the app ;)")
