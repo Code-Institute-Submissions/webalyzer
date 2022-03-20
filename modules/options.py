@@ -3,17 +3,19 @@ init run options
 """
 # from subprocess import run
 # from time import sleep
-from getch import pause
+# from getch import pause
 # from modules.slow_print import sprint  # , wprint
 # from modules.utils import delete_last_line
 from modules.utils import Validate
+from modules.validate.validate_code import Html
 from modules.prints import CHOICES, QUIT
 
 
-def run_choices():
+def run_choices(validated_url):
     """
     Function to run choices
     """
+
     print(QUIT)
     print()
     for line in CHOICES:
@@ -22,14 +24,17 @@ def run_choices():
 
     while True:
         # Creating a new Validate object
-        chosen_number = Validate.option_cls()
+        chosen_num = Validate.option_cls()
 
         # Validating the input against valid items
-        chosen_number_answer = chosen_number[0].validate_input(
-            chosen_number[1])
+        response_num = chosen_num[0].validate_input(
+            chosen_num[0], chosen_num[1])
         if (
-            chosen_number_answer[0] and
-            (chosen_number_answer[1] == '1' or '2' or '3' or '4')
+            response_num[0] and
+            (response_num[1] == '1' or '2' or '3' or '4')
         ):
-            pause("TRUTHY")
-            break
+            if response_num[1] == '1':
+                validation = Html(validated_url)
+                result = validation.errors()
+                print(result)
+                break
