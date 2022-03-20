@@ -1,13 +1,13 @@
 """
     init run intro
 """
+
 from time import sleep
 from subprocess import run
 from getch import pause
-from modules.utils import (del_last_line, del_last_lines_up,
-                           print_brand_name, print_about,
-                           print_yes_no, Validate)
-from modules.prints import BINARY
+from modules.utils import (del_last_line, del_last_lines_up, Validate)
+from modules.prints import (BINARY, print_brand_name,
+                            print_about, print_yes_no)
 from modules.validate_url import get_url_link
 
 
@@ -63,7 +63,7 @@ def print_intro():
                     read_more_answer[1] == 'y'
                 ):
                     del_last_lines_up(21)
-                    print("run help")
+                    print("Read More")
                     pause("!!!")
                     break
 
