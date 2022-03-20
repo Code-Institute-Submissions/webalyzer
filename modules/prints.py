@@ -3,7 +3,10 @@
     Prints made by @MTraveller
     https://github.com/MTraveller
 """
-
+from subprocess import run
+from time import sleep
+from art import tprint
+from modules.slow_print import sprint
 
 BINARY = (
     "01001001 00100000 01101000 01101111 "
@@ -53,13 +56,11 @@ CHOICES = [
     "==============================",
     "  Please Choose By (Number)   ",
     "==============================",
-    "\\*  (1): Validate Meta Tags */",
+    "\\*  (1): Validate HTML      */",
     "/*       -------------      *\\",
-    "\\*  (2): Validate HTML      */",
+    "\\*  (2): Validate CSS       */",
     "**       -------------      **",
-    "/*  (3): Validate CSS       *\\",
-    "\\*       -------------      */",
-    "/*  (4): Validate JS        *\\",
+    "/*  (3): Validate JS        *\\",
     "==============================",
 ]
 
@@ -112,3 +113,51 @@ BYE_BOTTOM = [
 
 QUIT = ("Did you know;\nTyping '\x1b[1;95mquit\x1b[0;0m' any time, "
         "will \x1b[1;95mQuit\x1b[0;0m the app ;)")
+
+
+def print_yes_no():
+    """
+        Prints "yes / no / quit" above input
+    """
+
+    sprint(YES_NO)
+
+
+def print_brand_name():
+    """
+        Prints brand name
+    """
+
+    tprint("Webalyzer", font="Small Slant", sep="\n")
+
+
+def print_intro_welcome():
+    """
+        Prints welcome intro
+    """
+
+    tprint("Welcome to", font="Small Slant", sep="\n")
+    sleep(.02)
+    print_brand_name()
+    sleep(.5)
+
+
+def print_about():
+    """
+        Prints Webalyzer's short story
+    """
+
+    for line in WEBALYZER:
+        sleep(1)
+        print(line)
+
+
+def print_outro():
+    """
+        Prints Webalyzer's Outro
+    """
+
+    run('clear', check=True)
+    for line in BYE_TOP + BYE_BRAND + BYE_MIDDLE + BYE_BOTTOM:
+        sleep(.02)
+        print(line)
