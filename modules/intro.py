@@ -8,7 +8,7 @@ from modules.utils import (del_last_line, del_last_lines_up,
                            print_brand_name, print_about,
                            print_yes_no, Validate)
 from modules.prints import BINARY
-from modules.options import run_choices
+from modules.validate_url import get_url_link
 
 
 def print_intro():
@@ -77,4 +77,4 @@ def print_intro():
 
     run('clear', check=True)
     print_brand_name()
-    run_choices()
+    get_url_link()
