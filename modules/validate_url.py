@@ -10,6 +10,7 @@ from requests.exceptions import HTTPError
 from modules.slow_print import sprint, wprint
 from modules.utils import Validate
 from modules.utils import del_last_lines_up
+from modules.options import run_choices
 
 
 # Regex Source:
@@ -43,7 +44,7 @@ def get_url_link():
             break
 
     del_last_lines_up(8)
-    return url_link
+    return run_choices(url_link)
 
 
 def validate_url(url):
