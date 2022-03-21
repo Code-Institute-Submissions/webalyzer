@@ -49,7 +49,7 @@ class Validate:
 
     def __init__(self, answer):
         self.answer = answer
-        self.options = 'quit', 'y', 'n', '1', '2', '3', '4'
+        self.options = 'quit', 'new', 'y', 'n', '1', '2', '3', '4'
 
     def __str__(self):
         return self.answer.lower().strip().replace(' ', '')
@@ -118,6 +118,10 @@ class Validate:
                 del_last_lines_up(4)
 
             return False, str(answer)
+
+        elif str(answer) == 'new':
+            from modules.validate.validate_url import get_url_link
+            get_url_link()
 
         elif str(answer) == 'quit':
             print_outro()
