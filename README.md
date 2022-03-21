@@ -128,8 +128,6 @@ The structure of app should not be more than 3 levels deep and should be user fr
 
 The minimum feature the app must contain includes the following features:
 
-- To be able to validate the standard `https://html.spec.whatwg.org` meta tags of a website.
-
 - To validate the HTML of a webpage.
 
 - To validate the CSS of a webpage.
@@ -140,11 +138,11 @@ The minimum feature the app must contain includes the following features:
 
 The desired features the app could contain includes the following features:
 
-- To be able to scrape the content of a webpage and analyze the content.
+- To be able to validate the standard `https://html.spec.whatwg.org` meta tags of a website.
 
 - To be able to scrape and validate all links of a webpage.
 
-- To validate the Python code of a file.
+- To validate a Python file.
 
 - To be able to add bulk URLs to validate/scrape.
 
