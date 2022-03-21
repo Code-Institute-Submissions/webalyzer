@@ -102,8 +102,9 @@ class Validate:
             Defining another classmethod for
             choosing a another number input.
         """
-        sprint("Want to validate another option?")
-        return cls(input("Use '\x1b[1;32my\x1b[0;0m' "
+
+        return cls(input("Want to validate another option? "
+                         "Use '\x1b[1;32my\x1b[0;0m' "
                          "for \x1b[1;32mYes\x1b[0;0m:   ")), option_input
 
     def validate_input(self, answer, optin):
@@ -123,7 +124,7 @@ class Validate:
                 sleep(.6)
                 del_last_lines_up(3)
 
-            elif not optin:
+            elif not optin or optin == 'another':
                 sleep(.6)
                 del_last_lines_up(4)
 
@@ -141,6 +142,6 @@ class Validate:
             sys.exit()
 
         elif str(answer) == 'y' and optin == 'another':
-            del_last_lines_up(5)
+            del_last_lines_up(3)
 
         return True, str(answer)
