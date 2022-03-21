@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import cfscrape
 from getch import pause
 from modules.utils import Validate
-# from modules.utils import del_last_lines_up
+from modules.utils import del_last_lines_up
 from modules.prints import run_choices_screen
 
 
@@ -81,6 +81,7 @@ class Html(ValidateCode):
             run_choices_screen()
 
         else:
+            del_last_lines_up(2)
             print("Well done, there were no errors!")
             # Creating a new Validate object
             another = Validate.another_cls()
