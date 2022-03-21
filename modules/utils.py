@@ -96,6 +96,16 @@ class Validate:
 
         return cls(input("Option:   ")), option_input
 
+    @classmethod
+    def another_cls(cls, option_input='another'):
+        """
+            Defining another classmethod for
+            choosing a another number input.
+        """
+        sprint("Want to validate another option?")
+        return cls(input("Use '\x1b[1;32my\x1b[0;0m' "
+                         "for \x1b[1;32mYes\x1b[0;0m:   ")), option_input
+
     def validate_input(self, answer, optin):
         """
             Function to check if then answer is valid.
@@ -123,8 +133,14 @@ class Validate:
             from modules.validate.validate_url import get_url_link
             get_url_link()
 
-        elif str(answer) == 'quit':
+        elif (
+            str(answer) == 'quit' or
+            str(answer) == 'n' and optin == 'another'
+        ):
             print_outro()
             sys.exit()
+
+        elif str(answer) == 'y' and optin == 'another':
+            del_last_lines_up(5)
 
         return True, str(answer)
