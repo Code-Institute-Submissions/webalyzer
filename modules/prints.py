@@ -154,6 +154,17 @@ def print_about():
         print(line)
 
 
+def run_choices_screen():
+    """
+        Prints run_choices options
+    """
+    print(QUITORNEW)
+    print()
+    for line in CHOICES:
+        print(line)
+    print()
+
+
 def print_outro():
     """
         Prints Webalyzer's Outro
