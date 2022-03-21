@@ -8,7 +8,7 @@ init run options
 # from modules.utils import delete_last_line
 from modules.utils import Validate
 from modules.validate.validate_code import Html
-from modules.prints import CHOICES, QUIT
+from modules.prints import CHOICES, QUITORNEW
 
 
 def run_choices(validated_url):
@@ -16,7 +16,7 @@ def run_choices(validated_url):
     Function to run choices
     """
 
-    print(QUIT)
+    print(QUITORNEW)
     print()
     for line in CHOICES:
         print(line)
@@ -31,10 +31,10 @@ def run_choices(validated_url):
             chosen_num[0], chosen_num[1])
         if (
             response_num[0] and
-            (response_num[1] == '1' or '2' or '3' or '4')
+            (response_num[1] == '1' or '2' or '3' or 'new')
         ):
             if response_num[1] == '1':
                 validation = Html(validated_url)
-                result = validation.errors()
-                print(result)
+                errors = validation.err()
+                print(errors)
                 break
