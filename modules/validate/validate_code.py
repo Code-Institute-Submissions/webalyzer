@@ -1,9 +1,15 @@
 """
     init validate code module
 """
+
+from subprocess import run
 import requests
 from bs4 import BeautifulSoup
 import cfscrape
+from getch import pause
+from modules.utils import Validate
+# from modules.utils import del_last_lines_up
+from modules.prints import run_choices_screen
 
 
 class ValidateCode:
@@ -29,6 +35,7 @@ class ValidateCode:
             res = re_s.get(self.html)
 
         self.data = BeautifulSoup(res.content, 'html5lib')
+        self.data.prettify()
 
     def __str__(self):
         return str(self.data)
@@ -36,29 +43,49 @@ class ValidateCode:
 
 class Html(ValidateCode):
     """
-        Subclass to send validation request of html code.
+        Class to send validation request of html code.
     """
 
     def __init__(self, data):
         super().__init__(data)
         self.all_li = self.data.find_all('li')
 
-    def extract(self):
-        """
-            Extract relevant text
-        """
-        extracted = []
-        for li in self.all_li:
-            span = li.find('span')
-            extracted.append(span)
-
-        return extracted
-
     def err(self):
         """
             Function to filter and beautify
             errors for the terminal.
         """
-        result = self.extract()
 
-        return result
+        all_lis = self.data.find_all('li', class_='error')
+
+        errors = []
+        location = []
+        for error in all_lis:
+            err = error.find('p').text
+            loc = error.find('p', class_='location').text
+            errors.append(err)
+            location.append(loc)
+
+        error_list = list(zip(errors, location))
+
+        if not len(error_list) == 0:
+            print("We received the following errors:\n")
+
+            for error in error_list:
+                for line in error:
+                    print(line)
+                print("\n")
+
+            pause("Press any key to continue...")
+            run('clear', check=True)
+            run_choices_screen()
+
+        else:
+            print("Well done, there were no errors!")
+            # Creating a new Validate object
+            another = Validate.another_cls()
+
+            # Validating the input against valid items
+            another[0].validate_input(another[0], another[1])
+
+        return
