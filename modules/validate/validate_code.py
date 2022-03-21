@@ -41,17 +41,24 @@ class Html(ValidateCode):
 
     def __init__(self, data):
         super().__init__(data)
+        self.all_li = self.data.find_all('li')
 
-        # print(data)
-
-        self.err = self.data.find_all('li')
-        # self.err = self.data.find_all('li', _class='error')
-        # self.war = self.data.find_all('li', _class='warning')
-
-    def errors(self):
+    def extract(self):
         """
-            Function to find all errors.
+            Extract relevant text
         """
+        extracted = []
+        for li in self.all_li:
+            span = li.find('span')
+            extracted.append(span)
 
-        return self.err
-        # print(self.war)
+        return extracted
+
+    def err(self):
+        """
+            Function to filter and beautify
+            errors for the terminal.
+        """
+        result = self.extract()
+
+        return result
