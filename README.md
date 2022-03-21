@@ -22,7 +22,7 @@ Project URL: [View live project](https://webalyzer.herokuapp.com "Webalyzer")
     -   #### Returning Visitor Goals
 
         1. I want the app to offer quick access to it's options.
-        2. I want the app to provide a help doc. if needed.
+        2. I want the app to provide a more in detail section about each option, if needed.
 
         <br>
 
@@ -90,8 +90,10 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
     -   They also intent to give the app an identity the user can relate to, lifting it's overall impression.
 
     <br>
+    
+    All images were produced using adobe's illustrator.
 
-    The background image was produced using adobe's illustrator as it is my preferred tool for working on svg files.
+    Background image:
 
     <br>
 
@@ -99,7 +101,7 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
 
     <br>
 
-    The favicon image was produced using adobe's illustrator as well.
+    Favicon image:
 
     <br>
 
@@ -153,6 +155,8 @@ The desired features the app could contain includes the following features:
 Webalyzer, short for "website analyzer" based on real world website -TextMechanic, a site I have used and known for a long time. A user can manipulate text, like removing empty lines, trim lines and empty spaces. Tools like removing duplicates and adding string(s) before or/and after a line etc. It's a good toolset to have when working with text. I wanted to create something similar and based on "TM" I came up with Webalyzer. An app that takes an input and gives feedback to the user.
 
 Asking myself, what's current need based on my current surounding. Web Developers! Both new and senior web developers. Questions comes to mind like; what could be used by the web developers, that could potientially save time? What features could be desired? As a web developer saving time where possible is and will be always good, as time is limited.
+
+Nowadays developers need to check their code through multiple validators, going from one app or site to another. What about those who does not use VScode or other code editors with linting capability? That's where Webalyzer gets into the picture.
 
 <br>
 
