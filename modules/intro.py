@@ -8,7 +8,7 @@ from getch import pause
 from modules.utils import (del_last_line, del_last_lines_up, Validate)
 from modules.prints import (BINARY, print_brand_name,
                             print_about, print_yes_no)
-from modules.validate_url import get_url_link
+from modules.validate.validate_url import get_url_link
 
 
 def print_intro():
@@ -75,6 +75,4 @@ def print_intro():
         elif background_answer[1] == 'n':
             break
 
-    run('clear', check=True)
-    print_brand_name()
     get_url_link()
