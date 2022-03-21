@@ -111,8 +111,10 @@ BYE_BOTTOM = [
     "╚" + ("╩" * 78) + "╝",
 ]
 
-QUIT = ("Did you know;\nTyping '\x1b[1;95mquit\x1b[0;0m' any time, "
-        "will \x1b[1;95mQuit\x1b[0;0m the app ;)")
+QUITORNEW = ("Did you know;\nTyping '\x1b[1;95mquit\x1b[0;0m'"
+             " or '\x1b[1;94mnew\x1b[0;0m' any time,\n"
+             "will \x1b[1;95mQuit\x1b[0;0m the app or"
+             " validate a \x1b[1;94mNew\x1b[0;0m URL ;)")
 
 
 def print_yes_no():
