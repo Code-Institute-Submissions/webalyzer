@@ -3,11 +3,13 @@
 """
 import re
 from time import sleep
+from subprocess import run
 import requests
 import urllib3
 # from getch import pause
 from requests.exceptions import HTTPError
 from modules.slow_print import sprint, wprint
+from modules.prints import print_brand_name
 from modules.utils import Validate, del_last_lines_up
 from modules.options import run_choices
 
@@ -94,6 +96,9 @@ def get_url_link():
         then over to run_choices() function in
         options.py
     """
+
+    run('clear', check=True)
+    print_brand_name()
 
     wprint(
         "The URL MUST include HTTP(s), DOMAIN and TLD")
