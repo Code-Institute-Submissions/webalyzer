@@ -9,8 +9,8 @@ import urllib3
 # from getch import pause
 from requests.exceptions import HTTPError
 from modules.slow_print import sprint, wprint
-from modules.prints import print_brand_name
-from modules.utils import Validate, del_last_lines_up
+from modules.prints import print_brand_name, del_last_lines_up
+from modules.validate.validate_input import Validate
 from modules.options import run_choices
 
 
