@@ -7,9 +7,22 @@ import requests
 from bs4 import BeautifulSoup
 import cfscrape
 from getch import pause
-from modules.utils import Validate
-from modules.utils import del_last_lines_up
-from modules.prints import print_brand_name, run_choices_screen
+from modules.validate.validate_input import Validate
+from modules.prints import (print_brand_name,
+                            run_choices_screen, del_last_lines_up)
+
+
+def choose_another_option():
+    """
+        Function to display another option input to user
+    """
+    del_last_lines_up(2)
+    print("Well done, there were no errors!")
+    # Creating a new Validate object
+    another = Validate.another_cls()
+
+    # Validating the input against valid items
+    another[0].validate_input(another[0], another[1])
 
 
 class ValidateCode:
@@ -106,13 +119,7 @@ class Html(ValidateCode):
             run_choices_screen()
 
         else:
-            del_last_lines_up(2)
-            print("Well done, there were no errors!")
-            # Creating a new Validate object
-            another = Validate.another_cls()
-
-            # Validating the input against valid items
-            another[0].validate_input(another[0], another[1])
+            choose_another_option()
 
 
 class Css(ValidateCode):
@@ -165,10 +172,4 @@ class Css(ValidateCode):
             run_choices_screen()
 
         else:
-            del_last_lines_up(2)
-            print("Well done, there were no errors!")
-            # Creating a new Validate object
-            another = Validate.another_cls()
-
-            # Validating the input against valid items
-            another[0].validate_input(another[0], another[1])
+            choose_another_option()
