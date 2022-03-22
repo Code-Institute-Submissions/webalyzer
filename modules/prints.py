@@ -3,10 +3,13 @@
     Prints made by @MTraveller
     https://github.com/MTraveller
 """
+
+import sys
 from subprocess import run
 from time import sleep
 from art import tprint
 from modules.slow_print import sprint
+
 
 BINARY = (
     "01001001 00100000 01101000 01101111 "
@@ -24,12 +27,16 @@ BINARY = (
     "01101101 01100001 01101011 01101001 "
     "01101110 01100111 00100000 01101001 "
     "01110100 00100000 00111010 00101001 "
-    "\n")
+    "\n"
+)
 
-YES_NO = ("Please use '\x1b[1;32my\x1b[0;0m' "
-          "for \x1b[1;32mYes\x1b[0;0m, "
-          "'\x1b[1;31mn\x1b[0;0m' for \x1b[1;31mNo\x1b[0;0m "
-          "or '\x1b[1;95mquit\x1b[0;0m' to \x1b[1;95mQuit\x1b[0;0m the app")
+
+YES_NO = (
+    "Please use '\x1b[1;32my\x1b[0;0m' "
+    "for \x1b[1;32mYes\x1b[0;0m, "
+    "'\x1b[1;31mn\x1b[0;0m' for \x1b[1;31mNo\x1b[0;0m "
+    "or '\x1b[1;95mquit\x1b[0;0m' to \x1b[1;95mQuit\x1b[0;0m the app"
+)
 
 
 WEBALYZER = (
@@ -52,6 +59,7 @@ WEBALYZER = (
     "Validation of Javascript is through CodeBeautify\n",
 )
 
+
 CHOICES = [
     "==============================",
     "  Please Choose By (Number)   ",
@@ -63,6 +71,7 @@ CHOICES = [
     "/*  (3): Validate JS        *\\",
     "==============================",
 ]
+
 
 WRONG = "\x1b[1;31mWrong answer, please try again...\x1b[0;0m"
 
@@ -77,6 +86,7 @@ BYE_TOP = [
     "║" + (" " * 78) + "║",
     "║" + (" " * 78) + "║",
 ]
+
 
 BYE_BRAND = [
     "║" + (" " * 12) + " _      __        __          __" + (" " * 34) + "║",
@@ -93,6 +103,7 @@ BYE_BRAND = [
     "/___/              " + (" " * 15) + "║",
 ]
 
+
 BYE_MIDDLE = [
     "║" + (" " * 78) + "║",
     "║" + (" " * 78) + "║",
@@ -103,6 +114,7 @@ BYE_MIDDLE = [
     "║" + (" " * 78) + "║",
 ]
 
+
 BYE_BOTTOM = [
     "║" + (" " * 78) + "║",
     "╠" + ("╦" * 78) + "╣",
@@ -111,10 +123,13 @@ BYE_BOTTOM = [
     "╚" + ("╩" * 78) + "╝",
 ]
 
-QUITORNEW = ("Did you know;\nTyping '\x1b[1;95mquit\x1b[0;0m'"
-             " or '\x1b[1;94mnew\x1b[0;0m' any time,\n"
-             "will \x1b[1;95mQuit\x1b[0;0m the app or"
-             " validate a \x1b[1;94mNew\x1b[0;0m URL ;)")
+
+QUITORNEW = (
+    "Did you know;\nTyping '\x1b[1;95mquit\x1b[0;0m'"
+    " or '\x1b[1;94mnew\x1b[0;0m' any time,\n"
+    "will \x1b[1;95mQuit\x1b[0;0m the app or"
+    " validate a \x1b[1;94mNew\x1b[0;0m URL ;)"
+)
 
 
 def print_yes_no():
@@ -174,3 +189,29 @@ def print_outro():
     for line in BYE_TOP + BYE_BRAND + BYE_MIDDLE + BYE_BOTTOM:
         sleep(.02)
         print(line)
+
+
+def del_last_line():
+    """
+        Function to delete last line
+    """
+
+    # delete last line
+    sys.stdout.write('\r\x1b[2K')
+
+
+def del_last_lines_up(times):
+    """
+        Function to delete lines up to (x times)
+    """
+
+    for _ in range(times):
+        # ACSII codes based on
+        # https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
+
+        # Move one line up \r to the start of the line
+        sys.stdout.write('\r\x1b[1A')
+        # Delete the last line
+        sys.stdout.write('\x1b[2K')
+    print()
+    sleep(.2)
