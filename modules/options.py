@@ -1,19 +1,17 @@
 """
-init run options
+    init run options
 """
 
-# from time import sleep
-# from getch import pause
-# from modules.slow_print import sprint  # , wprint
-# from modules.utils import delete_last_line
-from modules.utils import Validate
-from modules.validate.validate_code import Html
+from modules.validate.validate_input import Validate
+from modules.validate.validate_code import Html, Css
 from modules.prints import run_choices_screen
 
 
 def run_choices(validated_url):
     """
-    Function to run choices
+        Function to run choices and
+        send the url to the validation
+        service depending on choice.
     """
 
     run_choices_screen()
@@ -30,13 +28,13 @@ def run_choices(validated_url):
             (response_num[1] == '1' or '2' or '3')
         ):
             if response_num[1] == '1':
-                validation = Html(validated_url)
+                validation = Html(response_num[1], validated_url)
                 validation.err()
 
             elif response_num[1] == '2':
-                validation = Css(validated_url)
+                validation = Css(response_num[1], validated_url)
                 validation.err()
 
             else:
-                validation = Javascript(validated_url)
+                validation = Javascript(response_num[1], validated_url)
                 validation.err()
