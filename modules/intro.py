@@ -5,10 +5,11 @@
 from time import sleep
 from subprocess import run
 from getch import pause
-from modules.utils import (del_last_line, del_last_lines_up, Validate)
+from modules.prints import del_last_line, del_last_lines_up
 from modules.prints import (BINARY, print_brand_name,
                             print_about, print_yes_no)
 from modules.validate.validate_url import get_url_link
+from modules.validate.validate_input import Validate
 
 
 def print_intro():
