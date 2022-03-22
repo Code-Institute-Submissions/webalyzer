@@ -3,7 +3,6 @@
 """
 import sys
 from time import sleep
-# from getch import pause
 from modules.slow_print import sprint
 from modules.prints import WRONG, print_outro
 
