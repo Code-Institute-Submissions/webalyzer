@@ -9,7 +9,7 @@ import urllib3
 from requests.exceptions import HTTPError
 from modules.slow_print import sprint, wprint
 from modules.prints import print_brand_name, del_last_lines_up
-from modules.regex import FULL_URL
+from modules.regex import VALIDATE_URL
 from modules.validate.validate_input import Validate
 from modules.options import run_choices
 
@@ -64,9 +64,8 @@ def validate_url(url):
         if valid, sends the url to test_response_url
     """
 
-    compiled_regex = re.compile(FULL_URL)
     try:
-        if not re.search(compiled_regex, str(url)):
+        if not re.search(VALIDATE_URL, str(url)):
             raise ValueError(
                 f"URL Error! URL provided: {url}"
             )
