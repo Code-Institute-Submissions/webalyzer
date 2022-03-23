@@ -23,7 +23,7 @@ class Validate:
 
     def __init__(self, answer):
         self.answer = answer
-        self.options = 'quit', 'new', 'y', 'n', '1', '2', '3'
+        self.options = 'quit', 'new', 'y', 'n', '1', '2'
 
     def __str__(self):
         return self.answer.lower().strip().replace(' ', '')
