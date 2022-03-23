@@ -5,7 +5,7 @@
 from time import sleep
 from subprocess import run
 from getch import pause
-from modules.prints import del_last_line, del_last_lines_up
+from modules.prints import del_last_line  # , del_last_lines_up
 from modules.prints import (BINARY, print_brand_name,
                             print_about, print_yes_no)
 from modules.validate.validate_url import get_url_link
@@ -50,26 +50,8 @@ def print_intro():
             print_about()
 
             sleep(2)
-            while True:
-                print_yes_no()
 
-                # Creating a new Validate object
-                read_more = Validate.read_more_cls()
-
-                # Validating the input against valid letters
-                read_more_answer = read_more[0].validate_input(
-                    read_more[0], read_more[1])
-                if (
-                    read_more_answer[0] and
-                    read_more_answer[1] == 'y'
-                ):
-                    del_last_lines_up(21)
-                    print("Read More")
-                    pause("!!!")
-                    break
-
-                elif read_more_answer[1] == 'n':
-                    break
+            pause(message="\x1b[3mPress any key to continue...\x1b[23m")
 
             break
 
