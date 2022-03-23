@@ -36,40 +36,25 @@ class ValidateCode:
 
         self.html = f"https://validator.nu/?doc={url}"
         self.css = f"https://jigsaw.w3.org/css-validator/validator?uri={url}"
-        self.javascript = "https://jshint.com"
+
+        self.headers = {'Referrer': 'https://webalyzer.heokuapp.com',
+                        'User-Agent': 'Mozilla/5.0 (platform; '
+                        'rv:geckoversion) Gecko/geckotrail '
+                        'Firefox/firefoxversion',
+                        'Accept': 'text/html',
+                        'Accept-Encoding': 'gzip, compress', }
 
         if self.option == '1':
             with requests.Session() as re_s:
                 re_s = cfscrape.create_scraper()
-                re_s.headers = {'Referrer': 'https://webalyzer.heokuapp.com',
-                                'User-Agent': 'Mozilla/5.0 (platform; '
-                                'rv:geckoversion) Gecko/geckotrail '
-                                'Firefox/firefoxversion',
-                                'Accept': 'text/html',
-                                'Accept-Encoding': 'gzip, compress', }
+                re_s.headers = self.headers
                 res = re_s.get(self.html)
-
-        elif self.option == '2':
-            with requests.Session() as re_s:
-                re_s = cfscrape.create_scraper()
-                re_s.headers = {'Referrer': 'https://webalyzer.heokuapp.com',
-                                'User-Agent': 'Mozilla/5.0 (platform; '
-                                'rv:geckoversion) Gecko/geckotrail '
-                                'Firefox/firefoxversion',
-                                'Accept': 'text/html',
-                                'Accept-Encoding': 'gzip, compress', }
-                res = re_s.get(self.css)
 
         else:
             with requests.Session() as re_s:
                 re_s = cfscrape.create_scraper()
-                re_s.headers = {'Referrer': 'https://webalyzer.heokuapp.com',
-                                'User-Agent': 'Mozilla/5.0 (platform; '
-                                'rv:geckoversion) Gecko/geckotrail '
-                                'Firefox/firefoxversion',
-                                'Accept': 'text/html',
-                                'Accept-Encoding': 'gzip, compress', }
-                res = re_s.get(self.javascript)
+                re_s.headers = self.headers
+                res = re_s.get(self.css)
 
         self.data = BeautifulSoup(res.content, 'html5lib')
 
@@ -166,7 +151,7 @@ class Css(ValidateCode):
                 print(two_and_two)
                 sleep(.2)
 
-            pause("Press any key to continue...")
+            pause("\x1b[3mPress any key to continue...\x1b[23m")
             del_last_lines_up(1000)
             print_brand_name()
             run_choices_screen()
