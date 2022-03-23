@@ -53,7 +53,7 @@ WEBALYZER = (
     "3rd portfolio project assessment.", "\"Python Essentials\"\n",
     "The author @MTraveller - https://github.com/MTraveller,",
     "and can be reached at https://www.linkedin.com/in/mtantouri\n",
-    "Webalyzer will ask you for a URL to validate, on the next screen.\n",
+    "Webalyzer will ask you for a URL to validate, on the next screen.",
 )
 
 
