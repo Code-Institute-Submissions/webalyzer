@@ -40,23 +40,20 @@ YES_NO = (
 
 
 WEBALYZER = (
-    "Webalyzer is an app that asks for a URL "
-    "and returns the requested data.",
-    "It first checks the answer of the input, "
-    "validates the input, and continues.\n",
-    "Webalyzer first confirms if the answer is "
-    "a link with HTTP(s), domain, and TLD.",
-    "Then it moves on to validate the link by requesting "
-    "the host,", "and if the response header is 200, "
-    "then it carries on to the actual feature.\n",
-    "The features of Webalyzer is:\n",
-    "1. Validate the standard META TAGs of:",
-    "https://html.spec.whatwg.org/"
-    "multipage/semantics.html#standard-metadata-names\n",
-    "2. Validate HTML, CSS, and Javascript",
-    "Validation of HTML, CSS is through 'W3C' "
-    "=> World Wide Web Consortium",
-    "Validation of Javascript is through CodeBeautify\n",
+    "Webalyzer is a simple app that validates the "
+    "HTML, CSS and Javascript of a website. ",
+    "The initial idea was inspired by TextMechanic, and "
+    "was called Websichanic,", "but was rebranded to fit "
+    "the form it has shaped during development.\n",
+    "HTML validates through validator.nu, "
+    "a clone of 'W3C' => World Wide Web Consortium. ",
+    "CSS validates through the jigsaw.w3c.org validator.",
+    "Javascript validates through codebeautify.org.\n",
+    "Webalyzer was made as part of Code Institutes "
+    "3rd portfolio project assessment.", "\"Python Essentials\"\n",
+    "The author @MTraveller - https://github.com/MTraveller,",
+    "and can be reached at https://www.linkedin.com/in/mtantouri\n",
+    "Webalyzer will ask you for a URL to validate, on the next screen.\n",
 )
 
 
