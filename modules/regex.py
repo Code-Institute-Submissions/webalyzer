@@ -2,14 +2,8 @@
 
 import re
 
-# FULL_URL regex code Source:
-# geeksforgeeks.org/check-if-an-url-is-valid-or-not-using-regular-expression/
-# Regex code to check URL
-FULL_URL = re.compile("((http|https)://)(\\w+)?" +
-                      "[a-zA-Z0-9@:%._\\+~#?&//=]" +
-                      "{2,256}\\.[a-z]" +
-                      "{2,6}\\b([-a-zA-Z0-9@:%" +
-                      "._\\+~#?&//=]*)")
+VALIDATE_URL = re.compile(
+    r"((?:(?:https)|(?: http))+(?::\/\/)+(?:[^:\/?\n]+).*)")
 
 # Regex to extract whole domain name from http to (e.g. .com, etc)
 # Or just the domain name like in nike in
