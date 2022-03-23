@@ -6,22 +6,12 @@ from time import sleep
 from subprocess import run
 import requests
 import urllib3
-# from getch import pause
 from requests.exceptions import HTTPError
 from modules.slow_print import sprint, wprint
 from modules.prints import print_brand_name, del_last_lines_up
+from modules.regex import FULL_URL
 from modules.validate.validate_input import Validate
 from modules.options import run_choices
-
-
-# Regex Source:
-# geeksforgeeks.org/check-if-an-url-is-valid-or-not-using-regular-expression/
-# Regex code to check URL
-REGEX = ("((http|https)://)(\\w+)?" +
-         "[a-zA-Z0-9@:%._\\+~#?&//=]" +
-         "{2,256}\\.[a-z]" +
-         "{2,6}\\b([-a-zA-Z0-9@:%" +
-         "._\\+~#?&//=]*)")
 
 
 def test_response_url(url_link):
@@ -74,7 +64,7 @@ def validate_url(url):
         if valid, sends the url to test_response_url
     """
 
-    compiled_regex = re.compile(REGEX)
+    compiled_regex = re.compile(FULL_URL)
     try:
         if not re.search(compiled_regex, str(url)):
             raise ValueError(
