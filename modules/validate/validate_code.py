@@ -44,16 +44,14 @@ class ValidateCode:
                         'Accept': 'text/html',
                         'Accept-Encoding': 'gzip, compress', }
 
-        if self.option == '1':
-            with requests.Session() as re_s:
-                re_s = cfscrape.create_scraper()
-                re_s.headers = self.headers
+        with requests.Session() as re_s:
+            re_s = cfscrape.create_scraper()
+            re_s.headers = self.headers
+
+            if self.option == '1':
                 res = re_s.get(self.html)
 
-        else:
-            with requests.Session() as re_s:
-                re_s = cfscrape.create_scraper()
-                re_s.headers = self.headers
+            else:
                 res = re_s.get(self.css)
 
         self.data = BeautifulSoup(res.content, 'html5lib')
