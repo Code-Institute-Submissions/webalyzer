@@ -41,14 +41,13 @@ YES_NO = (
 
 WEBALYZER = (
     "Webalyzer is a simple app that validates the "
-    "HTML, CSS and Javascript of a website. ",
+    "HTML and CSS of a website. ",
     "The initial idea was inspired by TextMechanic, and "
     "was called Websichanic,", "but was rebranded to fit "
     "the form it has taken during development.\n",
-    "HTML validates through validator.nu, "
+    "HTML validates through validator.nu, ",
     "a clone of 'W3C' => World Wide Web Consortium. ",
-    "CSS validates through the jigsaw.w3c.org validator.",
-    "Javascript validates through codebeautify.org.\n",
+    "CSS validates through the jigsaw.w3c.org validator.\n",
     "Webalyzer was made as part of Code Institutes "
     "3rd portfolio project assessment.", "\"Python Essentials\"\n",
     "The author @MTraveller - https://github.com/MTraveller,",
