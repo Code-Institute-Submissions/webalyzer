@@ -23,7 +23,7 @@ class Validate:
 
     def __init__(self, answer):
         self.answer = answer
-        self.options = 'quit', 'new', 'y', 'n', '1', '2', '3', '4'
+        self.options = 'quit', 'new', 'y', 'n', '1', '2', '3'
 
     def __str__(self):
         return self.answer.lower().strip().replace(' ', '')
@@ -40,17 +40,6 @@ class Validate:
             "\x1b[0;0m\x1b[48;2;38;57;106m \x1b[1;97mWebalyzer "
             "\x1b[0;0;0;0;0m\x1b[3m\x1b[33m does?"
             "   \x1b[0;0m\x1b[23m")), option_input
-
-    @classmethod
-    def read_more_cls(cls, option_input=False):
-        """
-            Defining read more classmethod for optional
-            read more input.
-        """
-
-        return cls(input("Want to read about "
-                         "each option in more detail?"
-                         "   ")), option_input
 
     @classmethod
     def urllink_cls(cls):
