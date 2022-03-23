@@ -44,7 +44,7 @@ WEBALYZER = (
     "HTML, CSS and Javascript of a website. ",
     "The initial idea was inspired by TextMechanic, and "
     "was called Websichanic,", "but was rebranded to fit "
-    "the form it has shaped during development.\n",
+    "the form it has taken during development.\n",
     "HTML validates through validator.nu, "
     "a clone of 'W3C' => World Wide Web Consortium. ",
     "CSS validates through the jigsaw.w3c.org validator.",
