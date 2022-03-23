@@ -25,7 +25,7 @@ def run_choices(validated_url):
             chosen_num[0], chosen_num[1])
         if (
             response_num[0] and
-            (response_num[1] == '1' or '2' or '3')
+            (response_num[1] == '1' or '2')
         ):
             if response_num[1] == '1':
                 validation = Html(response_num[1], validated_url)
@@ -33,8 +33,4 @@ def run_choices(validated_url):
 
             elif response_num[1] == '2':
                 validation = Css(response_num[1], validated_url)
-                validation.err()
-
-            else:
-                validation = Javascript(response_num[1], validated_url)
                 validation.err()
