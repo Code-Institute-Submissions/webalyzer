@@ -1,5 +1,6 @@
 """
-    init run intro
+    This module prints the intro
+    to the terminal.
 """
 
 from time import sleep
@@ -18,6 +19,15 @@ def print_intro():
         check if user wants back story of
         Webalyzer and acts accordingly to
         the answer of the presented input.
+
+        ....
+        Args:
+            None
+        ....
+        Returns:
+            Functions does not explicity return
+            anything but runs get_url_link().
+        ....
     """
     print(BINARY)
 
