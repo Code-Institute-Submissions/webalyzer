@@ -1,5 +1,7 @@
 """
-    init validate URL
+    This module validates the URL
+    that the user has typed into the input
+    when a URL is requested.
 """
 import re
 from time import sleep
@@ -19,6 +21,17 @@ def test_response_url(url_link):
         Function to test response of requested url
         handle and give back feedback incase of any known
         errors.
+
+        ....
+        Args:
+            str(url)
+        ....
+        Returns:
+            If status_code returned is 200, then it'll be
+            sent back and options screen will print.
+            If not 200, depending on type of error,
+            user will be informed in the terminal,
+            with the specific error.
     """
 
     sleep(.2)
@@ -60,8 +73,18 @@ def test_response_url(url_link):
 def validate_url(url):
     """
         Function to validate the url link entered
-        by user against predefined REGEX code and
-        if valid, sends the url to test_response_url
+        by user, against predefined REGEX code and
+        if valid, sends the url to test_response_url()
+
+        ....
+        Args:
+            str(url)
+        ....
+        Returns:
+            If the url contains [http(s), domain and tld],
+            it'll be sent back, if not an ValueError will
+            be raised and the input is repeated.
+        ....
     """
 
     try:
@@ -84,6 +107,12 @@ def get_url_link():
         the URL to REGEX test and response test
         then over to run_choices() function in
         options.py
+
+        ....
+        Returns:
+            The validated str(URL) to run_choices()
+            in options.py
+        ....
     """
 
     run('clear', check=True)
@@ -96,6 +125,9 @@ def get_url_link():
     sleep(1.3)
 
     while True:
+        # Gets the input to print on terminal from validate_input.py
+        # Before receiving the URL the Validate class performs 3 types
+        # of convertion, lower(), strip() and replace(" ", "")
         url_link = Validate.urllink_cls()
 
         if validate_url(url_link) and test_response_url(url_link):
