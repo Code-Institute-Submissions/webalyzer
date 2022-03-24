@@ -188,6 +188,13 @@ def print_outro():
 def del_last_line():
     """
         Function to delete last line
+
+        ....
+        Returns:
+            Functions does not return anything
+            but does return deleting last line
+            in the terminal.
+        ....
     """
 
     # delete last line
@@ -197,6 +204,16 @@ def del_last_line():
 def del_last_lines_up(times):
     """
         Function to delete lines up to (x times)
+
+        ....
+        Args:
+            int(number)
+        ....
+        Returns:
+            Functions does not return anything
+            but does return deleting (x number
+            of times) lines upwards in the terminal.
+        ....
     """
 
     for _ in range(times):
