@@ -1,5 +1,8 @@
 """
-    init validate input module
+    This module handles validation
+    of all inputs made by user and
+    is responsible for providing
+    inputs to user.
 """
 
 import sys
@@ -33,6 +36,15 @@ class Validate:
         """
             Defining background classmethod for
             background input.
+
+            ....
+            Args:
+                str(answer)
+            ....
+            Returns:
+                Function returns an input
+                option_input: bool(True).
+            ....
         """
 
         return cls(input(
@@ -46,6 +58,14 @@ class Validate:
         """
             Defining urllink classmethod for
             url_link input.
+
+            ....
+            Args:
+                str(answer)
+            ....
+            Returns:
+                Function returns an input.
+            ....
         """
 
         return cls(input("Enter your url here: \n"))
@@ -55,6 +75,15 @@ class Validate:
         """
             Defining option classmethod for
             chosen number input.
+
+            ....
+            Args:
+                str(answer)
+            ....
+            Returns:
+                Function returns an input and
+                option_input: bool(True).
+            ....
         """
 
         return cls(input("Option:   ")), option_input
@@ -64,6 +93,15 @@ class Validate:
         """
             Defining another classmethod for
             choosing a another number input.
+
+            ....
+            Args:
+                str(answer)
+            ....
+            Returns:
+                Function returns an input and
+                option_input: str('another').
+            ....
         """
 
         return cls(input("Want to validate another option? "
@@ -75,6 +113,15 @@ class Validate:
             Function to check if then answer is valid.
             *optin is referring to option_input in the defined
             classmethod's, to target specific inputs.
+
+            ....
+            Args:
+                str(answer and optin if (another_cls))
+                bool: (optin) if any, is set to true or false
+            ....
+            Returns:
+                Function returns an input.
+            ....
         """
 
         result = str(answer) in self.options
@@ -94,6 +141,11 @@ class Validate:
             return False, str(answer)
 
         elif str(answer) == 'new':
+            # pylint recommends adding import to the top
+            # but adding this import to the top will result
+            # in ImportError: cannot import name '...'
+            # from partially initialized module '...'
+            # (most likely due to a circular import)
             from modules.validate.validate_url import get_url_link
             get_url_link()
 
