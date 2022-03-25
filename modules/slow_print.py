@@ -16,7 +16,7 @@ def sprint(string):
             str(string)
         ....
         Returns:
-            Functions does not return anything
+            Function does not return anything
             but does return printing on terminal.
         ....
     """
@@ -36,7 +36,7 @@ def wprint(string):
             str(string)
         ....
         Returns:
-            Functions does not return anything
+            Function does not return anything
             but does return printing on terminal.
         ....
     """
