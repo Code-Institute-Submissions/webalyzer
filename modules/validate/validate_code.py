@@ -235,6 +235,8 @@ class Html(ValidateCode):
             ....
         """
 
+        print("Processing Results..")
+        sleep(1)
         try:
             all_errors = self.all_lis.find_all('li')
             if all_errors == "'Html' object has no attribute 'data'":
@@ -245,8 +247,6 @@ class Html(ValidateCode):
             return True
 
         else:
-            print("Processing Results..")
-            sleep(1)
             errors_list = []
             for list_item in all_errors:
                 count = 0
@@ -259,8 +259,6 @@ class Html(ValidateCode):
                 except TypeError:
                     choose_another_option()
                     return True
-
-            del_last_lines_up(5)
 
             print("We received the following errors:\n")
 
