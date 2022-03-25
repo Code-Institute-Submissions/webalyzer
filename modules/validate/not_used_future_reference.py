@@ -10,6 +10,10 @@
     the results successfully, but with too many js
     errors which would ultimately create distrust
     and hurt webalyzer.
+
+    pylint and flake8 will report undefined
+    variables as no depended modules has
+    been imported.
 """
 
 self.request_js_files_falsy = False
