@@ -222,8 +222,6 @@ class Html(ValidateCode):
                 raise AttributeError()
 
             print("Processing Results..")
-            sleep(1)
-            del_last_lines_up(5)
 
             errors = []
             location = []
@@ -234,6 +232,9 @@ class Html(ValidateCode):
                 location.append(loc)
 
             error_list = list(zip(errors, location))
+            error_list = list(set(error_list))
+
+            del_last_lines_up(5)
 
             if len(error_list) != 0:
                 print("We received the following errors:\n")
@@ -314,9 +315,6 @@ class Css(ValidateCode):
                 raise AttributeError()
 
             print("Processing Results..")
-            sleep(1)
-            del_last_lines_up(5)
-
             for tr in self.trs:
                 tr_text = tr.text
 
@@ -329,13 +327,16 @@ class Css(ValidateCode):
                     valid_text[index] = replace_text
                 error_list.append(valid_text)
 
+            del_last_lines_up(5)
+
             if len(error_list) != 0:
-                dups_filtered = list(set(error_list))
+                error_list = set(tuple(err_sub) for err_sub in error_list)
                 print("We received the following errors:\n")
 
-                for err_l in dups_filtered:
+                for err_l in error_list:
                     error_message = re.sub(
                         r"(\s\s+)", ' ', ' '.join(err_l))
+
                     print(error_message)
                     print()
                     sleep(.4)
