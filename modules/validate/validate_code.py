@@ -330,9 +330,10 @@ class Css(ValidateCode):
                 error_list.append(valid_text)
 
             if len(error_list) != 0:
+                dups_filtered = list(set(error_list))
                 print("We received the following errors:\n")
 
-                for err_l in error_list:
+                for err_l in dups_filtered:
                     error_message = re.sub(
                         r"(\s\s+)", ' ', ' '.join(err_l))
                     print(error_message)
