@@ -126,7 +126,10 @@ class Validate:
 
         result = str(answer) in self.options
 
-        if not result:
+        if (
+            not result or
+            (optin is True and str(answer) in ['y', 'n'])
+        ):
             sleep(.2)
             sprint(WRONG)
 
