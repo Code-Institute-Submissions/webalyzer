@@ -2,13 +2,20 @@
 
 import re
 
-VALIDATE_URL = re.compile(
-    r"((?:(?:https)|(?: http))+(?::\/\/)+(?:[^:\/?\n]+).*)")
 
-# Regex to extract whole domain name from http to (e.g. .com, etc)
-# Or just the domain name like in nike in
-# https://nike.com or https://www.nike.com
-# As it turns out it was way harder to validate JS files than anticipated
-# I won't be using these but let them be here for future reference.
-WHOLE_DOMAIN = re.compile(r"((?:(?:https)|(?:http))+(?::\/\/)+(?:[^:\/?\n]+))")
-DOMAIN = re.compile(r"((?:https:)|(?:\w+)|(?:\.|//))+((\w+)?)(?:\.).*")
+# After many hours study about regex
+# I finally found the the solutions to my problems :)
+# For the URL I had initially bored a code from geekforgeeks
+# But it turned out that domains with dashes was deemed not valid.
+
+# VALIDATE_URL finds all valid domains to be valid after many tests,
+# with all kinds of combinations. Well, atleast all domains I've tested.
+
+# VALID_SUBSTRING finds all valid text in an occean of spaces and
+# newlines, be it strings, letters or numbers. So happy!
+
+
+VALIDATE_URL = re.compile(
+    r"((?:(?:https|http))+(?::\/\/)+(?:[^:\/?\n]+).*)")
+
+VALID_SUBTRING = re.compile(r"[^ ]*(?:(?:\w+.*))")
