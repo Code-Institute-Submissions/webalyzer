@@ -50,14 +50,16 @@ def run_choices(validated_url):
                 validation = Css(response_num[1], validated_url)
                 validation.err()
 
-        else:
-            # Because of how the app is constructed, there's
-            # checks and choices that makes this else block
-            # never trigger, added this, just in case.
-            print("Critical Error, rebooting app, sorry!")
-            sleep(2)
-            # Source for restarting app:
-            # daniweb.com/programming/software-development
-            # /code/260268/restart-your-python-program
-            python = sys.executable
-            os.execl(python, python, * sys.argv)
+            else:
+                pass
+
+    # Because of how the app is constructed, there's
+    # checks and choices that makes this the below
+    # never trigger, added this, just in case.
+    print("Critical Error, rebooting app, sorry!")
+    sleep(2)
+    # Source for restarting app:
+    # daniweb.com/programming/software-development
+    # /code/260268/restart-your-python-program
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
