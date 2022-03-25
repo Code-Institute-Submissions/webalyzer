@@ -67,6 +67,12 @@ def test_response_url(url_link):
         del_last_lines_up(5)
         return False
 
+    except requests.exceptions.InvalidSchema:
+        sprint(f"No connection adapters were found for {url_link}")
+        sleep(2)
+        del_last_lines_up(5)
+        return False
+
     return True
 
 
