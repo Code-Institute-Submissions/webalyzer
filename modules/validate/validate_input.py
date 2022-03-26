@@ -138,7 +138,7 @@ class Validate:
             sleep(.2)
             sprint(WRONG)
 
-            if optin == 'bg':
+            if optin == 'bg' or optin == 'another':
                 sleep(.6)
                 del_last_lines_up(4)
 
@@ -146,7 +146,7 @@ class Validate:
                 sleep(.6)
                 del_last_lines_up(3)
 
-            elif not optin or optin == 'another':
+            elif not optin:
                 sleep(.6)
                 del_last_lines_up(4)
 
@@ -167,8 +167,5 @@ class Validate:
         ):
             print_outro()
             sys.exit()
-
-        elif str(answer) == 'y' and optin == 'another':
-            del_last_lines_up(3)
 
         return True, str(answer)
