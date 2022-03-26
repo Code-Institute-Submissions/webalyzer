@@ -1,10 +1,12 @@
 # The 3rd Project Portfolio of CI
 
-### Webalyzer
+## Webalyzer
+
+Is a Python terminal based app that validates the HTML and CSS of a website through validator.nu and jigsaw.w3.org.
 
 Project URL: [View live project](https://webalyzer.herokuapp.com "Webalyzer")
 
-![Mockup](./assets/readme/app-mockup.jpg)
+![Mockup](./assets/readme/mockup-image.png "Webalyzer mockup")
 
 <br>
 
@@ -17,12 +19,12 @@ Project URL: [View live project](https://webalyzer.herokuapp.com "Webalyzer")
         1. I want to understand the site's primary purpose quickly.
         2. I want the app to give options related to it's branding.
         3. I want to use the app without any issues.
-        4. I want the app to continue on until I close the program. 
+        4. I want the app to continue on until I close the program.
+        5. I want the provide an about section if interested.
 
     -   #### Returning Visitor Goals
 
         1. I want the app to offer quick access to it's options.
-        2. I want the app to provide a more in detail section about each option, if needed.
 
         <br>
 
@@ -52,12 +54,9 @@ Project URL: [View live project](https://webalyzer.herokuapp.com "Webalyzer")
 
 ## Planes
 
-
 <br>
 
 ### Surface
-
-<br>
 
 #### Wireframe
 
@@ -71,7 +70,7 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
 
 -   #### Colour Scheme
 
-    -   The app uses three main colors which are:
+    -   All imagery was produced from the shades of the main three colors:
     
     | #HEX | Color |
     |:--------:|:--------:|
@@ -79,21 +78,21 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
     | #444655 |![Gradient Palette](./assets/readme/444655.png)|
     | #A8AABC |![Gradient Palette](./assets/readme/a8aabc.png)|
 
-    The background image was produced from the shades of the main three colors.
+    - The terminal uses the colors of; base white, yellow, blue and red.
 
     <br>
 
 -   #### Imagery
 
-    -   I created the images myself and was created to make the app more appealing.
-    -   The colors and images all serve to be aligned and assist in the name and branding of app.
+    -   I created the images myself to make the app more appealing.
+    -   The colors and images all serve to be aligned with and assist in the branding of the app.
     -   They also intent to give the app an identity the user can relate to, lifting it's overall impression.
 
     <br>
     
-    All images were produced using adobe's illustrator.
+    All images were produced using Adobe illustrator:
 
-    Background image:
+    - Background image:
 
     <br>
 
@@ -101,13 +100,19 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
 
     <br>
 
-    Favicon image:
+    - Favicon image:
 
     <br>
 
     ![Background Image](./assets/readme/favicon-for-app-illustrator-min.jpg)
 
     <br>
+
+    - Social image card:
+
+    <br>
+
+    ![Social Image Card]()
 
 ### Skeleton
 
@@ -134,8 +139,6 @@ The minimum feature the app must contain includes the following features:
 
 - To validate the CSS of a webpage.
 
-- To validate the Javascript of a website.
-
 #### Desired features
 
 The desired features the app could contain includes the following features:
@@ -143,6 +146,8 @@ The desired features the app could contain includes the following features:
 - To be able to validate the standard `https://html.spec.whatwg.org` meta tags of a website.
 
 - To be able to scrape and validate all links of a webpage.
+
+- To validate the JavaScript of a webpage.
 
 - To validate a Python file.
 
@@ -152,11 +157,11 @@ The desired features the app could contain includes the following features:
 
 ### Strategy
 
-Webalyzer, short for "website analyzer" based on real world website -TextMechanic, a site I have used and known for a long time. A user can manipulate text, like removing empty lines, trim lines and empty spaces. Tools like removing duplicates and adding string(s) before or/and after a line etc. It's a good toolset to have when working with text. I wanted to create something similar and based on "TM" I came up with Webalyzer. An app that takes an input and gives feedback to the user.
-
-Asking myself, what's current need based on my current surounding. Web Developers! Both new and senior web developers. Questions comes to mind like; what could be used by the web developers, that could potientially save time? What features could be desired? As a web developer saving time where possible is and will be always good, as time is limited.
+Asking myself, what's current need based on my current surounding. Web Developers! Questions comes to mind like; what could be used by web developers, that could potientially save time? What features could be desired? As a web developer saving time where possible is and will be always good, as time is limited.
 
 Nowadays developers need to check their code through multiple validators, going from one app or site to another. What about those who does not use VScode or other code editors with linting capability? That's where Webalyzer gets into the picture.
+
+Webalyzer, short for "website analyzer" based on real world website's like validator.nu  a HTML validator(a validator.w3.org clone) and jigsaw.w3.org a CSS validator. The app takes an input for a URL and displays the result to the user.
 
 <br>
 
@@ -174,34 +179,34 @@ Nowadays developers need to check their code through multiple validators, going 
 
 <br>
 
-1. [Mockflow:](https://mockflow.com/)
-    - Mockflow was used to create the [wireframes](#wireframe) during the design process.
-2. [Git:](https://git-scm.com/)
+1. [Mockflow:](https://mockflow.com/ "mockflow.com")
+    - Mockflow was used to create the wireframes during the design process.
+2. [Git:](https://git-scm.com/ "git-scm.com")
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-3. [GitHub:](https://github.com/)
+3. [GitHub:](https://github.com/ "github.com")
     - GitHub is used to store the project's code after being pushed from Git.
-4. [Heroku:](https://www.heroku.com)
+4. [Heroku:](https://www.heroku.com "heroku.com")
     - Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps.
-5. [Requests:](https://pypi.org/project/requests/)
+5. [Requests:](https://pypi.org/project/requests/ "pypi.org/project/requests/")
     - Requests is a simple, yet elegant, HTTP library.
-6. [html5lib:](https://pypi.org/project/html5lib/)
+6. [html5lib:](https://pypi.org/project/html5lib/ "pypi.org/project/html5lib/")
     - html5lib is a pure-python library for parsing HTML. It is designed to conform to the WHATWG HTML specification, as is implemented by all major web browsers.
-7. [bs4:](https://pypi.org/project/beautifulsoup4/)
+7. [bs4:](https://pypi.org/project/beautifulsoup4/ "pypi.org/project/beautifulsoup4/")
     - Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.
-8. [sys:](https://docs.python.org/3/library/sys.html)
+8. [sys:](https://docs.python.org/3/library/sys.html "docs.python.org/3/library/sys.html")
     - This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. It is always available.
-9. [time:](https://docs.python.org/3/library/time.html)
+9. [time:](https://docs.python.org/3/library/time.html "docs.python.org/3/library/time.html")
     - This module provides various time-related functions.
-10. [re:](https://docs.python.org/3/library/re.html)
+10. [re:](https://docs.python.org/3/library/re.html "docs.python.org/3/library/re.html")
     - This module provides regular expression matching operations similar to those found in Perl.
-11. [run:](https://docs.python.org/3/library/subprocess.html#subprocess.run)
-    - Used to run new codes and applications by creating new processes.
-12. [httperror:](https://docs.python.org/3/library/urllib.error.html#urllib.error.HTTPError)
+12. [httperror:](https://docs.python.org/3/library/urllib.error.html#urllib.error.HTTPError "docs.python.org/3/library/urllib.error.html")
     - Useful when handling exotic HTTP errors.
-13. [sleep:](https://docs.python.org/3/library/time.html#time.sleep)
-    - Delay execution for a given number of seconds. The argument may be a floating point number for subsecond precision.
-14. [tprint from art:](https://pypi.org/project/art/)
+13. [tprint from art:](https://pypi.org/project/art/ "pypi.org/project/art/")
     - ART is a Python lib for text converting to ASCII art
+14. [Lucidchart:](https://www.lucidchart.com "lucidchart.com")
+    - Lucidchart is the intelligent diagramming application that brings teams together to make better decisions and build the future.
+15. [Adobe Illustrator:](https://www.adobe.com/products/illustrator.html "adobe.com/products/illustrator.html")
+    - Adobe Illustrator is vector-based graphics software that lets you scale down your artwork for mobile screens or scale up to billboard size.
 
     <br>
 
@@ -225,7 +230,7 @@ Initially I had a small fight with Heroku and finally realized it was out of the
 
 ## Testings
 
-
+Intensive testing were done and can be read in [Testings.md](./assets/readme/testings.md)
 
 <br>
 
@@ -238,6 +243,11 @@ Initially I had a small fight with Heroku and finally realized it was out of the
 
 ### Validate Python
 
+Validation of all Python code was with PEP8's online checker and all code in all files returned; Alright!
+
+<br>
+
+![PEP8]()
 
 <br>
 
@@ -263,17 +273,13 @@ Initially I had a small fight with Heroku and finally realized it was out of the
 
 ## Credits
 
-### Code
-
-
-
 <br>
 
 ### Sources Used
 
-[Python docs](https://docs.python.org/3.10/)
+[Python Docs](https://docs.python.org/3.10/)
 
-[Python peps](https://peps.python.org/pep-0000/)
+[Python Peps](https://peps.python.org/pep-0000/)
 
 [Stackoverflow](https://stackoverflow.com)
 
@@ -281,7 +287,7 @@ Initially I had a small fight with Heroku and finally realized it was out of the
 
 [Pypi](https://pypi.org)
 
-[whatwg.org/#standard-metadata-names:](https://html.spec.whatwg.org/multipage/semantics.html#standard-metadata-names)
+[ANSI Escape Sequences:](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797)
 
 <br>
 
