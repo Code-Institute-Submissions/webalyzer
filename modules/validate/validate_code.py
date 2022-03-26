@@ -219,6 +219,10 @@ class Html(ValidateCode):
                   "validator has an issue.\n")
             sleep(3)
 
+        else:
+            print("Processing Results..")
+            sleep(1)
+
     def err(self):
         """
             Function to filter
@@ -235,8 +239,6 @@ class Html(ValidateCode):
             ....
         """
 
-        print("Processing Results..")
-        sleep(1)
         try:
             all_errors = self.all_lis.find_all('li')
             if all_errors == "'Html' object has no attribute 'data'":
@@ -264,7 +266,7 @@ class Html(ValidateCode):
 
             for error in errors_list:
                 for line in error:
-                    print(line)
+                    print("On line:", line)
                 sleep(.4)
                 print()
 
@@ -312,8 +314,9 @@ class Css(ValidateCode):
                   "that the validator has an issue.\n")
             sleep(3)
 
-        print("Processing Results..")
-        sleep(1)
+        else:
+            print("Processing Results..")
+            sleep(1)
 
     def err(self):
         """
@@ -363,7 +366,7 @@ class Css(ValidateCode):
                     error_message = re.sub(
                         r"(\s\s+)", ' ', ' '.join(err_l))
 
-                    print(error_message)
+                    print("On line:", error_message)
                     print()
                     sleep(.4)
 
