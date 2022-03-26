@@ -6,9 +6,10 @@
 from time import sleep
 from subprocess import run
 from getch import pause
-from modules.prints import del_last_line  # , del_last_lines_up
+from modules.prints import del_last_line
+from modules.slow_print import sprint
 from modules.prints import (BINARY, print_brand_name,
-                            print_about, print_yes_no)
+                            print_about, YES_NO)
 from modules.validate.validate_url import get_url_link
 from modules.validate.validate_input import Validate
 
@@ -42,7 +43,7 @@ def print_intro():
     sleep(1)
 
     while True:
-        print_yes_no()
+        sprint(YES_NO)
         sleep(.3)
 
         # Creating a new Validate object
