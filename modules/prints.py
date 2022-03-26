@@ -8,7 +8,6 @@ import sys
 from subprocess import run
 from time import sleep
 from art import tprint
-from modules.slow_print import sprint
 
 
 BINARY = (
@@ -34,8 +33,7 @@ BINARY = (
 YES_NO = (
     "Please use '\x1b[1;32my\x1b[0;0m' "
     "for \x1b[1;32mYes\x1b[0;0m, "
-    "'\x1b[1;31mn\x1b[0;0m' for \x1b[1;31mNo\x1b[0;0m "
-    "or '\x1b[1;95mquit\x1b[0;0m' to \x1b[1;95mQuit\x1b[0;0m the app"
+    "'\x1b[1;31mn\x1b[0;0m' for \x1b[1;31mNo\x1b[0;0m."
 )
 
 
@@ -124,14 +122,6 @@ QUITORNEW = (
     "will \x1b[1;95mQuit\x1b[0;0m the app or"
     " validate a \x1b[1;94mNew\x1b[0;0m URL ;)"
 )
-
-
-def print_yes_no():
-    """
-        Prints "yes / no / quit" above input
-    """
-
-    sprint(YES_NO)
 
 
 def print_brand_name():
