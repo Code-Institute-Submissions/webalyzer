@@ -156,23 +156,22 @@ class ValidateCode:
                   "reached, please try again, later.")
 
         else:
-            if self.res_check:
-                if self.option == '1':
-                    print("Checking Successfull!")
-                    sleep(1)
-                    del_last_lines_up(1)
-                    print("Retriving Results :)")
-                    res = re_s.get(self.html)
-                    sleep(1)
-                    del_last_lines_up(1)
-                else:
-                    print("Checking Successfull!")
-                    sleep(1)
-                    del_last_lines_up(1)
-                    print("Retriving Results :)")
-                    res = re_s.get(self.css)
-                    sleep(1)
-                    del_last_lines_up(1)
+            if self.option == '1':
+                print("Checking Successfull!")
+                sleep(1)
+                del_last_lines_up(1)
+                print("Retriving Results :)")
+                res = re_s.get(self.html)
+                sleep(1)
+                del_last_lines_up(1)
+            else:
+                print("Checking Successfull!")
+                sleep(1)
+                del_last_lines_up(1)
+                print("Retriving Results :)")
+                res = re_s.get(self.css)
+                sleep(1)
+                del_last_lines_up(1)
 
             self.data = BeautifulSoup(res.content, 'html5lib')
             self.data.prettify()
