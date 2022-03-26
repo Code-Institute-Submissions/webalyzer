@@ -20,8 +20,7 @@ from modules.regex import VALID_SUBTRING
 
 def run_options():
     """
-        Function to display
-        options.
+        Function to display options.
 
         ....
         Args:
@@ -37,11 +36,10 @@ def run_options():
     run_choices_screen()
 
 
-def error_choose_another_option():
+def choose_another_option_input():
     """
         Function to display another
-        option input to user if response
-        from service isn't 200.
+        option input.
 
         ....
         Args:
@@ -52,19 +50,44 @@ def error_choose_another_option():
         ....
     """
 
-    # Creating a new Validate object
-    another = Validate.another_cls()
-    # Validating the input against valid items
-    another[0].validate_input(another[0], another[1])
+    while True:
+        # Creating a new Validate object
+        another = Validate.another_cls()
+        # Validating the input against valid items
+        response_another = another[0].validate_input(
+            another[0], another[1])
 
+        if response_another[0] and response_another[1] == 'y':
+            break
+
+
+def error_choose_another_option():
+    """
+        Function to trigger
+        choose_another_option_input() &
+        run_options() functions
+        to user if response from service
+        isn't 200, 201 or 202.
+
+        ....
+        Args:
+            None
+        ....
+        Returns:
+            No explicit return set.
+        ....
+    """
+
+    choose_another_option_input()
     run_options()
 
 
 def choose_another_option():
     """
-        Function to display another
-        option input to user when code
-        has been validated.
+        Function to trigger
+        choose_another_option_input() &
+        run_options() functions to user
+        when code has been validated.
 
         ....
         Args:
@@ -74,14 +97,10 @@ def choose_another_option():
             No explicit return set.
         ....
     """
+
     del_last_lines_up(1)
     print("Well done, there were no errors!")
-
-    # Creating a new Validate object
-    another = Validate.another_cls()
-    # Validating the input against valid items
-    another[0].validate_input(another[0], another[1])
-
+    choose_another_option_input()
     run_options()
 
 
