@@ -32,7 +32,7 @@ class Validate:
         return self.answer.lower().strip().replace(' ', '')
 
     @classmethod
-    def background_cls(cls, option_input=False):
+    def background_cls(cls, option_input='bg'):
         """
             Defining background classmethod for
             background input.
@@ -43,7 +43,7 @@ class Validate:
             ....
             Returns:
                 Function returns an input
-                option_input: bool(True).
+                option_input: bool(False).
             ....
         """
 
@@ -104,9 +104,13 @@ class Validate:
             ....
         """
 
-        return cls(input("Want to validate another option? "
+        return cls(input("Want to validate another option?\n"
                          "Use '\x1b[1;32my\x1b[0;0m' "
-                         "for \x1b[1;32mYes\x1b[0;0m:   ")), option_input
+                         "for \x1b[1;32mYes\x1b[0;0m, "
+                         "'\x1b[1;94mnew\x1b[0;0m' for a "
+                         "'\x1b[1;94mnew URL\x1b[0;0m' "
+                         "or '\x1b[1;31mn\x1b[0;0m' to "
+                         "\x1b[1;31mQuit\x1b[0;0m:   ")), option_input
 
     def validate_input(self, answer, optin):
         """
@@ -128,12 +132,17 @@ class Validate:
 
         if (
             not result or
-            (optin is True and str(answer) in ['y', 'n'])
+            (optin is True and str(answer) in ['y', 'n']) or
+            (optin == 'bg' and str(answer) in ['new', 'quit'])
         ):
             sleep(.2)
             sprint(WRONG)
 
-            if optin:
+            if optin == 'bg':
+                sleep(.6)
+                del_last_lines_up(4)
+
+            elif optin:
                 sleep(.6)
                 del_last_lines_up(3)
 
