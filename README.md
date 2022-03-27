@@ -114,25 +114,37 @@ I created wireframes for mobile and desktop screens, while both terminal and rel
 
     ![Social Image Card](./assets/social-image-card.jpg)
 
+<br>
+
 ### Skeleton
 
 <br>
+
+The app will greet the user with a welcome screen where the user can choose between 2 options yes or no options, read about Webalyzer, or continue.
 
 ![Intro](./assets/readme/intro.jpg)
 
 <br>
 
+Choosing to read about Webalyzer, the user will be able to read a few short lines that summarize what Webalyzer is all about and who made it.
+
 ![About](./assets/readme/about.jpg)
 
 <br>
+
+Whether choosing not to read about Webalyzer or continuing after reading, the user will be presented with a screen that has an input to put a URL.
 
 ![Ask for url](./assets/readme/ask-for-url.jpg)
 
 <br>
 
+After successfully validating the URL, the user will be met with two choices. 1. option to validate HTML or 2. option to validate CSS. While the URL is being validated, the user receives feedback with the intention that the app is working and something is happening. Depending on the result, the user will see a no error message and choose to validate another option, another URL, or quit. If the validation includes errors, the user will see a list of errors, on which line, which error, and for what precisely as the user would if visited the 3rd-party validator.
+
 ![Options](./assets/readme/options.gif)
 
 <br>
+
+When the user chooses to quit the app, an outro will show with Webalyzer's name and a short friendly goodbye message.
 
 ![Outro](./assets/readme/outro.jpg)
 
@@ -255,7 +267,7 @@ The more I shifted my mindset towards object-oriented programming during develop
 
 I am always on the lookout for how to optimize for better, smarter, shorter, and more performant code.
 
-Like adding a `timeout="10"` to the initial URL input response testing, I cut the wait from 1 min 40 s down to 14s from URLs with timeouts. The main drive for this addition was not to have users become impatient.
+Like adding a `timeout="10"` to the initial URL input response testing, I cut the wait from 1 min 40 sec down to 14 sec for URLs with timeouts. The main drive for this addition was not to have users become impatient.
 
 During development, try: except: and else: blocks are critical for the app's success, especially when dealing with 3rd-party sources.
 
