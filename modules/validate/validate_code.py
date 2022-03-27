@@ -267,33 +267,35 @@ class Html(ValidateCode):
             return True
 
         else:
-            errors_list = []
-            for list_item in all_errors:
-                count = 0
-                try:
+            try:
+                errors_list = []
+                for list_item in all_errors:
+                    count = 0
                     for li in list_item.find('li', {'class': 'error'}):
                         if count == 2:
                             continue
                         errors_list.append(li.text)
                         count += 1
-                except TypeError:
-                    choose_another_option()
-                    return True
 
-            print("We received the following errors:\n")
+            except TypeError:
+                choose_another_option()
+                return True
 
-            for error in errors_list:
-                for line in error:
-                    print("On line:", line)
-                sleep(.4)
-                print()
+            else:
+                print("We received the following errors:\n")
 
-            pause(message="\x1b[3mPress any key to continue...\x1b[23m")
-            del_last_lines_up(1000)
-            print_brand_name()
-            run_choices_screen()
+                for error in errors_list:
+                    for line in error:
+                        print("On line:", line)
+                    sleep(.4)
+                    print()
 
-            return True
+                pause(message="\x1b[3mPress any key to continue...\x1b[23m")
+                del_last_lines_up(1000)
+                print_brand_name()
+                run_choices_screen()
+
+                return True
 
 
 class Css(ValidateCode):
@@ -353,7 +355,6 @@ class Css(ValidateCode):
             ....
         """
 
-        error_list = []
         try:
             if self.trs in self.trs == "'Css' object has no attribute 'trs'":
                 raise AttributeError()
@@ -363,6 +364,7 @@ class Css(ValidateCode):
             return True
 
         else:
+            error_list = []
             for tr in self.trs:
                 tr_text = tr.text
 
@@ -376,11 +378,12 @@ class Css(ValidateCode):
                 error_list.append(valid_text)
 
             if len(error_list) != 0:
-                error_list = set(tuple(err_sub) for err_sub in error_list)
+                error_list_wo_dups = set(tuple(err_sub)
+                                         for err_sub in error_list)
                 del_last_lines_up(5)
                 print("We received the following errors:\n")
 
-                for err_l in error_list:
+                for err_l in error_list_wo_dups:
                     error_message = re.sub(
                         r"(\s\s+)", ' ', ' '.join(err_l))
 
