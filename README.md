@@ -116,7 +116,26 @@ I created wireframes for mobile and desktop screens, while both terminal and rel
 
 ### Skeleton
 
-(How the infomation implemented), (how will the user navigate), (how the content relate to each other, low, mid top priority, how and where to position content)?
+<br>
+
+![Intro](./assets/readme/intro.jpg)
+
+<br>
+
+![About](./assets/readme/about.jpg)
+
+<br>
+
+![Ask for url](./assets/readme/ask-for-url.jpg)
+
+<br>
+
+![Options](./assets/readme/options.gif)
+
+<br>
+
+![Outro](./assets/readme/outro.jpg)
+
 <br>
 
 ### Structure
@@ -234,16 +253,75 @@ The produced code successfully validated regular non-minified JS files, but give
 
 The more I shifted my mindset towards object-oriented programming during development, the more I understood the Python language and its capabilities. Its vast support and unlimited opportunities to implement ideas made me confident using Python and realizing how easy Python is to learn and use.
 
+I am always on the lookout for how to optimize for better, smarter, shorter, and more performant code.
+
+Like adding a `timeout="10"` to the initial URL input response testing, I cut the wait from 1 min 40 s down to 14s from URLs with timeouts. The main drive for this addition was not to have users become impatient.
+
+During development, try: except: and else: blocks are critical for the app's success, especially when dealing with 3rd-party sources.
+
+Adding features upon features, lots of testing needs to happen. When I added try - except: blocks and noticed some performance degrade depending where the try: was added and items included. Trying to find the sweet spot, I successfully gained better performance at the end of the day.
+
+Regex comes in handy when dealing with text and URLs, and one can void many exceptions errors along the way.
+
+![Avoid bad urls](./assets/readme/regex-for-urls.jpg)
+
+<br>
+
+I can say that I learned a lot about the Python language and feel confident working with it, but I still have much to learn and try.
+
 <br>
 
 ## Testings
 
+### Python Code
+
 Intensive testing was done and is available here: [Testings.md](./assets/readme/testings.md)
+
+### Lighthouse
+
+Adding an extra google font with a rel attribute of preload, I successfully cut down the render-blocking time from 1.23s to 0.48s, which is excellent.
+
+| Before Preload |
+|:--------:|
+| ![app-page](./assets/readme/before-google-preload.jpg) |
+
+| After Preload |
+|:--------:|
+| ![app-page](./assets/readme/after-google-preload.jpg) |
+
+| App Page |
+|:--------:|
+| ![app-page](./assets/readme/lighthouse-mobile.jpg) |
+
+<br>
+
+The app was also testing with [color.a11y.com/Contrast](https://color.a11y.com/Contrast/ "color.a11y.com/Contrast") for any accessability issues.
+
+![Result](./assets/readme/accessibility-webalyzer.jpg)
 
 <br>
 
 ### Bugs
 
+I have grown fond of eliminating bugs found in my code as if I am intentionally trying to call them out and spot them wherever possible.
+
+<br>
+
+I suddenly was faced with a loop that, at first, didn't seem to be found. The issue was I forgot to break out of the loop upon moving and refactoring code. Including the below in red, I successfully fixed the problem.
+
+![While loop bug](./assets/readme/while-loop-bug.jpg)
+
+<br>
+
+A bug related to the above also appeared while testing the app as both 'y' and 'n' where allowed inputs but was not ment to be valid at the options screen.
+
+![Y & N bug](./assets/readme/y-n-bug.jpg)
+
+<br>
+
+The solution was to add an if statement targeting the said letters as shown below.
+
+![Solution Y & N bug](./assets/readme/solution-to-y-n-options-answer.jpg)
 
 <br>
 
@@ -253,9 +331,6 @@ Intensive testing was done and is available here: [Testings.md](./assets/readme/
 
 I ran all Python code against PEP8's online checker with no errors reported. See screenshots here: [pep8](./assets/readme/pep8.md)
 
-<br>
-
-![PEP8]()
 
 <br>
 
@@ -285,21 +360,37 @@ I ran all Python code against PEP8's online checker with no errors reported. See
 
 ### Sources Used
 
-[Python Docs](https://docs.python.org/3.10/)
+[Python Docs](https://docs.python.org/3.10/ "docs.python.org")
 
-[Python Peps](https://peps.python.org/pep-0000/)
+[Python Requests Docs](https://docs.python-requests.org/en/latest/user/quickstart/ "docs.python-requests.org")
 
-[Stackoverflow](https://stackoverflow.com)
+[Python Peps](https://peps.python.org/pep-0000/ "peps.python.org")
 
-[Regex101](https://regex101.com)
+[Beautiful Soup Doc](https://www.crummy.com/software/BeautifulSoup/bs4/doc/ "crummy.com/software/BeautifulSoup/bs4/doc/")
 
-[Pypi](https://pypi.org)
+[Stackoverflow](https://stackoverflow.com "stackoverflow.com")
 
-[ANSI Escape Sequences:](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797)
+[Regex101](https://regex101.com "regex101.com")
+
+[Pypi](https://pypi.org "pypi.org")
+
+[ANSI Escape Sequences:](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797 "github.com/fnky/")
+
+[Extended ASCII](https://theasciicode.com.ar/extended-ascii-code/box-drawings-double-horizontal-line-character-ascii-code-205.html "theasciicode.com.ar")
+
+[thisPointer Regex](https://thispointer.com/python-remove-characters-from-string-by-regex-4-other-ways/ "thispointer.com")
+
+[umbraco](https://umbraco.com/knowledge-base/http-status-codes/ "umbraco.com")
+
+Special thanks to [Jayant Malik](https://stackoverflow.com/users/13525989/jayant-malik "stackoverflow.com/users/13525989/jayant-malik") for providing an excellent explanation of Python's circular import issue.
+
+[Stackoverflow ](https://stackoverflow.com/a/62303448 "https://stackoverflow.com/questions/59156895/cannot-import-name-mydb-from-partially-initialized-module-connection-in-pyth")
 
 <br>
 
 ## Acknowledgement
+
+No code within this project has been copied other than the provided base template by Code Institute. The sources used above provided guidance throughout the development.
 
 This project is part of the "Full Stack Software Developer Diploma" at [Code Institute](https://codeinstitute.net/).
 
