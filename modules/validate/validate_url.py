@@ -38,7 +38,8 @@ def test_response_url(url_link):
     sprint("Checking website...")
     sleep(2)
     try:
-        response = requests.get(url_link).status_code
+        response = requests.get(url_link,
+                                timeout=10).status_code
         if not response == 200:
             raise HTTPError(
                 f"Response: {response}"
@@ -49,26 +50,14 @@ def test_response_url(url_link):
         del_last_lines_up(5)
         return False
 
-    except requests.exceptions.InvalidURL:
-        sprint(f"{url_link}: URL has an invalid label.")
-        sleep(2)
-        del_last_lines_up(5)
-        return False
-
     except urllib3.exceptions.LocationParseError:
-        sprint(f"Failed to parse: '{url_link}'")
+        sprint(f"Failed to parse: {url_link}, please try again.")
         sleep(2)
         del_last_lines_up(5)
         return False
 
     except requests.exceptions.ConnectionError:
-        sprint("This site can't be reached, please try again.")
-        sleep(2)
-        del_last_lines_up(5)
-        return False
-
-    except requests.exceptions.InvalidSchema:
-        sprint(f"No connection adapters were found for {url_link}")
+        sprint(f"{url_link} can't be reached, please try again.")
         sleep(2)
         del_last_lines_up(5)
         return False
@@ -76,7 +65,7 @@ def test_response_url(url_link):
     return True
 
 
-def validate_url(url):
+def validate_url(url_link):
     """
         Function to validate the url link entered
         by user, against predefined REGEX code and
@@ -92,11 +81,11 @@ def validate_url(url):
             be raised and the input is repeated.
         ....
     """
-
+    regex_url = re.match(VALIDATE_URL, str(url_link))
     try:
-        if not re.search(VALIDATE_URL, str(url)):
+        if not regex_url:
             raise ValueError(
-                f"URL Error! URL provided: {url}"
+                f"URL Error! URL provided: {url_link}"
             )
     except ValueError as validate_error:
         sprint(f"\nInvalid link: {validate_error}, please try again.")
