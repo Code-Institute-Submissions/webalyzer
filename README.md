@@ -295,9 +295,17 @@ Adding an extra google font with a rel attribute of preload, I successfully cut 
 
 <br>
 
-The app was also testing with [color.a11y.com/Contrast](https://color.a11y.com/Contrast/ "color.a11y.com/Contrast") for any accessability issues.
+### Accessibility
+
+The app was tested with [color.a11y.com/Contrast](https://color.a11y.com/Contrast/ "color.a11y.com/Contrast") for any accessability issues.
 
 ![Result](./assets/readme/accessibility-webalyzer.jpg)
+
+<br>
+
+The social card image was tested with [brandwood.com/a11y/](https://www.brandwood.com/a11y/ "brandwood.com/a11y/") for any accessability issues.
+
+![Result](./assets/readme/a11y-social-card-image.jpg)
 
 <br>
 
