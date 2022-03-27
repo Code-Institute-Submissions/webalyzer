@@ -2,7 +2,7 @@
 
 ## Webalyzer
 
-Is a Python terminal based app that validates the HTML and CSS of a website through validator.nu and jigsaw.w3.org.
+Is a Python terminal-based app that validates the HTML and CSS through validator.nu and jigsaw.w3.org.
 
 Project URL: [View live project](https://webalyzer.herokuapp.com "Webalyzer")
 
@@ -60,7 +60,7 @@ Project URL: [View live project](https://webalyzer.herokuapp.com "Webalyzer")
 
 #### Wireframe
 
-Mockflow.com was used to design the initial layout for the desktop screen only, as the project requirements does not include or mention mobile responsiveness.
+I created wireframes for mobile and desktop screens, while both terminal and reload button are all set to display none for screens below 1279 pixels. Initial project name was websichanic inspired by TextMechanic, later changed to Webalyzer to be aligned with the shape the project has taken.
 
 | Mobile | Desktop |
 |:--------:|:--------:|
@@ -70,7 +70,7 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
 
 -   #### Colour Scheme
 
-    -   All imagery was produced from the shades of the main three colors:
+    -   I produced all imagery from the shades of the primary three colors:
     
     | #HEX | Color |
     |:--------:|:--------:|
@@ -84,9 +84,9 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
 
 -   #### Imagery
 
-    -   I created the images myself to make the app more appealing.
-    -   The colors and images all serve to be aligned with and assist in the branding of the app.
-    -   They also intent to give the app an identity the user can relate to, lifting it's overall impression.
+    -   The purpose of the images is to make the app more appealing.
+    -   The colors and images all serve to be aligned with and assist in the app's branding.
+    -   The images also intend to give the app an identity the user can relate to, lifting its overall impression.
 
     <br>
     
@@ -121,7 +121,7 @@ Mockflow.com was used to design the initial layout for the desktop screen only, 
 
 ### Structure
 
-The structure of app should not be more than 3 levels deep and should be user friendly so that the user quickly finds what the user wants. Below is a chart showcasing the logic structure and functionality of the app. 
+The app's structure should not be more than three levels deep and should be user-friendly to find what the user wants quickly. Below is a chart showcasing the logic structure and functionality of the app.
 
 <br>
 
@@ -207,30 +207,38 @@ Webalyzer, short for "website analyzer" based on real world website's like valid
     - Lucidchart is the intelligent diagramming application that brings teams together to make better decisions and build the future.
 15. [Adobe Illustrator:](https://www.adobe.com/products/illustrator.html "adobe.com/products/illustrator.html")
     - Adobe Illustrator is vector-based graphics software that lets you scale down your artwork for mobile screens or scale up to billboard size.
+16. [Google fonts:](https://fonts.google.com "fonts.google.com")
+    - Google Fonts makes it easy to bring personality and performance to websites and products.
+17. [Font Awesome:](https://fontawesome.com "fontawesome.com")
+    - Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
 
     <br>
 
 ### Dev HTML
 
-The base HTML that came with the initial project template which was provided by Code Institute, was used and slightly altered to move the button below the terminal. Three extra tags where added to give me more freedom to better control the layout of the app and make it aligned with the vizualised identity and brand image set in the design stage.
+Code Institutet provided the base HTML that came with the initial project template, and I slightly altered it to move the reload button below the terminal. I added three extra tags to give me more freedom to better control the app's layout and align it with the visualized identity and brand image set in the design stage.
 
 <br>
 
 ### Dev CSS
 
-Initially I had a small fight with Heroku and finally realized it was out of the scope of this project. I added the CSS code to `/views/layout.html` instead of a custom stylesheet file. That works, but I would rather separate the my code based on language and make it more origanized.
+Initially, I had a small fight with Heroku and realized it was out of this project's scope. Instead of a custom stylesheet file, I added the CSS code to `/views/layout.html`. That works, but I would rather have CSS separate from HTML.
 
 <br>
 
 ### Dev Python
 
+I initially wanted this project to have four options and contemplated how to implement each feature. As it was my first time working with the Python language, I quickly realized that all features I wanted were unrealistic with the short time I had for this project. I implemented only HTML and CSS validation options after leaving out Javascript because of issues related to services validating JS. The tests weren't consistent and unreliable from website to website, especially if JS files were minified or had a nonce attribute.
 
+The produced code successfully validated regular non-minified JS files, but given that successful validation wouldn't be consistent, it would ultimately hurt and put distrust in Webalyzer.
+
+The more I shifted my mindset towards object-oriented programming during development, the more I understood the Python language and its capabilities. Its vast support and unlimited opportunities to implement ideas made me confident using Python and realizing how easy Python is to learn and use.
 
 <br>
 
 ## Testings
 
-Intensive testing were done and can be read in [Testings.md](./assets/readme/testings.md)
+Intensive testing was done and is available here: [Testings.md](./assets/readme/testings.md)
 
 <br>
 
@@ -243,7 +251,7 @@ Intensive testing were done and can be read in [Testings.md](./assets/readme/tes
 
 ### Validate Python
 
-Validation of all Python code was with PEP8's online checker and all code in all files returned; Alright!
+I ran all Python code against PEP8's online checker with no errors reported. See screenshots here: [pep8](./assets/readme/pep8.md)
 
 <br>
 
