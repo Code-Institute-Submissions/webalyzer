@@ -109,8 +109,8 @@ class Validate:
                          "for \x1b[1;32mYes\x1b[0;0m, "
                          "'\x1b[1;94mnew\x1b[0;0m' for a "
                          "'\x1b[1;94mnew URL\x1b[0;0m' "
-                         "or '\x1b[1;31mn\x1b[0;0m' to "
-                         "\x1b[1;31mQuit\x1b[0;0m:   ")), option_input
+                         "or '\x1b[1;95mquit\x1b[0;0m' to "
+                         "'\x1b[1;95mQuit\x1b[0;0m':   ")), option_input
 
     def validate_input(self, answer, optin):
         """
@@ -132,8 +132,9 @@ class Validate:
 
         if (
             not result or
-            (optin is True and str(answer) in ['y', 'n']) or
-            (optin == 'bg' and str(answer) in ['new', 'quit'])
+            optin == 'bg' and str(answer) in ['new', 'quit', '1', '2'] or
+            optin is True and str(answer) in ['y', 'n'] or
+            optin == 'another' and str(answer) in ['n', '1', '2']
         ):
             sleep(.2)
             sprint(WRONG)
@@ -161,10 +162,7 @@ class Validate:
             from modules.validate.validate_url import get_url_link
             get_url_link()
 
-        elif (
-            str(answer) == 'quit' or
-            str(answer) == 'n' and optin == 'another'
-        ):
+        elif str(answer) == 'quit':
             print_outro()
             sys.exit()
 
