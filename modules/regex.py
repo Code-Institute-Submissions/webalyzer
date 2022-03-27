@@ -16,6 +16,8 @@ import re
 
 
 VALIDATE_URL = re.compile(
-    r"((?:(?:https|http))+(?::\/\/)+(?:[^:\/?\n]+).*)")
+    r"(((https|http):\/\/)[^\W]"
+    r"(?:([a-zA-Z\d]+)(?:(\.|\-)|\w+)+).*)"
+)
 
 VALID_SUBTRING = re.compile(r"[^ ]*(?:(?:\w+.*))")
