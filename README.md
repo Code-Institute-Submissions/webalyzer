@@ -60,7 +60,7 @@ Project URL: [View live project](https://webalyzer.herokuapp.com "Webalyzer")
 
 #### Wireframe
 
-I created wireframes for mobile and desktop screens, while both terminal and reload button are all set to display none for screens below 1279 pixels. Initial project name was websichanic inspired by TextMechanic, later changed to Webalyzer to be aligned with the shape the project has taken.
+I created wireframes for mobile and desktop screens, while both terminal and reload button are all set to display none for screens below 1279 pixels. The initial project name was websichanic, inspired by TextMechanic, later changed to Webalyzer to be aligned with the shape the project has taken.
 
 | Mobile | Desktop |
 |:--------:|:--------:|
@@ -112,7 +112,7 @@ I created wireframes for mobile and desktop screens, while both terminal and rel
 
     <br>
 
-    ![Social Image Card]()
+    ![Social Image Card](./assets/social-image-card.jpg)
 
 ### Skeleton
 
