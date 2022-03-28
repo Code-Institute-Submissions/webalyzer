@@ -2,7 +2,7 @@
 
 ## Webalyzer
 
-Is a Python terminal-based app that validates the HTML and CSS through validator.nu and jigsaw.w3.org.
+Is a Python terminal-based app that validates HTML and CSS through validator.nu and jigsaw.w3.org.
 
 Project URL: [View live project](https://webalyzer.herokuapp.com "Webalyzer")
 
@@ -78,7 +78,13 @@ I created wireframes for mobile and desktop screens, while both terminal and rel
     | #444655 |![Gradient Palette](./assets/readme/444655.png)|
     | #A8AABC |![Gradient Palette](./assets/readme/a8aabc.png)|
 
-    - The terminal uses the colors of; base white, yellow, blue and red.
+    - The terminal uses the colors of; base white, yellow, blue, red and magenta.
+
+    <br>
+
+    #### Typography
+
+    -   [VT323](https://fonts.google.com/specimen/VT323?category=Monospace "fonts.google.com/specimen/VT323") is used to give the app a computerized theme.
 
     <br>
 
@@ -92,7 +98,7 @@ I created wireframes for mobile and desktop screens, while both terminal and rel
     
     All images were produced using Adobe illustrator:
 
-    - Background image:
+    -   Background image:
 
     <br>
 
@@ -100,7 +106,7 @@ I created wireframes for mobile and desktop screens, while both terminal and rel
 
     <br>
 
-    - Favicon image:
+    -   Favicon image:
 
     <br>
 
@@ -108,7 +114,7 @@ I created wireframes for mobile and desktop screens, while both terminal and rel
 
     <br>
 
-    - Social image card:
+    -   Social image card:
 
     <br>
 
@@ -174,25 +180,25 @@ The minimum feature the app must contain includes the following features:
 
 The desired features the app could contain includes the following features:
 
-- To be able to validate the standard `https://html.spec.whatwg.org` meta tags of a website.
+- To validate the standard `https://html.spec.whatwg.org` meta tags of a website.
 
-- To be able to scrape and validate all links of a webpage.
+- To scrape and validate all links of a webpage.
 
 - To validate the JavaScript of a webpage.
 
 - To validate a Python file.
 
-- To be able to add bulk URLs to validate/scrape.
+- To add bulk URLs to validate/scrape.
 
 <br>
 
 ### Strategy
 
-Asking myself, what's current need based on my current surounding. Web Developers! Questions comes to mind like; what could be used by web developers, that could potientially save time? What features could be desired? As a web developer saving time where possible is and will be always good, as time is limited.
+I was asking myself what's current needs based on my current surrounding. Web Developers! Questions come to mind: What could web developers use that could potentially save time? What features could be needed? As a web developer, saving time is always good, as time is limited.
 
-Nowadays developers need to check their code through multiple validators, going from one app or site to another. What about those who does not use VScode or other code editors with linting capability? That's where Webalyzer gets into the picture.
+Nowadays, developers need to check their code through multiple validators, going from one app or site to another. What about those who do not use VScode or other code editors with linting capability? That's where Webalyzer gets into the picture.
 
-Webalyzer, short for "website analyzer" based on real world website's like validator.nu  a HTML validator(a validator.w3.org clone) and jigsaw.w3.org a CSS validator. The app takes an input for a URL and displays the result to the user.
+Webalyzer, short for "website analyzer," is based on real-world websites like validator.nu HTML validator(a validator.w3.org clone), and jigsaw.w3.org, a CSS validator. The app takes input for a URL and displays the result to the user.
 
 <br>
 
@@ -217,31 +223,31 @@ Webalyzer, short for "website analyzer" based on real world website's like valid
 3. [GitHub:](https://github.com/ "github.com")
     - GitHub is used to store the project's code after being pushed from Git.
 4. [Heroku:](https://www.heroku.com "heroku.com")
-    - Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps.
+    - Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps. Project is hosted on Heroku for viewing and interacting with the app.
 5. [Requests:](https://pypi.org/project/requests/ "pypi.org/project/requests/")
-    - Requests is a simple, yet elegant, HTTP library.
+    - Requests is a simple, yet elegant, HTTP library. Webalyzer uses requests to interact with 3rd-party app's.
 6. [html5lib:](https://pypi.org/project/html5lib/ "pypi.org/project/html5lib/")
-    - html5lib is a pure-python library for parsing HTML. It is designed to conform to the WHATWG HTML specification, as is implemented by all major web browsers.
+    - html5lib is a pure-python library for parsing HTML. It is designed to conform to the WHATWG HTML specification, as is implemented by all major web browsers. html5lib is used for parsing the HTML of the validators.
 7. [bs4:](https://pypi.org/project/beautifulsoup4/ "pypi.org/project/beautifulsoup4/")
-    - Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.
+    - Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree. Beautiful Soup is used to extract the targeted html of the validators.
 8. [sys:](https://docs.python.org/3/library/sys.html "docs.python.org/3/library/sys.html")
-    - This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. It is always available.
+    - This module provides access to some variables used or maintained by the interpreter and to functions that interact strongly with the interpreter. It is always available. Sys is used for slow printing text on the terminal, restarting the terminal, deleting lines, and exiting the terminal.
 9. [time:](https://docs.python.org/3/library/time.html "docs.python.org/3/library/time.html")
-    - This module provides various time-related functions.
+    - This module provides various time-related functions. Time is used to make the terminal sleep for x seconds.
 10. [re:](https://docs.python.org/3/library/re.html "docs.python.org/3/library/re.html")
-    - This module provides regular expression matching operations similar to those found in Perl.
+    - This module provides regular expression matching operations similar to those found in Perl. Re is used to match regular expression againt URLs and text in HTML.
 12. [httperror:](https://docs.python.org/3/library/urllib.error.html#urllib.error.HTTPError "docs.python.org/3/library/urllib.error.html")
-    - Useful when handling exotic HTTP errors.
+    - Useful when handling exotic HTTP errors. Httperror is used to handle http errors.
 13. [tprint from art:](https://pypi.org/project/art/ "pypi.org/project/art/")
-    - ART is a Python lib for text converting to ASCII art
+    - ART is a Python lib for text converting to ASCII art. ART is used to print ASCII text in the terminal.
 14. [Lucidchart:](https://www.lucidchart.com "lucidchart.com")
-    - Lucidchart is the intelligent diagramming application that brings teams together to make better decisions and build the future.
+    - Lucidchart is the intelligent diagramming application that brings teams together to make better decisions and build the future. Lucid chart is used to make the flow and logic charts.
 15. [Adobe Illustrator:](https://www.adobe.com/products/illustrator.html "adobe.com/products/illustrator.html")
-    - Adobe Illustrator is vector-based graphics software that lets you scale down your artwork for mobile screens or scale up to billboard size.
+    - Adobe Illustrator is vector-based graphics software that lets you scale down your artwork for mobile screens or scale up to billboard size. Illustrator is used to create all images.
 16. [Google fonts:](https://fonts.google.com "fonts.google.com")
-    - Google Fonts makes it easy to bring personality and performance to websites and products.
+    - Google Fonts makes it easy to bring personality and performance to websites and products. Google fonts is used for the typography of app outside of the terminal.
 17. [Font Awesome:](https://fontawesome.com "fontawesome.com")
-    - Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators.
+    - Font Awesome is the Internet's icon library and toolkit, used by millions of designers, developers, and content creators. Github icon is used for the author button.
 
     <br>
 
@@ -263,7 +269,7 @@ I initially wanted this project to have four options and contemplated how to imp
 
 The produced code successfully validated regular non-minified JS files, but given that successful validation wouldn't be consistent, it would ultimately hurt and put distrust in Webalyzer.
 
-The more I shifted my mindset towards object-oriented programming during development, the more I understood the Python language and its capabilities. Its vast support and unlimited opportunities to implement ideas made me confident using Python and realizing how easy Python is to learn and use.
+The more I shifted my mindset towards object-oriented programming during development, the more I understood the Python language and its capabilities. Its vast support and unlimited opportunities to implement ideas made me confident in using Python and realizing how easy Python is to learn and use.
 
 I am always on the lookout for how to optimize for better, smarter, shorter, and more performant code.
 
@@ -271,7 +277,7 @@ Like adding a `timeout="10"` to the initial URL input response testing, I cut th
 
 During development, try: except: and else: blocks are critical for the app's success, especially when dealing with 3rd-party sources.
 
-Adding features upon features, lots of testing needs to happen. When I added try - except: blocks and noticed some performance degrade depending where the try: was added and items included. Trying to find the sweet spot, I successfully gained better performance at the end of the day.
+Adding features upon features, lots of testing needs to happen. When I added try - except: blocks, I noticed some performance degraded depending on where the try: was added and items included. Trying to find the sweet spot, I successfully gained better performance at the end of the day.
 
 Regex comes in handy when dealing with text and URLs, and one can void many exceptions errors along the way.
 
@@ -361,16 +367,85 @@ I ran all Python code against PEP8's online checker with no errors reported. See
 
 ### Fork
 
+How to fork this repository:
+
+1. Log in to GitHub and navigate to [this repository](https://github.com/MTraveller/webalyzer).
+2. You'll see a button called <b>Fork</b> on the top right side of the page. Click the button to create a copy of this repository to your own GitHub account.
+
+![Fork Project](./assets/readme/deployment/fork.jpg)
 
 <br>
 
 ### Clone
 
+How to clone this project:
+
+1. Under the repository’s name, click on the <b>Code</b> button.
+2. In the <b>HTTPS</b> tap, click on the clipboard icon to copy the given URL.
+3. In your IDE of choice, open <b>**git bash**</b>.
+4. Change the current working directory to where you want the cloned directory to be.
+5. Type <b>**git clone**</b>, paste the URL copied from GitHub - https://github.com/MTraveller/webalyzer.git.
+6. Press <b>**enter**</b>, and you are done.
+
+![Clone Project](./assets/readme/deployment/clone.jpg)
 
 <br>
 
 ### Deploy
 
+To deploy the app to Heroku simply navigate to [Heroku.com](https://www.heroku.com "heroku.com") and login to your account or create one if needed. Upon entering your dashboard, create a new app and set the location.
+
+<br>
+
+| New App | Location |
+|:--------:|:--------:|
+| ![app-page](./assets/readme/deployment/create-new-app.jpg) | ![app-page](./assets/readme/deployment/choose-name-location.jpg) |
+
+<br>
+
+First you need to make the settings needed for this app.
+
+<br>
+
+| Settings |
+|:--------:|
+| ![app-page](./assets/readme/deployment/start-with-settings.jpg) |
+
+<br>
+
+| Reveal Config Vars | Config Vars |
+|:--------:|:--------:|
+| ![app-page](./assets/readme/deployment/reveal-config-vars.jpg) | ![app-page](./assets/readme/deployment/config-vars.jpg) |
+
+<br>
+
+| Needed Buildpacks | Choose Buildpacks |
+|:--------:|:--------:|
+| ![app-page](./assets/readme/deployment/needed-buildpacks.jpg) | ![app-page](./assets/readme/deployment/choosing-buildpacks.jpg) |
+
+<br>
+
+Then you need to connect your repository to Heroku.
+
+<br>
+
+| Deploy |
+|:--------:|
+| ![app-page](./assets/readme/deployment/deploy-setup.jpg) |
+
+<br>
+
+| Deploy Method |
+|:--------:|
+| ![app-page](./assets/readme/deployment/deploy-method.jpg) |
+| ![app-page](./assets/readme/deployment/connect-to-repository.jpg) |
+
+<br>
+
+| Deploy |
+|:--------:|
+| ![app-page](./assets/readme/deployment/deploy-app.jpg) |
+| ![app-page](./assets/readme/deployment/view-app.jpg) |
 
 <br>
 
