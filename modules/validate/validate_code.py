@@ -104,6 +104,42 @@ def choose_another_option():
     run_options()
 
 
+def try_res(response):
+    """
+        Function to test reponse
+        of validator.
+
+        ....
+        Args:
+            self.res_check = requests.get()
+        ....
+        Returns:
+            Set to return either True or
+            False depending on the
+            response outcome.
+        ....
+    """
+
+    try:
+        if response not in [200, 201, 202]:
+            raise HTTPError(
+                f"Response: {response}"
+            )
+
+    except HTTPError as http_err:
+        print("Validation Service Error: "
+              f"{http_err}, please try again, later.")
+        return False
+
+    except requests.exceptions.ConnectionError:
+        print("This validation service can't be "
+              "reached, please try again, later.")
+        return False
+
+    else:
+        return True
+
+
 class ValidateCode:
     """
         Class to validate requested
@@ -126,7 +162,7 @@ class ValidateCode:
         self.url = url
 
         self.service = ''
-        self.res_check = 0
+        self.res_validator = None
 
         self.html = f"https://validator.nu/?doc={url}"
         self.css = f"https://jigsaw.w3.org/css-validator/validator?uri={url}"
@@ -137,50 +173,50 @@ class ValidateCode:
                         'Firefox/firefoxversion',
                         'Accept': 'text/html',
                         'Accept-Encoding': 'gzip, compress', }
-        try:
-            with requests.Session() as re_s:
-                re_s = cfscrape.create_scraper()
-                re_s.headers = self.headers
 
-                while self.res_check == 0:
-                    del_last_lines_up(14)
-                    if self.option == '1':
-                        print("Checking Validator.nu Service!")
-                        self.service = "Validator.nu"
-                        self.res_check = requests.get(
-                            'https://validator.nu').status_code
-                        sleep(1.2)
-                        del_last_lines_up(1)
+        self.data = None
 
-                    elif self.option == '2':
-                        print("Checking Jigsaw.w3.org Service!")
-                        self.service = "Jigsaw.w3.org"
-                        self.res_check = requests.get(
-                            'https://jigsaw.w3.org/'
-                            'css-validator/').status_code
-                        sleep(1.2)
-                        del_last_lines_up(1)
+        with requests.Session() as re_s:
+            re_s = cfscrape.create_scraper()
+            re_s.headers = self.headers
 
-                if self.res_check not in [200, 201, 202]:
-                    raise HTTPError(
-                        f"Response: {self.res_check}"
-                    )
-
-        except HTTPError as http_err:
-            print("Validation Service Error: "
-                  f"{http_err}, please try again, later.")
-
-        except requests.exceptions.ConnectionError:
-            print("This validation service can't be "
-                  "reached, please try again, later.")
-
-        else:
+            del_last_lines_up(14)
             if self.option == '1':
+                print("Checking Validator.nu Service!")
+                self.service = "Validator.nu"
+                self.res_check = requests.get(
+                    'https://validator.nu').status_code
+                sleep(1.2)
+                del_last_lines_up(1)
+
+            elif self.option == '2':
+                print("Checking Jigsaw.w3.org Service!")
+                self.service = "Jigsaw.w3.org"
+                self.res_check = requests.get(
+                    'https://jigsaw.w3.org/css-validator/').status_code
+                sleep(1.2)
+                del_last_lines_up(1)
+
+            self.res_validator = try_res(self.res_check)
+
+            def grab_validation(self, request):
+                self.data = BeautifulSoup(request.content, 'html5lib')
+                self.data.prettify()
+
+                return self.data
+
+            if not self.res_validator:
+                print()
+                choose_another_option_input()
+                run_options()
+
+            elif self.option == '1':
                 print("Checking Successfull!")
                 sleep(1)
                 del_last_lines_up(1)
                 print("Retriving Results :)")
                 res = re_s.get(self.html)
+                grab_validation(self, res)
                 sleep(1)
                 del_last_lines_up(1)
             else:
@@ -189,16 +225,14 @@ class ValidateCode:
                 del_last_lines_up(1)
                 print("Retriving Results :)")
                 res = re_s.get(self.css)
+                grab_validation(self, res)
                 sleep(1)
                 del_last_lines_up(1)
-
-            self.data = BeautifulSoup(res.content, 'html5lib')
-            self.data.prettify()
 
     def __str__(self):
         # __str__ avoids sending the
         # object's name and id in memory,
-        # instead of the actual usable data
+        # instead sends the actual usable data
         return str(self.data)
 
 
@@ -221,25 +255,29 @@ class Html(ValidateCode):
     def __init__(self, option, data):
         super().__init__(option, data)
 
-        try:
-            self.all_lis = self.data.find('ol')
-            if self.all_lis == "'Html' object has no attribute 'data'":
-                raise AttributeError(
-                    f"No Response: {self.all_lis}"
-                )
-        except AttributeError as data_err:
-            del_last_lines_up(3)
-            print("Ohh.. noo.. There's an error!\n"
-                  "Error: Did not receive data from validator, "
-                  "instead got:\n"
-                  f"{data_err}"
-                  "\n\nWhich basically means; that the "
-                  "validator has an issue.\n")
-            sleep(3)
+        self.all_lis = None
+        self.all_errors = None
 
-        else:
-            print("Processing Results..")
-            sleep(1)
+        if self.data is not None:
+            try:
+                self.all_lis = self.data.find('ol')
+                if self.all_lis == "'Html' object has no attribute 'data'":
+                    raise AttributeError(
+                        f"No Response: {self.all_lis}"
+                    )
+            except AttributeError as data_err:
+                del_last_lines_up(3)
+                print("Ohh.. noo.. There's an error!\n"
+                      "Error: Did not receive data from validator, "
+                      "instead got:\n"
+                      f"{data_err}"
+                      "\n\nWhich basically means; that the "
+                      "validator has an issue.\n")
+                sleep(3)
+
+            else:
+                print("Processing Results..")
+                sleep(1)
 
     def err(self):
         """
@@ -257,45 +295,46 @@ class Html(ValidateCode):
             ....
         """
 
-        try:
-            all_errors = self.all_lis.find_all('li')
-            if all_errors == "'Html' object has no attribute 'data'":
-                raise AttributeError()
-
-        except AttributeError:
-            error_choose_another_option()
-            return True
-
-        else:
+        if self.all_lis is not None:
             try:
-                errors_list = []
-                for list_item in all_errors:
-                    count = 0
-                    for li in list_item.find('li', {'class': 'error'}):
-                        if count == 2:
-                            continue
-                        errors_list.append(li.text)
-                        count += 1
+                self.all_errors = self.all_lis.find_all('li')
+                if self.all_errors == "'Html' object has no attribute 'data'":
+                    raise AttributeError()
 
-            except TypeError:
-                choose_another_option()
+            except AttributeError:
+                error_choose_another_option()
                 return True
 
             else:
-                print("We received the following errors:\n")
+                try:
+                    errors_list = []
+                    for list_item in self.all_errors:
+                        count = 0
+                        for li in list_item.find('li', {'class': 'error'}):
+                            if count == 2:
+                                continue
+                            errors_list.append(li.text)
+                            count += 1
 
-                for error in errors_list:
-                    for line in error:
-                        print("On line:", line)
-                    sleep(.4)
-                    print()
+                except TypeError:
+                    choose_another_option()
 
-                pause(message="\x1b[3mPress any key to continue...\x1b[23m")
-                del_last_lines_up(1000)
-                print_brand_name()
-                run_choices_screen()
+                else:
+                    print("We received the following errors:\n")
 
-                return True
+                    for error in errors_list:
+                        for line in error:
+                            print("On line:", line)
+                        sleep(.4)
+                        print()
+
+                    pause(
+                        message="\x1b[3mPress any key to continue...\x1b[23m")
+                    del_last_lines_up(1000)
+                    print_brand_name()
+                    run_choices_screen()
+
+        return True
 
 
 class Css(ValidateCode):
@@ -317,26 +356,29 @@ class Css(ValidateCode):
     def __init__(self, option, data):
         super().__init__(option, data)
 
-        try:
-            self.trs = set(self.data.find_all('tr', {'class': 'error'}))
-            if self.trs == "'Css' object has no attribute 'data'":
-                raise AttributeError(
-                    f"No Response: {self.trs}"
-                )
+        self.trs = None
 
-        except AttributeError as data_err:
-            del_last_lines_up(3)
-            print("Ohh.. noo.. There's an error!\n"
-                  "Error: Did not receive data from validator, "
-                  "instead got:\n"
-                  f"{data_err}"
-                  "\n\nWhich basically means "
-                  "that the validator has an issue.\n")
-            sleep(3)
+        if self.data is not None:
+            try:
+                self.trs = set(self.data.find_all('tr', {'class': 'error'}))
+                if self.trs == "'Css' object has no attribute 'data'":
+                    raise AttributeError(
+                        f"No Response: {self.trs}"
+                    )
 
-        else:
-            print("Processing Results..")
-            sleep(1)
+            except AttributeError as data_err:
+                del_last_lines_up(3)
+                print("Ohh.. noo.. There's an error!\n"
+                      "Error: Did not receive data from validator, "
+                      "instead got:\n"
+                      f"{data_err}"
+                      "\n\nWhich basically means "
+                      "that the validator has an issue.\n")
+                sleep(3)
+
+            else:
+                print("Processing Results..")
+                sleep(1)
 
     def err(self):
         """
@@ -355,48 +397,50 @@ class Css(ValidateCode):
             ....
         """
 
-        try:
-            if self.trs in self.trs == "'Css' object has no attribute 'trs'":
-                raise AttributeError()
+        if self.trs is not None:
+            try:
+                if self.trs in self.trs == ("'Css' object "
+                                            "has no attribute 'trs'"):
+                    raise AttributeError()
 
-        except AttributeError:
-            error_choose_another_option()
-            return True
-
-        else:
-            error_list = []
-            for tr in self.trs:
-                tr_text = tr.text
-
-                valid_text = re.findall(VALID_SUBTRING, tr_text)
-                for idx in valid_text:
-                    index = valid_text.index(idx)
-                    if not len(idx) > 6:
-                        continue
-                    replace_text = re.sub(' : ', ': ', idx)
-                    valid_text[index] = replace_text
-                error_list.append(valid_text)
-
-            if len(error_list) != 0:
-                error_list_wo_dups = set(tuple(err_sub)
-                                         for err_sub in error_list)
-                del_last_lines_up(5)
-                print("We received the following errors:\n")
-
-                for err_l in error_list_wo_dups:
-                    error_message = re.sub(
-                        r"(\s\s+)", ' ', ' '.join(err_l))
-
-                    print("On line:", error_message)
-                    print()
-                    sleep(.4)
-
-                pause(message="\x1b[3mPress any key to continue...\x1b[23m")
-                del_last_lines_up(1000)
-                print_brand_name()
-                run_choices_screen()
+            except AttributeError:
+                error_choose_another_option()
 
             else:
-                choose_another_option()
+                error_list = []
+                for tr in self.trs:
+                    tr_text = tr.text
+
+                    valid_text = re.findall(VALID_SUBTRING, tr_text)
+                    for idx in valid_text:
+                        index = valid_text.index(idx)
+                        if not len(idx) > 6:
+                            continue
+                        replace_text = re.sub(' : ', ': ', idx)
+                        valid_text[index] = replace_text
+                    error_list.append(valid_text)
+
+                if len(error_list) != 0:
+                    error_list_wo_dups = set(tuple(err_sub)
+                                             for err_sub in error_list)
+                    del_last_lines_up(5)
+                    print("We received the following errors:\n")
+
+                    for err_l in error_list_wo_dups:
+                        error_message = re.sub(
+                            r"(\s\s+)", ' ', ' '.join(err_l))
+
+                        print("On line:", error_message)
+                        print()
+                        sleep(.4)
+
+                    pause(
+                        message="\x1b[3mPress any key to continue...\x1b[23m")
+                    del_last_lines_up(1000)
+                    print_brand_name()
+                    run_choices_screen()
+
+                else:
+                    choose_another_option()
 
         return True
