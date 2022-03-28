@@ -43,7 +43,6 @@ Project URL: [View live project](https://webalyzer.herokuapp.com "Webalyzer")
     * [Testings](#testings)
     * [Bugs](#bugs)
 * [Validator](#validator)
-    * [Python](#validate-python)
 * [Deployment](#deployment)
     * [Fork](#fork)
     * [Clone](#clone)
@@ -158,11 +157,25 @@ When the user chooses to quit the app, an outro will show with Webalyzer's name 
 
 ### Structure
 
-The app's structure should not be more than three levels deep and should be user-friendly to find what the user wants quickly. Below is a chart showcasing the logic structure and functionality of the app.
+<br>
+
+#### App Flow
+
+The app structure should not be more than three levels deep and should be user-friendly to quickly find what the user wants. Below is a chart showcasing the flow structure and functionality of the app.
 
 <br>
 
-![Background Image](./assets/readme/app-process-chart-final.svg)
+![Background Image](./assets/readme/app-flow-chart.svg)
+
+<br>
+
+#### App Logic
+
+Below is a chart showcasing the logic behind the app.
+
+<br>
+
+![Background Image](./assets/readme/app-logic-chart.svg)
 
 <br>
 
@@ -293,7 +306,7 @@ I can say that I learned a lot about the Python language and feel confident work
 
 ### Python Code
 
-Intensive testing was done and is available here: [Testings.md](./assets/readme/testings.md)
+I did intensive testing during development, but highlights are available on [Testings.md](./assets/readme//testing/testings.md)
 
 ### Lighthouse
 
@@ -393,7 +406,7 @@ How to clone this project:
 
 ### Deploy
 
-To deploy the app to Heroku simply navigate to [Heroku.com](https://www.heroku.com "heroku.com") and login to your account or create one if needed. Upon entering your dashboard, create a new app and set the location.
+To deploy the app to Heroku, navigate to [Heroku.com](https://www.heroku.com "heroku.com") and login into your account or create one if needed. Upon entering your dashboard, create a new app and set the location.
 
 <br>
 
@@ -403,7 +416,7 @@ To deploy the app to Heroku simply navigate to [Heroku.com](https://www.heroku.c
 
 <br>
 
-First you need to make the settings needed for this app.
+First, you need to make the necessary settings for this app.
 
 <br>
 
@@ -485,7 +498,7 @@ Special thanks to [Jayant Malik](https://stackoverflow.com/users/13525989/jayant
 
 ## Acknowledgement
 
-No code within this project has been copied other than the provided base template by Code Institute. The sources used above provided guidance throughout the development.
+No code within this project is a copy unless specified explicitly in the source code—Code Institute provided the base template for this project. The sources used above provided guidance throughout the development.
 
 This project is part of the "Full Stack Software Developer Diploma" at [Code Institute](https://codeinstitute.net/).
 
