@@ -355,7 +355,7 @@ The solution was to add an if statement targeting the said letters as shown belo
 
 ### Validate Python
 
-I ran all Python code against PEP8's online checker with no errors reported. See screenshots here: [pep8](./assets/readme/pep8.md)
+I ran all Python code against PEP8's online checker with no errors reported. See screenshots here: [pep8](./assets/readme/pep8/pep8.md)
 
 
 <br>
