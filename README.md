@@ -125,7 +125,7 @@ I created wireframes for mobile and desktop screens, while both terminal and rel
 
 <br>
 
-The app will greet the user with a welcome screen where the user can choose between 2 options yes or no options, read about Webalyzer, or continue.
+The app will greet the user with a welcome screen where the user can choose between 2 options yes or no, read about Webalyzer, or continue.
 
 ![Intro](./assets/readme/intro.jpg)
 
@@ -143,7 +143,7 @@ Whether choosing not to read about Webalyzer or continuing after reading, the us
 
 <br>
 
-After successfully validating the URL, the user will be met with two choices. 1. option to validate HTML or 2. option to validate CSS. While the URL is being validated, the user receives feedback with the intention that the app is working and something is happening. Depending on the result, the user will see a no error message and choose to validate another option, another URL, or quit. If the validation includes errors, the user will see a list of errors, on which line, which error, and for what precisely as the user would if visited the 3rd-party validator.
+After successfully validating the URL, the user will be met with two choices. 1. option to validate HTML or 2. option to validate CSS. While the URL is being validated, the user receives feedback with the intention that the app is working and something is happening. Depending on the result, the user will see a no error message and choose to validate another option, another URL, or quit. If the validation includes errors, the user will see a list of errors, on which line, which error, and for what, precisely as the user would if visited the 3rd-party validator.
 
 ![Options](./assets/readme/options.gif)
 
@@ -183,7 +183,7 @@ Below is a chart showcasing the logic behind the app.
 
 #### Minimum viable product
 
-The minimum feature the app must contain includes the following features:
+The minimum features the app must include are the following:
 
 - To validate the HTML of a webpage.
 
@@ -191,7 +191,7 @@ The minimum feature the app must contain includes the following features:
 
 #### Desired features
 
-The desired features the app could contain includes the following features:
+The desired features the app could contain includes the following:
 
 - To validate the standard `https://html.spec.whatwg.org` meta tags of a website.
 
@@ -310,7 +310,7 @@ I did intensive testing during development, but highlights are available on [Tes
 
 ### Lighthouse
 
-Adding an extra google font with a rel attribute of preload, I successfully cut down the render-blocking time from 1.23s to 0.48s, which is excellent.
+Adding an extra google font link with a rel attribute of preload, I successfully cut down the render-blocking time from 1.23s to 0.48s, which is excellent.
 
 | Before Preload |
 |:--------:|
@@ -342,7 +342,7 @@ The social card image was tested with [brandwood.com/a11y/](https://www.brandwoo
 
 ### Bugs
 
-I have grown fond of eliminating bugs found in my code as if I am intentionally trying to call them out and spot them wherever possible.
+I have grown fond of eliminating bugs found in my code as I intentionally try to provoke and find them.
 
 <br>
 
